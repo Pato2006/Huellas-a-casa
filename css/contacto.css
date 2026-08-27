@@ -1,0 +1,169 @@
+.centrar-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.centrar-texto h1 {
+    color: #5e4e3e;
+    font-size: 64px;
+    margin: 20px;
+}
+
+.centrar-texto p {
+    color: #5e4e3e;
+    width: 1200px;
+    font-size: 30px;
+    margin: 20px;
+}
+
+.boton-contacto {
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #654C32;
+    border: none;
+    border-radius: 5px;
+    margin: 120px;
+    width: 450px;
+    border-radius: 40px;
+}
+
+.boton-contacto a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.nuestros-datos {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin: 100px;
+}
+
+.lateral-iz {
+
+    flex-direction: row;
+    width: 400px;
+}
+
+.lateral-dr {
+    flex-direction: row;
+    width: 400px;
+}
+
+.lateral-dr p,
+.lateral-iz p {
+    color: #5e4e3e;
+    font-size: 24px;
+
+}
+
+.lateral-dr h2,
+.lateral-iz h2 {
+    color: #5e4e3e;
+    font-size: 32px;
+
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes h2 {
+    color: #5e4e3e;
+    font-size: 32px;
+    margin: 15px;
+}
+
+.iconos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.redes img {
+    margin: 5px;
+}
+
+@media (max-width: 700px) {
+
+    main {
+        background-position: left;
+    }
+
+    .cabecera {
+        height: auto;
+    }
+
+    nav {
+        align-items: center;
+    }
+
+    .cabecera-contenido {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .lista {
+        padding: 5px;
+        margin-left: 25px;
+    }
+
+    .lista a {
+        font-size: 20px;
+    }
+
+    .boton-index {
+        margin: 20px;
+    }
+
+    .boton-index a {
+        font-size: 20px;
+    }
+
+    .contenido p {
+        font-size: 60px;
+    }
+
+    .comentarios {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        gap: 25px;
+        margin-bottom: 60px;
+    }
+
+    .centrar {
+        font-size: 40px;
+    }
+
+    .rectangulo {
+        width: 80%;
+        max-width: 250px;
+        min-height: 100px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .pie p {
+        font-size: 24px;
+        padding-top: 40px;
+    }
+}

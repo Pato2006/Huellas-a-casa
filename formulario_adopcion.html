@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+
+<body>
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
+            <nav>
+                <ul class="menu">
+                    <li class="lista"><a href="index.html">Adoptar</a></li>
+                    <li class="lista"><a href="turnos.html">Donar</a></li>
+                    <li class="lista"><a href="nuevo_turno.html">Contactos</a></li>
+                    <li class="lista"><a href="servicios.html"><img src="img/perfil.svg" alt="Perfil" id="perfil"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="contenedor">
+            <h1>Formulario de adopcion</h1>
+            <form action="" method="" class="formulario">
+                <fieldset class="contorno">
+                    <p>
+                        <label for="familia">Grupo familiar</label><br>
+                        <input type="text" name="familia" required>
+                    </p>
+
+                    <p>
+                        <label for="info_familia">¿Alguno de los integrantes de tu casa tiene alergias?
+                            ¿Cuales?</label><br>
+                        <input type="text" name="info_familia" required>
+                    </p>
+                    <p>
+                        <label for="info_mascotas">¿Tenes otras mascotas?¿Cuales y que edad tienen?</label><br>
+                        <input type="text" name="info_mascotas" required>
+                    </p>
+                    <p>
+                        <span>¿Estan castrados?</span><br>
+                        <input type="radio" name="castrado" value="si" required>
+                        <label for="True">Si</label>
+                        <input type="radio" name="castrado" value="no">
+                        <label for="False">No</label>
+                        <input type="radio" name="castrado" value="no">
+                        <label for="False">No tengo mascotas</label>
+                    </p>
+                    <p>
+                        <label for="cuidado_mascota">¿Quien puede cuidarlo en caso de ausentarte?</label><br>
+                        <input type="text" name="cuidado_mascota" required>
+                    </p>
+
+                    <p>
+                        <label for="tiempo_solo_mascota">¿Cuanto tiempo va a estar el animal solo?</label><br>
+                        <input type="text" name="tiempo_solo_mascota" required>
+                    </p>
+                    <p>
+                        <label for="localidad_dueno">¿Donde vivis?</label><br>
+                        <input type="text" name="localidad_dueno" required>
+                    </p>
+                </fieldset>
+                <button type="submit" class="boton-form">Enviar propuesta</button>
+                <button type="reset" class="boton-form">Limpiar formulario</button>
+            </form>
+            <p>Importante: Este formulario sera revidaso y puede ser aprobado o desaprobado, completarlo no garantiza la
+                adopcion</p>
+
+        </div>
+    </main>
+    <footer class="pie">
+        <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
+        <p>Cada huella merece encontrar un hogar.</p>
+    </footer>
+
+</body>
+
+</html>

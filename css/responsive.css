@@ -1,0 +1,133 @@
+/* Comentarios */
+
+@media (max-width: 1000px) {
+    .centrar-texto h1 {
+        font-size: 24px;
+    }
+
+    .centrar-texto p {
+        font-size: 20px;
+        width: auto;
+    }
+
+    .portada {
+    height: auto;
+
+    }
+
+    .boton-contacto {
+        width: 120px;
+        margin: 60px;
+    }
+
+    .boton-contacto a {
+        font-size: 20px;
+    }
+
+    .lateral-iz h2,
+    .lateral-dr h2 {
+        font-size: 24px;
+    }
+
+    .lateral-iz p,
+    .lateral-dr p {
+        margin-top: 20px;
+        margin-left: 10px;
+        font-size: 20px;
+    }
+
+
+    .redes h2 {
+        font-size: 12px;
+    }
+
+    .redes img {
+        width: 40px;
+    }
+}
+
+/* Index */
+
+@media (max-width: 1000px) {
+
+
+    .cabecera {
+        height: auto;
+    }
+
+    nav {
+        align-items: center;
+    }
+
+    .cabecera-contenido {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .lista {
+        padding: 5px;
+        margin-left: 25px;
+    }
+
+    .lista a {
+        font-size: 20px;
+    }
+
+    .boton-index {
+        margin: 20px;
+        width: 200px;
+    }
+
+    .boton-index a {
+        font-size: 20px;
+    }
+
+    .contenido p {
+        font-size: 60px;
+    }
+
+    .comentarios {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        gap: 25px;
+        margin-bottom: 60px;
+    }
+
+    .centrar {
+        font-size: 40px;
+    }
+
+    .rectangulo {
+        width: 80%;
+        max-width: 250px;
+        min-height: 100px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .pie p {
+        font-size: 16px;
+        padding-top: 40px;
+    }
+}
+
+
+/* Formulario */
+@media (max-width: 1000px) {
+
+    .boton-form {
+        width: 150px;
+    }
+
+}
