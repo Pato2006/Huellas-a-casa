@@ -1,5 +1,6 @@
 Con Github Desktop, una vez logeada, darle a clonar a este repositorio y trabajar con el Visual Studio Code en esa carpeta
-<img width="960" height="657" alt="image" src="https://github.com/user-attachments/assets/accf4f59-24d5-419f-8ebd-f613623b058e" />
+<img width="952" height="647" alt="Foto" src="https://github.com/user-attachments/assets/8fd564a1-71c3-4938-9cde-7695890770e1" />
+
 cada vez que abran el proyecto darle a Pull para tener la ultima version
 cuando hayan terminado, en commit ponen un titulo (obligatorio) y descripcion(opcional) de los cambios
 cuando este hecho el commit, pushean para subirlo al repositorio
