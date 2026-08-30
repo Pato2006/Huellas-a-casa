@@ -11,7 +11,7 @@
     }
 
     .portada {
-    height: auto;
+        height: auto;
 
     }
 
@@ -50,7 +50,6 @@
 
 @media (max-width: 1000px) {
 
-
     .cabecera {
         height: auto;
     }
@@ -74,6 +73,10 @@
 
     .lista a {
         font-size: 20px;
+    }
+
+    .admin a {
+        font-size: 16px;
     }
 
     .boton-index {
@@ -130,4 +133,58 @@
         width: 150px;
     }
 
+}
+
+/* Formulario Admin */
+
+@media (max-width: 1000px) {
+
+    .tarjetas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .informacion {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .informacion img {
+        margin-right: 0px;
+        margin-bottom: 25px;
+    }
+
+    .datos {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .botones {
+        width: 100%;
+        align-items: center;
+        margin-right: 0px;
+        margin-left: 40px
+    }
+
+    .eleccion {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boton_adopcion {
+        width: 200px;
+        margin-top: 10px;
+    }
+
+    .rechazar {
+        margin-bottom: 10px;
+    }
 }

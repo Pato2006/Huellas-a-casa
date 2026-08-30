@@ -1,0 +1,78 @@
+.tarjetas {
+    height: auto;
+    width: 100%;
+    background-color: #c8d1d9;
+}
+
+.contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start
+}
+
+.informacion {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    align-content: center;
+    margin: 25px;
+}
+
+.informacion img {
+    height: 200px;
+    margin-right: 25px;
+}
+
+.datos {
+    width: auto;
+    font-size: 26px;
+}
+
+.datos p {
+    font-size: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    margin-right: 25px;
+}
+
+.eleccion {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.boton_adopcion {
+    height: 50px;
+    width: 125px;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-right: 10px;
+    border: none;
+    font-size: 20px;
+}
+
+.ver {
+    width: 300px;
+    background-color: #5e4e3f;
+    color: #f5eae2;
+}
+
+.aceptar {
+    color: #697168;
+    background-color: #b5c3c4;
+}
+
+.rechazar {
+    color: #761f2a;
+    background-color: #ff7d7d;
+}
