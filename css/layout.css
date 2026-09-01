@@ -1,19 +1,21 @@
 * {
     margin: 0;
     padding: 0;
+    /* doy margen y padding 0 para que no quede el borde en el main */
 }
 
 a,
 p,
-h2,
 button {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
+    /* fuente general a todos los a,p y botones */
 }
 
 .cabecera {
     background-color: #f5eae2;
     height: 100px;
+    /* le doy color al fondo y una altura predefinida */
 }
 
 .cabecera-contenido {
@@ -21,6 +23,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* dada la altura predefinida se usa todo, en flex en fila, que tengan espacio entre ellos y esten centrados */
 }
 
 .menu {
@@ -28,31 +31,37 @@ button {
     align-items: center;
     list-style: none;
     margin-right: 20px;
+    /* los botones en flex, sin estilo, margen a la derecha de c/u y al centro */
 }
 
 .lista {
     padding: 10px;
+    /* cada item de la lista que tenga un relleno */
 }
 
 .lista a {
     color: #654C32;
     text-decoration: none;
     font-size: 30px;
+    /* los links de la lista con un color, sin subrayado y tamaño de fuente */
 }
 
 #logo {
     height: 80px;
     margin-left: 20px;
+    /* altura y margen izquierdo del logo del refugio */
 }
 
 #perfil {
     height: 45px;
+    /* el perfil es una foto (svg) asi que le damos altura chiquita */
 }
 
 
 li:hover {
     background-color: #c8d1d9;
     border-radius: 20px;
+    /* efecto para que cambie de color cuando se ponga el mouse por encima y un redondeo */
 }
 
 .contenedor {
@@ -60,6 +69,7 @@ li:hover {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    /* el contenedor general que centra todo */
 }
 
 .pie {
@@ -68,9 +78,11 @@ li:hover {
     background-color: #f5eae2;
     justify-content: center;
     text-align: center;
+    /* el footer con ancho todo y una altura exacta, fondo y centrado */
 }
 
 .pie p {
     font-size: 32px;
     padding-top: 40px;
+    /* al texto del footer un tamaño y un relleno de arriba para que no esten tan juntos */
 }

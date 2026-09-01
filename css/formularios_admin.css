@@ -2,39 +2,43 @@
     height: auto;
     width: 100%;
     background-color: #c8d1d9;
+    /* le doy color, que ocupe toda la pantalla y el alto es el que ocupe todos los elementos */
 }
 
 .contenido {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start
+    /* todos los elementos del animal van en fila pero espaciados, entonces uno queda al inicio
+    y el otro al final*/
 }
 
 .informacion {
     display: flex;
-    justify-content: center;
     align-items: start;
-    align-content: center;
     margin: 25px;
+    /* todos los datos del animal se muestran en fila con un margen y se alinean al inicio (se ve en
+    la foto) */
 }
 
 .informacion img {
     height: 200px;
     margin-right: 25px;
+    /* altura fija a la imagen  y margen a la derecha para no quede tan pegada con los datos*/
 }
 
 .datos {
     width: auto;
-    font-size: 26px;
+    /* ancho de la pantalla*/
+}
+
+.datos h1 {
+    font-size: 56px;
+    /* le doy al texto un tamaño de fuente específico */
 }
 
 .datos p {
     font-size: 20px;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
+    /* le doy al texto un tamaño de fuente específico */
 }
 
 .botones {
@@ -43,12 +47,16 @@
     align-items: flex-start;
     width: 300px;
     margin-right: 25px;
+    /* los botones se muestran en columnas por flex y se alinean al inicio
+    tienen tamaño específico y margen a la derecha para que no se quede pegado */
 }
 
 .eleccion {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    /* div adentro para los botones de eleccion separados con todo el ancho del div padre
+    botones */
 }
 
 .boton_adopcion {
@@ -59,20 +67,26 @@
     margin-right: 10px;
     border: none;
     font-size: 20px;
+    /* a los 2 botones les doy las mismas especificaciones, sin borden pero redondeado, con fuente 
+    tamaño y margen especifico */
 }
 
 .ver {
     width: 300px;
     background-color: #5e4e3f;
     color: #f5eae2;
+    /* clase especifica para el boton de ver formularios de adopcion, solo es mas largo y con otros
+    colores */
 }
 
 .aceptar {
     color: #697168;
     background-color: #b5c3c4;
+    /* carac. del boton de aceptar, solo cambia colores */
 }
 
 .rechazar {
     color: #761f2a;
     background-color: #ff7d7d;
+    /* carac. del boton de rechazar, solo cambia colores */
 }

@@ -1,16 +1,22 @@
+h2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    /* modifico el h2 solo para contactos */
+}
+
 .centrar-texto {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
+    /* el contenedor lo centra y este lo pone ademas en columnas */
 }
 
 .centrar-texto h1 {
     color: #5e4e3e;
     font-size: 64px;
     margin: 20px;
+    /* al h1 del contenedor anterior tiene margen gral color y fuente mas grande */
 }
 
 .centrar-texto p {
@@ -18,6 +24,7 @@
     width: 1200px;
     font-size: 30px;
     margin: 20px;
+    /* al p del contenedor anterior tiene margen gral color fuente y un ancho especifico para que no ocupe todo */
 }
 
 .boton-contacto {
@@ -29,12 +36,15 @@
     margin: 120px;
     width: 450px;
     border-radius: 40px;
+    /* al boton de donar del contenedor le damos margen, relleno, le sacamos el estilo del borde
+    pero queda con un redondeado, ancho establecido y un color de fondo */
 }
 
 .boton-contacto a {
     color: white;
     text-decoration: none;
     font-size: 40px;
+    /* al link del boton le damos color blanco, sin subrayado y un tamaño de fuente */
 }
 
 .nuestros-datos {
@@ -42,31 +52,26 @@
     align-items: start;
     justify-content: center;
     margin: 100px;
+    /* div gral donde estan nuestros contactos, centrados, van arriba de todo y estan en fila con un
+    margen para que se separen de los costados y el boton de donar ademas de cada item */
 }
 
-.lateral-iz {
-
-    flex-direction: row;
+.lateral {
+    flex-direction: column;
     width: 400px;
+    /* los 2 div izq y derecha que estan en flex, en columna y con ancho establecido*/
 }
 
-.lateral-dr {
-    flex-direction: row;
-    width: 400px;
-}
-
-.lateral-dr p,
-.lateral-iz p {
+.lateral p {
     color: #5e4e3e;
     font-size: 24px;
-
+    /* al contenedor, el texto con fuente y color */
 }
 
-.lateral-dr h2,
-.lateral-iz h2 {
+.lateral h2 {
     color: #5e4e3e;
     font-size: 32px;
-
+    /* al contenedor, el titulo con fuente y color */
 }
 
 .redes {
@@ -74,96 +79,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* div de nuestras redes, todo en flex (fila) a columna y centrado*/
 }
 
 .redes h2 {
     color: #5e4e3e;
     font-size: 32px;
     margin: 15px;
+    /* el titulo con fuente margen y color */
 }
 
 .iconos {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* subdiv en redes para poner las fotos en fila con flex */
 }
 
 .redes img {
     margin: 5px;
-}
-
-@media (max-width: 700px) {
-
-    main {
-        background-position: left;
-    }
-
-    .cabecera {
-        height: auto;
-    }
-
-    nav {
-        align-items: center;
-    }
-
-    .cabecera-contenido {
-        flex-direction: column;
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-
-    }
-
-    .lista {
-        padding: 5px;
-        margin-left: 25px;
-    }
-
-    .lista a {
-        font-size: 20px;
-    }
-
-    .boton-index {
-        margin: 20px;
-    }
-
-    .boton-index a {
-        font-size: 20px;
-    }
-
-    .contenido p {
-        font-size: 60px;
-    }
-
-    .comentarios {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 50px;
-        gap: 25px;
-        margin-bottom: 60px;
-    }
-
-    .centrar {
-        font-size: 40px;
-    }
-
-    .rectangulo {
-        width: 80%;
-        max-width: 250px;
-        min-height: 100px;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .pie p {
-        font-size: 24px;
-        padding-top: 40px;
-    }
+    width: 50px;
+    /* las fotos de las redes con un margen y un ancho */
 }

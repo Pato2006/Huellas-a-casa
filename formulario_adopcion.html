@@ -28,13 +28,14 @@
     <main>
         <div class="contenedor">
             <h1>Formulario de adopcion</h1>
+            <!-- comienzo del formulario-->
             <form action="" method="" class="formulario">
-                <fieldset class="contorno">
+                <fieldset class="contorno"> <!-- borde -->
+                    <!-- comienzan las preguntas-->
                     <p>
                         <label for="familia">Grupo familiar</label><br>
                         <input type="text" name="familia" required>
                     </p>
-
                     <p>
                         <label for="info_familia">¿Alguno de los integrantes de tu casa tiene alergias?
                             ¿Cuales?</label><br>
@@ -44,7 +45,7 @@
                         <label for="info_mascotas">¿Tenes otras mascotas?¿Cuales y que edad tienen?</label><br>
                         <input type="text" name="info_mascotas" required>
                     </p>
-                    <p>
+                    <p class="castrado">
                         <span>¿Estan castrados?</span><br>
                         <input type="radio" name="castrado" value="si" required>
                         <label for="True">Si</label>
@@ -66,13 +67,15 @@
                         <label for="localidad_dueno">¿Donde vivis?</label><br>
                         <input type="text" name="localidad_dueno" required>
                     </p>
+                    <!-- terminan las preguntas-->
                 </fieldset>
+                <!-- botones de accion-->
                 <button type="submit" class="boton-form">Enviar propuesta</button>
                 <button type="reset" class="boton-form">Limpiar formulario</button>
             </form>
             <p>Importante: Este formulario sera revidaso y puede ser aprobado o desaprobado, completarlo no garantiza la
                 adopcion</p>
-
+            <!-- aclaracion-->
         </div>
     </main>
     <footer class="pie">

@@ -1,52 +1,4 @@
-/* Comentarios */
-
-@media (max-width: 1000px) {
-    .centrar-texto h1 {
-        font-size: 24px;
-    }
-
-    .centrar-texto p {
-        font-size: 20px;
-        width: auto;
-    }
-
-    .portada {
-        height: auto;
-
-    }
-
-    .boton-contacto {
-        width: 120px;
-        margin: 60px;
-    }
-
-    .boton-contacto a {
-        font-size: 20px;
-    }
-
-    .lateral-iz h2,
-    .lateral-dr h2 {
-        font-size: 24px;
-    }
-
-    .lateral-iz p,
-    .lateral-dr p {
-        margin-top: 20px;
-        margin-left: 10px;
-        font-size: 20px;
-    }
-
-
-    .redes h2 {
-        font-size: 12px;
-    }
-
-    .redes img {
-        width: 40px;
-    }
-}
-
-/* Index */
+/* Index y layout */
 
 @media (max-width: 1000px) {
 
@@ -54,42 +6,63 @@
         height: auto;
     }
 
-    nav {
-        align-items: center;
-    }
+    /* mantengo altura */
 
     .cabecera-contenido {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        display: flex;
         justify-content: space-between;
+        /* div de el navbar en columnas, centradas y con espacio */
+    }
 
+    .portada {
+        height: 600px;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+    /* hago la foto del fondo que se adapte a las dimensiones */
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        /* el nav en fila, centrado y con espacio entre los items */
     }
 
     .lista {
         padding: 5px;
         margin-left: 25px;
+        /* cada item del nav con margen y relleno distinto */
     }
 
     .lista a {
         font-size: 20px;
+        width: auto;
+        /* el texto de la lista con otra fuente */
     }
 
-    .admin a {
-        font-size: 16px;
-    }
 
     .boton-index {
         margin: 20px;
         width: 200px;
+        /* botones de adoptar donar con tamaño y margen distinto */
     }
 
     .boton-index a {
         font-size: 20px;
+        /* el texto de los botones con otra fuente */
     }
 
     .contenido p {
         font-size: 60px;
+        /* el texto de la portada con otra fuente */
+    }
+
+    .centrar {
+        font-size: 40px;
+        /* solo cambio fuente al h1 ya centrado */
     }
 
     .comentarios {
@@ -101,12 +74,11 @@
         justify-content: center;
         margin-top: 50px;
         gap: 25px;
+        /* le doy separacion entre los divs de rectangulos */
         margin-bottom: 60px;
+        /* div de los consejos de como adoptar y donar en columnas, centradas y con espacio*/
     }
 
-    .centrar {
-        font-size: 40px;
-    }
 
     .rectangulo {
         width: 80%;
@@ -117,11 +89,99 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        /* le doy el 80% del ancho, todo en fila centrado */
     }
 
     .pie p {
         font-size: 16px;
         padding-top: 40px;
+        /* cambio tamaño de fuente del footer */
+    }
+}
+
+@media (max-width: 600px) {
+    .portada {
+        height: 500px;
+        padding: 20px;
+        background-position: center;
+    }
+    /* caso especial para menos de 600px */
+}
+
+/* Contacto */
+
+@media (max-width: 1000px) {
+    .centrar-texto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* pongo todo en columnas y al centro */
+    }
+
+    .centrar-texto h1 {
+        font-size: 24px;
+        /* al h1 de ese contenedor cambio fuente */
+    }
+
+    .centrar-texto p {
+        font-size: 20px;
+        width: auto;
+        /* al p de ese contenedor cambio tamao y tiene ancho segun la pantalla */
+    }
+
+    .centrar-texto img {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        /* a la imagen de ese contenedor le doy margen y ancho */
+    }
+
+    .boton-contacto {
+        width: 120px;
+        margin: 60px;
+        /* cambio margen y tamaño del boton */
+    }
+
+    .boton-contacto a {
+        font-size: 20px;
+        /* cambio fuente del texto del boton */
+    }
+
+    .nuestros-datos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px
+            /* pongo todo en columnas y centro con un margen */
+    }
+
+    /* div de donde estamos y como contactarnos en columnas y centrado, cambio tamaño de 
+    fuente tambien */
+    .lateral {
+        margin-left: 40px;
+        width: 100%;
+    }
+
+    .lateral h2 {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    .lateral p {
+        margin-top: 20px;
+        margin-left: 10px;
+        font-size: 20px;
+    }
+
+    /* sobre nuestras redes sociales, cambio tamaño de fuente y de imagenes */
+    .redes h2 {
+        font-size: 24px;
+    }
+
+    .redes img {
+        width: 40px;
     }
 }
 
@@ -129,9 +189,17 @@
 /* Formulario */
 @media (max-width: 1000px) {
 
+    .contorno {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* pongo todo en columas */
     .boton-form {
         width: 150px;
     }
+
+    /* cambio tamaño del boton */
 
 }
 
@@ -144,11 +212,15 @@
         flex-direction: column;
     }
 
+    /* cada tarjeta en columas */
+
     .contenido {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
+
+    /* todo en columnas (uno abajo del otro) y al inicio*/
 
     .informacion {
         flex-direction: column;
@@ -157,9 +229,12 @@
         width: auto;
     }
 
+    /* los datos tambien en columna y centrados */
+
     .informacion img {
         margin-right: 0px;
         margin-bottom: 25px;
+        /* saco margen de la imagen y le doy uno de abajo para separar de los datos */
     }
 
     .datos {
@@ -167,24 +242,31 @@
         font-size: 20px;
     }
 
+    /* cambio fuente a los datos */
+
     .botones {
         width: 100%;
-        align-items: center;
         margin-right: 0px;
         margin-left: 40px
     }
 
+    /* los botones en columna y con otro margen */
+
     .eleccion {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
     }
+
+    /* los botones de aceptar y rechazar en fila */
 
     .boton_adopcion {
         width: 200px;
         margin-top: 10px;
     }
 
-    .rechazar {
-        margin-bottom: 10px;
+    /* le cambio tamaño y margen a los botones */
+
+    .rechazar,
+    .aceptar {
+        margin-bottom: 20px;
     }
 }

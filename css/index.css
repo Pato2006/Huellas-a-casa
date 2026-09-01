@@ -1,20 +1,24 @@
 main {
     width: 100%;
     text-align: center;
+    /* alineo todo al centro */
 }
 
 .portada {
     width: 100%;
     height: 800px;
     background-image: url("../img/index_fondo.jpg");
+    /* pongo imagen del fondo y le doy dimensiones */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /* configuro el fondo */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* pongo en flexbox por columna y alineo al centro todo lo de adentro */
 }
 
 .contenido {
@@ -22,7 +26,16 @@ main {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    /* Todo lo de adentro de la portada en flexbox columnas y al centro */
 }
+
+.contenido p {
+    padding: 20px;
+    font-size: 64px;
+    color: #5e4e3e;
+    /* al texto le doy color tamaño y relleno (padding) */
+}
+
 
 .abajo {
     display: flex;
@@ -30,6 +43,7 @@ main {
     justify-content: center;
     margin-top: auto;
     margin-bottom: 30px;
+    /* los botones, flex en fila al centro, margin-top pone todo abajo y un margen abajo */
 }
 
 .boton-index {
@@ -41,26 +55,23 @@ main {
     margin: 150px;
     width: 400px;
     border-radius: 40px;
+    /* configuracion a cada boton, borde margen tamaño y relleno */
 }
 
 .boton-index a {
     color: white;
     text-decoration: none;
     font-size: 40px;
-}
-
-.contenido p {
-    padding: 20px;
-    font-size: 64px;
-    color: #5e4e3e;
+    /* configuracion a cada link del boton */
 }
 
 .comentarios {
     height: 200px;
     width: auto;
+    display: flex;
     align-items: center;
     justify-content: space-around;
-    display: flex;
+    /* altura al centro y los espacio entre los 3 */
 }
 
 .rectangulo {
@@ -71,46 +82,35 @@ main {
     justify-content: center;
     text-align: center;
     border-radius: 10px;
+    /* cada tarjeta en flexbox y al centro redondeado y con tamaño fijo */
 }
-
-.adoptar {
-    background-color: #f5eae2;
-
-}
-
 .rectangulo p {
     font-size: 20px;
+    /* cambio de fuente al texto de los rectangulos */
+}
+.adoptar {
+    background-color: #f5eae2;
+    /* estilo a los de adoptar (solo color) */
 }
 
-.ayuda {
-    width: 500px;
-    display: block;
-}
-
-.ayuda img {
-    width: 100px;
-    height: auto;
-}
-
-.color_p {
+.color_adoptar {
     color: #5e4e3e;
+    /* un color a los p del rectangulo de adoptar */
 }
 
 .donar {
     background-color: #b5c3c4;
+    /* estilo al donar (solo color) */
 }
 
-.color_p2 {
+.color_donar {
     color: #697168;
-}
-
-#corazon {
-    width: 50px;
-    margin-top: 15px;
+    /* un color a los p del rectangulo de donar */
 }
 
 h1 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 64px;
     margin-top: 30px;
+    /* a cada h1 le doy fuente tamaño margen */
 }
