@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+
+<body>
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
+            <nav>
+                <ul class="menu">
+                    <li class="lista"><a href="index.html">Adoptar</a></li>
+                    <li class="lista"><a href="turnos.html">Donar</a></li>
+                    <li class="lista"><a href="nuevo_turno.html">Contactos</a></li>
+                    <li class="lista"><a href="servicios.html"><img src="img/perfil.svg" alt="Perfil" id="perfil"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="fotoportada">
+                <h1><strong>CON TU AYUDA ELLOS TIENEN UNA SEGUNDA OPORTUNIDAD</strong></h1>
+                <img src="img/fotodonar.jpg" alt="">
+            </div>
+        <div class="contenedor">
+            <h1>Formulario de donacion</h1>
+            <!-- comienzo del formulario-->
+            <form action="" method="" class="formulario">
+                <fieldset class="contorno"> <!-- borde -->
+                    <!-- comienzan las preguntas-->
+                    <p>
+                        <label for="nombre">Nombre y apellido del donante</label><br>
+                        <input type="text" name="donante" required>
+                    </p>
+                    <p>
+                        <label for="monto">Ingresar monto</label><br>
+                        <input type="text" name="monto" required>
+                    </p>
+                    <p>
+                        <label for="tarjeta">Ingresar numero de tarjeta</label><br>
+                        <input type="text" name="tarjeta" required>
+                    </p>
+                    <p>
+                        <label for="info_tarjeta">Ingresar vencimiento</label><br>
+                        <input type="text" name="info_tarjeta" required>
+                    </p>
+
+                    <p>
+                        <label for="cvv">Ingresar CVV</label><br>
+                        <input type="text" name="cvv" required>
+                    </p>
+                    <!-- terminan las preguntas-->
+                </fieldset>
+                <!-- botones de accion-->
+                <button type="submit" class="boton-form">Enviar propuesta</button>
+                <button type="reset" class="boton-form">Limpiar formulario</button>
+            </form>
+            <p>Importante: Este formulario sera revisado para que luego se notifique la verificación de la donación. </p>
+            <!-- aclaracion-->
+        </div>
+        <h2>Deposito o Transferencia bancaria</h2>
+        <p>Alias: Refugio.Huellasacasa
+            Cbu: 0170999940000025926071</p>
+    </main>
+    <footer class="pie">
+        <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
+        <p>Cada huella merece encontrar un hogar.</p>
+    </footer>
+
+</body>
+
+</html>
