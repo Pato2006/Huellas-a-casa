@@ -17,10 +17,11 @@
     }
 
     .portada {
-        height: 600px;
+        height: auto;
         padding: 30px 20px;
         box-sizing: border-box;
     }
+
     /* hago la foto del fondo que se adapte a las dimensiones */
 
     .menu {
@@ -43,20 +44,26 @@
         /* el texto de la lista con otra fuente */
     }
 
+    .abajo {
+        display: flex;
+        flex-direction: column;
+
+    }
 
     .boton-index {
         margin: 20px;
-        width: 200px;
+        width: 100px;
         /* botones de adoptar donar con tamaño y margen distinto */
     }
 
     .boton-index a {
-        font-size: 20px;
-        /* el texto de los botones con otra fuente */
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
     }
 
     .contenido p {
-        font-size: 60px;
+        font-size: 40px;
         /* el texto de la portada con otra fuente */
     }
 
@@ -99,15 +106,16 @@
     }
 }
 
+/*
 @media (max-width: 600px) {
     .portada {
-        height: 500px;
+        height: auto;
         padding: 20px;
         background-position: center;
     }
-    /* caso especial para menos de 600px */
+    /* caso especial para menos de 600px 
 }
-
+*/
 /* Contacto */
 
 @media (max-width: 1000px) {
