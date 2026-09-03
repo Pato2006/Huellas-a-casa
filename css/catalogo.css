@@ -1,0 +1,79 @@
+.catalogo {
+    display: flex;
+    width: 100%;
+}
+
+.leteral_iz {
+    min-height: 250px;
+    width: 13%;
+    background-color: #c8d1d9;
+}
+
+.filtros {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.filtros h3 {
+    font-size: 26px;
+}
+
+.filtro_fila {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.lista {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style-type: none;
+}
+
+.lista button {
+    background-color: #c8d1d9;
+    border: none;
+}
+
+.leteral_dr {
+    width: 87%;
+    min-height: 250px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.animal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    width: 300px;
+}
+
+.animal h2 {
+    color: #5e4e3e;
+}
+
+.animal img {
+    width: 300px;
+    height: 300px;
+}
+
+.boton-catalogo {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #5e4e3f;
+    font-size: 18px;
+    color: #f5eae2;
+}
