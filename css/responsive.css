@@ -207,8 +207,13 @@
         width: 150px;
     }
 
-    /* cambio tamaño del boton */
+    #fotodonacion {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
+    /* hago que la imagen del formulario se adapte a las dimensiones */
 }
 
 /* Formulario Admin */
@@ -280,6 +285,36 @@
 }
 
 /* catalogo */
+@media (max-width: 1500px) {
+
+    .lateral_iz {
+        width: auto;
+    }
+
+    .lateral_dr {
+        flex-direction: row;
+        padding: 5px;
+
+    }
+
+    .animal {
+        padding: 0;
+        width: auto;
+        width: 200px;
+    }
+
+    .animal img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+/* Login y registro*/
 @media (max-width: 1000px) {
-    
+    .login-contenido {
+        margin: 0px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
