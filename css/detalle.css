@@ -1,0 +1,64 @@
+.detalle {
+    display: flex;
+    justify-content: space-between;
+    /* foto a la izquierda e informacion a la derecha */
+}
+
+.informacion {
+    display: flex;
+    align-items: start;
+    margin: 25px;
+    /* datos del animal */
+}
+
+.informacion img {
+    height: 400px;
+    width: 400px;
+    margin-right: 25px;
+    /* tamaño de la foto */
+}
+
+.datos h1 {
+    font-size: 56px;
+    color: #5e4e3e;
+}
+
+.datos p {
+    font-size: 20px;
+    color: #5e4e3e;
+    width: 450px;
+}
+
+.boton_adoptar {
+    display: block;
+    background-color: #5e4e3f;
+    color: #f5eae2;
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 250px;
+}
+
+/* requisitos */
+
+.requisitos {
+    margin: 25px;
+    margin-top: 10px;
+}
+
+.requisitos h2 {
+    color: #697168;
+    font-size: 30px;
+}
+
+.requisitos-contenido {
+    background-color: #c8d1d9;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.requisitos-contenido p {
+    color: #697168;
+    font-size: 18px;
+}

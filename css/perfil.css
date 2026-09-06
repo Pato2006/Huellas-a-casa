@@ -1,5 +1,9 @@
-body{
+body {
     background-color: #b5c3c4;
+}
+
+main {
+    height: 400px
 }
 
 h1 {
