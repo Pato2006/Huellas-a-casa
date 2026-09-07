@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellas a Casa</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+
+<body>
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
+            <nav>
+                <ul class="menu">
+                    <li class="lista"><a href="catalogo.html">Adoptar</a></li>
+                    <li class="lista"><a href="formulario_donar.html">Donar</a></li>
+                    <li class="lista"><a href="contacto.html">Contactos</a></li>
+                    <li class="lista"><a href="perfil.html"><img src="img/perfil.svg" alt="Perfil" id="perfil"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>Modificar perfil</h1>
+
+        <form class="perfil-caja" action="#" method="post">
+            <div class="perfil-columna-izquierda">
+                <img src="img/perfil.svg" alt="Foto de perfil" class="perfil-avatar">
+                <label for="foto" class="boton-modificar">
+                    Cambiar foto
+                    <input type="file" id="foto" name="foto" accept="image/*" hidden>
+                </label>
+            </div>
+
+            <div class="perfil-datos">
+                <label for="nombre">
+                    <strong>Nombre:</strong>
+                    <input type="text" id="nombre" name="nombre" value="Nombre">
+                </label>
+
+                <label for="apellido">
+                    <strong>Apellido:</strong>
+                    <input type="text" id="apellido" name="apellido" value="Apellido">
+                </label>
+
+                <label for="email">
+                    <strong>Correo electrónico:</strong>
+                    <input type="email" id="email" name="email" value="...@gmail.com">
+                </label>
+
+                <label for="telefono">
+                    <strong>Número de teléfono:</strong>
+                    <input type="tel" id="telefono" name="telefono" value="+54 123456789">
+                </label>
+
+                <label for="fecha_nacimiento">
+                    <strong>Fecha de nacimiento:</strong>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="0001-01-01">
+                </label>
+
+                <button type="submit" class="boton-guardar"><a href="perfil.html"></a>Guardar cambios</button>
+            </div>
+        </form>
+    </main>
+    <footer class="pie">
+        <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
+        <p>Cada huella merece encontrar un hogar.</p>
+    </footer>
+
+</body>
+
+</html>
