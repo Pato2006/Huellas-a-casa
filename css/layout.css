@@ -68,14 +68,6 @@ li:hover {
     /* efecto para que cambie de color cuando se ponga el mouse por encima y un redondeo */
 }
 
-.contenedor {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    /* el contenedor general que centra todo */
-}
-
 .pie {
     width: auto;
     height: 200px;
