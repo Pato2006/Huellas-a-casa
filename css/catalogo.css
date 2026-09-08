@@ -6,7 +6,6 @@
 
 .lateral_iz {
     width: 13%;
-    float: left;
     background-color: #c8d1d9;
 }
 
@@ -67,7 +66,6 @@
 
 .lateral_dr {
     width: 87%;
-    float: right;
     background-color: white;
     display: flex;
     flex-wrap: wrap;
