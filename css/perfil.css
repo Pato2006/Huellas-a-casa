@@ -3,7 +3,7 @@ body {
 }
 
 main {
-    height: 400px
+    height: 500px
 }
 
 h1 {
@@ -16,13 +16,14 @@ h1 {
 .perfil-caja {
     background-color: #f5eae2;
     max-width: 700px;
-    margin: 0 auto;
     padding: 30px;
     border-radius: 20px;
     display: flex;
     gap: 30px;
     align-items: flex-start;
     text-align: left;
+    box-shadow: 0 4px 12px #4b4747;
+    width: 100%;
 }
 
 .perfil-columna-izquierda {
@@ -47,8 +48,19 @@ h1 {
     padding: 15px 20px;
     font-size: 13px;
     cursor: pointer;
-    width: 90px;
+    width: 115px;
     text-decoration: none;
+    margin-top: 25px;
+    text-align: center;
+}
+.boton-guardar {
+    background-color: #654C32;
+    color: #f5eae2;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    width: 150px;
     margin-top: 25px;
 }
 
@@ -56,4 +68,14 @@ h1 {
     margin-bottom: 15px;
     font-size: 16px;
     color: #654C32;
+}
+.perfil-datos input {
+    border: none;
+    border-bottom: 1px solid #654C32;
+    background: transparent;
+    font-size: 16px;
+    color: #654C32;
+    padding: 2px 4px;
+    min-width: 150px;
+    width: 100%;
 }
