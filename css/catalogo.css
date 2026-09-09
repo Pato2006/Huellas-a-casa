@@ -2,6 +2,7 @@
     display: flex;
     width: 100%;
 }
+
 /* div principal */
 
 .lateral_iz {
@@ -17,6 +18,7 @@
     padding-left: 20px;
     padding-top: 20px;
 }
+
 /* div que contiene los botones de cada filtro */
 
 .filtros h3 {
@@ -28,6 +30,7 @@
     flex-direction: column;
     align-items: flex-start;
 }
+
 /* configuracion de cada fila */
 
 
@@ -36,8 +39,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    list-style-type: none;
 }
+
 /* las opciones de cada filtro */
 
 .lista-catalogo button {
@@ -45,24 +48,19 @@
     border: none;
 }
 
-#nombre_animal{
+#nombre_animal {
     width: 115px;
     height: 20px;
     margin-right: 10px;
 }
+
 /* el input para buscar por nombre */
 
-
-.nombre{
-    display: flex; 
-    flex-direction: column;
-    align-items: flex-start;
-}
-/* 2da clase para el div especial de buscar por nombre */
-
-.nombre button{
+#buscar-nombre {
     margin-top: 5px;
 }
+
+/* 2da clase para el div especial de buscar por nombre */
 
 .lateral_dr {
     width: 87%;
@@ -73,6 +71,7 @@
     padding: 20px;
     box-sizing: border-box;
 }
+
 /* aside de la derecha  */
 
 .animal {
@@ -83,6 +82,7 @@
     padding: 20px;
     width: 300px;
 }
+
 /* el div de cada animal */
 
 .animal h2 {
@@ -105,4 +105,5 @@
     text-decoration: none;
     text-align: center;
 }
+
 /* el boton para conocer cada perro*/

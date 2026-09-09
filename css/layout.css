@@ -62,7 +62,7 @@ body {
 }
 
 
-li:hover {
+.lista:hover {
     background-color: #c8d1d9;
     border-radius: 20px;
     /* efecto para que cambie de color cuando se ponga el mouse por encima y un redondeo */
