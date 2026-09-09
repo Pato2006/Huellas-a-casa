@@ -1,0 +1,47 @@
+.informacion {
+    margin: 30px;
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+}
+
+.div_detalle_iz {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+}
+
+.foto_detalle {
+    width: 500px;
+}
+
+#foto {
+    display: none;
+}
+
+.label_subir_foto {
+    display: inline-block;
+    cursor: pointer;
+    /* cambia el cursor al pasar sobre el label */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 10px;
+    background-color: #c8d1d9;
+    color: #654c32;
+}
+
+.div_detalle_dr {
+    width: 80%;
+}
+
+.fondo {
+    background-color: white;
+}
+
+input[type="text"],
+textarea {
+    width: 300px;
+}
