@@ -52,8 +52,7 @@ main {
     background-color: #654C32;
     border: none;
     border-radius: 5px;
-    margin: 150px;
-    width: 400px;
+    margin: 20px;
     border-radius: 40px;
     /* configuracion a cada boton, borde margen tamaño y relleno */
 }
