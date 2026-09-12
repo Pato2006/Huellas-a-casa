@@ -240,10 +240,7 @@
 }
 
 /* Formulario donación */
-@media (max-width: 1000px) {
-
-    
-}
+@media (max-width: 1000px) {}
 
 /* Formulario Admin */
 
@@ -314,20 +311,70 @@
 }
 
 /* Catalogo */
-@media (max-width: 1500px) {
+@media (max-width: 1000px) {
+
+    .catalogo {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Filtros arriba */
+    .lateral_iz {
+        width: 100%;
+        background-color: #c8d1d9;
+    }
+
+    .filtros {
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .filtros h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .filtro_fila {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lista-catalogo {
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+
+    /* Catálogo abajo */
+    .lateral_dr {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 
     .animal {
-        padding: 0;
-        width: auto;
         width: 200px;
+        padding: 0;
     }
 
     .animal img {
         width: 200px;
         height: 200px;
     }
-}
 
+    .boton_catalogo {
+        width: 180px;
+    }
+}
 
 /* Login y registro*/
 @media (max-width: 1000px) {
