@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellas a casa</title>
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
@@ -30,48 +30,47 @@
             <h1>Formulario de adopcion</h1>
             <!-- comienzo del formulario-->
             <form action="" method="" class="formulario">
-                <fieldset class="contorno"> <!-- borde -->
-                    <!-- comienzan las preguntas-->
-                    <p>
-                        <label for="familia">Grupo familiar</label><br>
-                        <input type="text" name="familia" required>
-                    </p>
-                    <p>
-                        <label for="info_familia">¿Alguno de los integrantes de tu casa tiene alergias?
-                            ¿Cuales?</label><br>
-                        <input type="text" name="info_familia" required>
-                    </p>
-                    <p>
-                        <label for="info_mascotas">¿Tenes otras mascotas?¿Cuales y que edad tienen?</label><br>
-                        <input type="text" name="info_mascotas" required>
-                    </p>
-                    <p class="castrado">
-                        <span>¿Estan castrados?</span><br>
-                        <input type="radio" name="castrado" value="si" required>
-                        <label for="True">Si</label>
-                        <input type="radio" name="castrado" value="no">
-                        <label for="False">No</label>
-                        <input type="radio" name="castrado" value="no">
-                        <label for="False">No tengo mascotas</label>
-                    </p>
-                    <p>
-                        <label for="cuidado_mascota">¿Quien puede cuidarlo en caso de ausentarte?</label><br>
-                        <input type="text" name="cuidado_mascota" required>
-                    </p>
+                <!-- comienzan las preguntas-->
+                <div class="columna">
+                    <label for="familia" class="texto">Grupo familiar</label><br>
+                    <input type="text" name="familia" required>
+                </div>
+                <div class="columna">
+                    <label for="info_familia" class="texto">¿Alguno de los integrantes de tu casa tiene alergias?
+                        ¿Cuales?</label><br>
+                    <input type="text" name="info_familia" required>
+                </div>
+                <div class="columna">
+                    <label for="info_mascotas" class="texto">¿Tenes otras mascotas?¿Cuales y que edad
+                        tienen?</label><br>
+                    <input type="text" name="info_mascotas" required>
+                </div>
+                <div class="columna">
+                    <span class="texto">Que animal es?</span><br>
+                    <input type="radio" name="tipo" value="perro" required>
+                    <label for="perro" class="texto">Perro</label>
+                    <input type="radio" name="tipo" value="gato">
+                    <label for="gato" class="texto">Gato</label>
+                </div>
+                <div class="columna">
+                    <label for="cuidado_mascota" class="texto">¿Quien puede cuidarlo en caso de ausentarte?</label><br>
+                    <input type="text" name="cuidado_mascota" required>
+                </div>
 
-                    <p>
-                        <label for="tiempo_solo_mascota">¿Cuanto tiempo va a estar el animal solo?</label><br>
-                        <input type="text" name="tiempo_solo_mascota" required>
-                    </p>
-                    <p>
-                        <label for="localidad_dueno">¿Donde vivis?</label><br>
-                        <input type="text" name="localidad_dueno" required>
-                    </p>
-                    <!-- terminan las preguntas-->
-                </fieldset>
+                <div class="columna">
+                    <label for="tiempo_solo_mascota" class="texto">¿Cuanto tiempo va a estar el animal solo?</label><br>
+                    <input type="text" name="tiempo_solo_mascota" required>
+                </div>
+                <div class="columna">
+                    <label for="localidad_dueno" class="texto">¿Donde vivis?</label><br>
+                    <input type="text" name="localidad_dueno" required>
+                </div>
+                <!-- terminan las preguntas-->
                 <!-- botones de accion-->
-                <button type="submit" class="boton-form">Enviar propuesta</button>
-                <button type="reset" class="boton-form">Limpiar formulario</button>
+                <div class="botonera">
+                    <button type="submit" class="boton-form">Enviar propuesta</button>
+                    <button type="reset" class="boton-form">Limpiar formulario</button>
+                </div>
             </form>
             <p>Importante: Este formulario sera revidaso y puede ser aprobado o desaprobado, completarlo no garantiza la
                 adopcion</p>

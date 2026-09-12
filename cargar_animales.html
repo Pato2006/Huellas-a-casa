@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellas a casa</title>
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!-- es igual al layout usuario solo cambia los <a> del menu-->
 </head>
 
@@ -34,39 +34,50 @@
             <h1>Cargar Animal</h1>
             <!-- comienzo del formulario-->
             <form action="" method="" class="formulario">
-                <fieldset class="contorno"> <!-- borde -->
-                    <!-- comienzan las preguntas-->
-                    <p>
-                        <label for="nombre">Nombre</label><br>
-                        <input type="text" name="donante" required>
-                    </p>
-                    <p>
-                        <label for="edad">Edad</label><br>
-                        <input type="text" name="edad" required>
-                    </p>
-                    <p>
-                        <label for="peso">Peso</label><br>
-                        <input type="text" name="peso" required>
-                    </p>
-                    <p>
-                        <label for="personalidad">personalidad</label><br>
-                        <input type="text" name="personalidad" required>
-                    </p>
+                <!-- comienzan las preguntas-->
+                <div class="columna">
+                    <label for="nombre" class="texto">Nombre</label><br>
+                    <input type="text" name="nombre" required>
+                </div>
 
-                    <p>
-                        <label for="cvv">Gato/Perro</label><br>
-                        <input type="text" name="tipo" required>
-                    </p>
+                <div class="columna">
+                    <label for="edad" class="texto">Edad</label><br>
+                    <input type="text" name="edad" required>
+                </div>
 
-                    <p>
-                        <label for="foto">Foto del animal</label>
-                        <input type="file" id="foto" name="foto" accept="image/*">
-                    </p>
-                    <!-- terminan las preguntas-->
-                </fieldset>
+                <div class="columna">
+                    <label for="peso" class="texto">Peso</label><br>
+                    <input type="text" name="peso" required>
+                </div>
+
+                <div class="columna">
+                    <label for="personalidad" class="texto">Personalidad</label><br>
+                    <input type="text" name="personalidad" required>
+                </div>
+
+                <div class="columna">
+                    <span class="texto">¿Estan castrados?</span><br>
+                    <input type="radio" name="castrado" value="si" required>
+                    <label for="True" class="texto">Si</label>
+                    <input type="radio" name="castrado" value="no">
+                    <label for="False" class="texto">No</label>
+                    <input type="radio" name="castrado" value="no">
+                    <label for="False" class="texto">No tengo mascotas</label>
+                </div>
+
+                <div class="columna boton_file">
+                    <label for="comprobante" class="texto">
+                        <input type="file" id="comprobante" name="comprobante" hidden>
+                        Foto del animal
+                    </label><br>
+                </div>
+
+                <!-- terminan las preguntas-->
                 <!-- botones de accion-->
-                <button type="submit" class="boton-form">Cargar Animal</button>
-                <button type="reset" class="boton-form">Limpiar formulario</button>
+                <div class="botonera">
+                    <button type="submit" class="boton-form">Cargar Animal</button>
+                    <button type="reset" class="boton-form">Limpiar formulario</button>
+                </div>
             </form>
         </div>
     </main>

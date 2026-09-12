@@ -34,34 +34,21 @@
             <h1>Formulario de donacion</h1>
             <!-- comienzo del formulario-->
             <form action="" method="" class="formulario">
-                <fieldset class="contorno"> <!-- borde -->
-                    <!-- comienzan las preguntas-->
-                    <p>
-                        <label for="nombre">Nombre y apellido del donante</label><br>
-                        <input type="text" name="donante" required>
-                    </p>
-                    <p>
-                        <label for="monto">Ingresar monto</label><br>
-                        <input type="text" name="monto" required>
-                    </p>
-                    <p>
-                        <label for="tarjeta">Ingresar numero de tarjeta</label><br>
-                        <input type="text" name="tarjeta" required>
-                    </p>
-                    <p>
-                        <label for="info_tarjeta">Ingresar vencimiento</label><br>
-                        <input type="text" name="info_tarjeta" required>
-                    </p>
+                <div class="columna">
+                    <label for="mensaje" class="texto">¿Queres mandar un mensaje?</label><br>
+                    <textarea type="text" name="mensaje"> </textarea>
+                </div>
+                <div class="columna boton_comprobante">
+                    <label for="comprobante" class="texto">
+                        <input type="file" id="comprobante" name="comprobante" hidden>
+                        Adjuntar comprobante </label><br>
 
-                    <p>
-                        <label for="cvv">Ingresar CVV</label><br>
-                        <input type="text" name="cvv" required>
-                    </p>
-                    <!-- terminan las preguntas-->
-                </fieldset>
+                </div>
                 <!-- botones de accion-->
-                <button type="submit" class="boton-form">Enviar propuesta</button>
-                <button type="reset" class="boton-form">Limpiar formulario</button>
+                <div class="botonera">
+                    <button type="submit" class="boton-form">Enviar</button>
+                    <button type="reset" class="boton-form">Limpiar formulario</button>
+                </div>
             </form>
             <p>Importante: Este formulario sera revisado para que luego se notifique la verificación de la donación.
             </p>

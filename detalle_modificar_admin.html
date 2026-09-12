@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellas a casa</title>
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/detalle_modificar.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
@@ -31,48 +31,61 @@
     <!-- contenedor que centra todo, puede o no usarse-->
     <main>
         <div class="informacion">
-            <div class="div_detalle_iz">
+            <div class="contenedor">
                 <img src="img/perro_adopcion_2.jpg" alt="foto del perro" class="foto_detalle">
-                <input type="file" name="foto" id="foto" accept="image/*">
-                <label for="foto" class="label_subir_foto">CARGAR FOTO</label>
-            </div>
-            <div class="div_detalle_dr">
-                <form action="" method="" class="formulario fondo">
-                    <fieldset class="contorno"> <!-- borde -->
-                        <!-- comienzan las preguntas-->
-                        <p>
-                            <label for="nombre">Nombre</label><br>
-                            <input type="text" name="nombre" required>
-                        </p>
-                        <p>
-                            <label for="edad">Edad</label><br>
-                            <input type="text" name="edad" required>
-                        </p>
-                        <p>
-                            <label for="peso">Peso</label><br>
-                            <input type="text" name="peso" required>
-                        </p>
-                        <p>
-                            <label for="personalidad">Personalidad</label><br>
-                            <input type="text" name="personalidad" required>
-                        </p>
+                <div class="columna boton_input">
+                    <label for="foto" class="texto">
+                        <input type="file" id="foto" name="foto" hidden>
+                        Cambiar foto
+                    </label><br>
+                </div>
 
-                        <p>
-                            <label for="descripcion">Descripcion</label><br>
-                            <textarea name="descripcion" required></textarea>
-                        </p>
-                        <p>
-                            <span>Tipo</span><br>
-                            <input type="radio" name="tipo" value="" required>
-                            <label for="perro">Perro</label>
-                            <input type="radio" name="tipo" value="gato">
-                            <label for="gato">Gato</label>
-                        </p>
-                        <!-- terminan las preguntas-->
-                    </fieldset>
+
+                <form action="" method="" class="formulario">
+                    <!-- comienzan las preguntas-->
+
+                    <div class="columna">
+                        <label for="nombre" class="texto">Nombre</label><br>
+                        <input type="text" name="nombre" required>
+                    </div>
+
+                    <div class="columna">
+                        <label for="edad" class="texto">Edad</label><br>
+                        <input type="text" name="edad" required>
+                    </div>
+
+                    <div class="columna">
+                        <label for="peso" class="texto">Peso</label><br>
+                        <input type="text" name="peso" required>
+                    </div>
+
+                    <div class="columna">
+                        <label for="personalidad" class="texto">Personalidad</label><br>
+                        <input type="text" name="personalidad" required>
+                    </div>
+
+                    <div class="columna">
+                        <label for="descripcion" class="texto">Descripción</label><br>
+                        <textarea name="descripcion" required></textarea>
+                    </div>
+
+                    <div class="columna">
+                        <span class="texto">Tipo</span><br>
+
+                        <input type="radio" name="tipo" value="perro" required>
+                        <label for="perro" class="texto">Perro</label>
+
+                        <input type="radio" name="tipo" value="gato">
+                        <label for="gato" class="texto">Gato</label>
+                    </div>
+
+                    <!-- terminan las preguntas-->
+
                     <!-- botones de accion-->
-                    <button type="submit" class="boton-form">Modificar</button>
-                    <button type="reset" class="boton-form">Limpiar formulario</button>
+                    <div class="botonera">
+                        <button type="submit" class="boton-form">Modificar</button>
+                        <button type="reset" class="boton-form">Limpiar formulario</button>
+                    </div>
                 </form>
             </div>
         </div>

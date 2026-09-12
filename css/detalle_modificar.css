@@ -1,19 +1,17 @@
 .informacion {
-    margin: 30px;
-    display: flex;
-    width: 100%;
-    min-height: 100%;
-}
-
-.div_detalle_iz {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    width: 40%;
     align-items: center;
 }
 
 .foto_detalle {
     width: 500px;
+    height: auto;
+    display: block;
 }
 
 #foto {
@@ -23,25 +21,17 @@
 .label_subir_foto {
     display: inline-block;
     cursor: pointer;
-    /* cambia el cursor al pasar sobre el label */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    width: 100px;
+    padding: 10px 14px;
+    border: 1px solid #aebfc2;
+    border-radius: 0;
+    width: 100%;
+    max-width: 200px;
     margin-top: 10px;
-    background-color: #c8d1d9;
-    color: #654c32;
-}
-
-.div_detalle_dr {
-    width: 80%;
+    background-color: #0b6670;
+    color: white;
+    text-align: center;
 }
 
 .fondo {
     background-color: white;
-}
-
-input[type="text"],
-textarea {
-    width: 300px;
 }
