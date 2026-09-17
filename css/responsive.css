@@ -384,7 +384,14 @@
         margin-bottom: 30px;
     }
 }
+/* Login y registro*/
 
+@media (max-width: 1000px) {
+    .perfil-caja {
+        width: 90%;
+        padding: 15px;
+    }
+}
 /* Detalle Modificar Admin */
 @media (max-width: 1000px) {
 
