@@ -256,12 +256,13 @@
     .contenido {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     /* todo en columnas (uno abajo del otro) y al inicio*/
 
     .informacion {
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -276,7 +277,7 @@
         /* saco margen de la imagen y le doy uno de abajo para separar de los datos */
     }
 
-    .datos {
+    .datos_animal {
         width: 100%;
         font-size: 20px;
     }
@@ -284,7 +285,7 @@
     /* cambio fuente a los datos */
 
     .botones {
-        width: 100%;
+        align-items: center;
         margin-right: 0px;
         margin-left: 40px
     }
@@ -384,6 +385,7 @@
         margin-bottom: 30px;
     }
 }
+
 /* Login y registro*/
 
 @media (max-width: 1000px) {
@@ -392,6 +394,7 @@
         padding: 15px;
     }
 }
+
 /* Detalle Modificar Admin */
 @media (max-width: 1000px) {
 

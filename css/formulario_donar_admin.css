@@ -21,8 +21,8 @@
 }
 
 .informacion img {
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     margin-right: 25px;
     /* altura fija a la imagen  y margen a la derecha para no quede tan pegada con los datos*/
 }
