@@ -1,20 +1,22 @@
 .detalle {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    height: auto;
     /* foto a la izquierda e informacion a la derecha */
 }
 
 .informacion {
     display: flex;
     align-items: start;
-    margin: 25px;
+    margin: 20px;
     /* datos del animal */
 }
 
 .informacion img {
     height: 400px;
     width: 400px;
-    margin-right: 25px;
+    margin-right: 20px;
     /* tamaño de la foto */
 }
 
@@ -38,6 +40,7 @@
     padding: 10px;
     border-radius: 15px;
     margin-top: 250px;
+    text-decoration: none;
 }
 
 /* requisitos */
