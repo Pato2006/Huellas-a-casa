@@ -27,58 +27,64 @@
     </header>
     <main>
 
-        <main>
-            <div class="login-contenido">
-                <form action="#" method="post">
-                    <legend>Crear Cuenta</legend>
+        <div class="login-contenido">
+            <form action="#" method="post" id="registro">
+                <legend>Crear Cuenta</legend>
 
-                    <p>
-                        <label for="correo">Correo electrónico</label><br>
-                        <input type="email" id="correo" name="correo" required>
-                    </p>
+                <p>
+                    <label for="correo">Correo electrónico</label><br>
+                    <input type="email" id="correo" name="correo">
+                    <small id="error-correo"></small>
+                </p>
 
-                    <p>
-                        <label for="nombre">Nombre</label><br>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </p>
+                <p>
+                    <label for="nombre">Nombre</label><br>
+                    <input type="text" id="nombre" name="nombre">
+                    <small id="error-nombre"></small>
+                </p>
 
-                    <p>
-                        <label for="apellido">Apellido</label><br>
-                        <input type="text" id="apellido" name="apellido" required>
-                    </p>
+                <p>
+                    <label for="apellido">Apellido</label><br>
+                    <input type="text" id="apellido" name="apellido">
+                    <small id="error-apellido"></small>
+                </p>
 
-                    <p>
-                        <label for="telefono">Número de teléfono</label><br>
-                        <input type="tel" id="telefono" name="telefono" required>
-                    </p>
+                <p>
+                    <label for="telefono">Número de teléfono</label><br>
+                    <input type="tel" id="telefono" name="telefono">
+                    <small id="error-telefono"></small>
+                </p>
 
-                    <p>
-                        <label for="fecha_nacimiento">Fecha de nacimiento</label><br>
-                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-                    </p>
+                <p>
+                    <label for="fecha-nacimiento">Fecha de nacimiento</label><br>
+                    <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+                    <small id="error-fecha-nacimiento"></small>
+                </p>
 
-                    <p>
-                        <label for="dni">DNI</label><br>
-                        <input type="number" id="dni" name="dni" required>
-                    </p>
+                <p>
+                    <label for="dni">DNI</label><br>
+                    <input type="number" id="dni" name="dni">
+                    <small id="error-dni"></small>
+                </p>
 
-                    <p>
-                        <label for="contraseña">Contraseña</label><br>
-                        <input type="password" id="contraseña" name="contraseña" required>
-                    </p>
+                <p>
+                    <label for="contraseña">Contraseña</label><br>
+                    <input type="password" id="contraseña" name="contraseña">
+                    <small id="error-contraseña"></small>
+                </p>
 
-                    <button type="submit">Registrarse</button>
-                </form>
+                <button type="submit">Registrarse</button>
+            </form>
+            <p id="mensaje-formulario" aria-live="polite"></p>
+            <a href="login.html" class="boton-regis">Iniciar sesión</a>
+        </div>
 
-                <a href="login.html" class="boton-regis">Iniciar sesión</a>
-            </div>
-        </main>
     </main>
     <footer class="pie">
         <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
         <p>Cada huella merece encontrar un hogar.</p>
     </footer>
-
+    <script src="js/registro.js"></script>
 </body>
 
 </html>

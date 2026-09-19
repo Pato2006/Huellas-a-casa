@@ -28,21 +28,24 @@
     <main>
 
         <div class="login-contenido">
-            <form action="#" method="post">
+            <form id="login" action="#" method="post">
                 <legend>Iniciar Sesión</legend>
 
                 <p>
                     <label for="correo">Correo electrónico</label><br>
-                    <input type="email" id="correo" name="correo" required>
+                    <input type="email" id="correo" name="correo">
+                    <small id="error-correo"></small>
                 </p>
 
                 <p>
                     <label for="contraseña">Contraseña</label><br>
-                    <input type="password" id="contraseña" name="contraseña" required>
+                    <input type="password" id="contraseña" name="contraseña">
+                    <small id="error-contraseña"></small>
                 </p>
 
                 <button type="submit">Iniciar Sesión</button>
             </form>
+            <p id="mensaje-formulario" aria-live="polite"></p>
 
             <a href="registro.html" class="boton-regis">Crear cuenta</a>
         </div>
@@ -51,7 +54,7 @@
         <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
         <p>Cada huella merece encontrar un hogar.</p>
     </footer>
-
+    <script src="js/login.js"></script>
 </body>
 
 </html>

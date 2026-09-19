@@ -50,3 +50,20 @@ main {
     padding: 15px 30px;
     
 }
+.login-contenido input.valido {
+    border: 2px solid #047857;
+}
+.login-contenido input.invalido {
+    border: 2px solid #b42318;
+}
+.login-contenido small {
+    display: block;
+    color: #b42318;
+    margin-top: 4px;
+}
+#mensaje-formulario {
+    color: #b42318;
+}
+#mensaje-formulario.valido {
+    color: #047857;
+}
