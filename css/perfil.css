@@ -78,3 +78,20 @@ h1 {
     min-width: 150px;
     width: 100%;
 }
+.perfil-datos input.valido {
+    border: 2px solid #047857;
+}
+.perfil-datos input.invalido {
+    border: 2px solid #b42318;
+}
+.perfil-datos small {
+    display: block;
+    color: #b42318;
+    margin-top: 4px;
+}
+#mensaje-formulario {
+    color: #b42318;
+}
+#mensaje-formulario.valido {
+    color: #047857;
+}
