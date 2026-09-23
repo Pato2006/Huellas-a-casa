@@ -109,3 +109,37 @@ textarea {
     align-items: center;
     justify-content: center;
 }
+
+/* Validación: mismo criterio de colores que login.css y perfil.css */
+.formulario input.valido,
+.formulario textarea.valido {
+    border: 2px solid #047857;
+}
+
+.formulario input.invalido,
+.formulario textarea.invalido {
+    border: 2px solid #b42318;
+}
+
+.formulario small {
+    display: block;
+    color: #b42318;
+    margin-top: 4px;
+}
+
+
+.formulario label:has(input.invalido) {
+    border: 2px solid #b42318;
+}
+
+.formulario label:has(input.valido) {
+    border: 2px solid #047857;
+}
+
+#mensaje-formulario {
+    color: #b42318;
+}
+
+#mensaje-formulario.valido {
+    color: #047857;
+}

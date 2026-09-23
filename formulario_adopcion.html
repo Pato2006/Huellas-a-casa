@@ -29,41 +29,49 @@
         <div class="contenedor">
             <h1>Formulario de adopcion</h1>
             <!-- comienzo del formulario-->
-            <form action="" method="" class="formulario">
+            <form action="" method="" id="adoptar" class="formulario">
                 <!-- comienzan las preguntas-->
                 <div class="columna">
                     <label for="familia" class="texto">Grupo familiar</label><br>
-                    <input type="text" name="familia" required>
+                    <input type="text" id="familia" name="familia" >
+                    <small id="error-familia"></small>
                 </div>
                 <div class="columna">
-                    <label for="info_familia" class="texto">¿Alguno de los integrantes de tu casa tiene alergias?
+                    <label for="alergias" class="texto">¿Alguno de los integrantes de tu casa tiene alergias?
                         ¿Cuales?</label><br>
-                    <input type="text" name="info_familia" required>
+                    <input type="text" id="alergias" name="info_familia" >
+                    <small id="error-alergias"></small>
                 </div>
                 <div class="columna">
-                    <label for="info_mascotas" class="texto">¿Tenes otras mascotas?¿Cuales y que edad
+                    <label for="mascotas" class="texto">¿Tenes otras mascotas?¿Cuales y que edad
                         tienen?</label><br>
-                    <input type="text" name="info_mascotas" required>
+                    <input type="text" id="mascotas" name="info_mascotas" >
+                    <small id="error-mascotas"></small>
                 </div>
                 <div class="columna">
                     <span class="texto">Que animal es?</span><br>
-                    <input type="radio" name="tipo" value="perro" required>
-                    <label for="perro" class="texto">Perro</label>
-                    <input type="radio" name="tipo" value="gato">
-                    <label for="gato" class="texto">Gato</label>
+                    <input type="radio" id="tipo-perro" name="tipo" value="perro" >
+                    <label for="tipo-perro" class="texto">Perro</label>
+                    <input type="radio" id="tipo-gato" name="tipo" value="gato">
+                    <label for="tipo-gato" class="texto">Gato</label>
+                    <small id="error-tipo"></small>
+
                 </div>
                 <div class="columna">
-                    <label for="cuidado_mascota" class="texto">¿Quien puede cuidarlo en caso de ausentarte?</label><br>
-                    <input type="text" name="cuidado_mascota" required>
+                    <label for="cuidado" class="texto">¿Quien puede cuidarlo en caso de ausentarte?</label><br>
+                    <input type="text" id="cuidado" name="cuidado_mascota" >
+                    <small id="error-cuidado"></small>
                 </div>
 
                 <div class="columna">
-                    <label for="tiempo_solo_mascota" class="texto">¿Cuanto tiempo va a estar el animal solo?</label><br>
-                    <input type="text" name="tiempo_solo_mascota" required>
+                    <label for="tiempo_solo" class="texto">¿Cuanto tiempo va a estar el animal solo?</label><br>
+                    <input type="text" id="tiempo_solo" name="tiempo_solo_mascota" >
+                    <small id="error-solo"></small>
                 </div>
                 <div class="columna">
-                    <label for="localidad_dueno" class="texto">¿Donde vivis?</label><br>
-                    <input type="text" name="localidad_dueno" required>
+                    <label for="hogar" class="texto">¿Donde vivis?</label><br>
+                    <input type="text" id="hogar" name="localidad_dueno" >
+                    <small id="error-hogar"></small>
                 </div>
                 <!-- terminan las preguntas-->
                 <!-- botones de accion-->
@@ -72,7 +80,8 @@
                     <button type="reset" class="boton-form">Limpiar formulario</button>
                 </div>
             </form>
-            <p>Importante: Este formulario sera revidaso y puede ser aprobado o desaprobado, completarlo no garantiza la
+            <p id="mensaje-formulario" aria-live="polite"></p>
+            <p>Importante: Este formulario sera revisado y puede ser aprobado o desaprobado, completarlo no garantiza la
                 adopcion</p>
             <!-- aclaracion-->
         </div>
@@ -81,7 +90,7 @@
         <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
         <p>Cada huella merece encontrar un hogar.</p>
     </footer>
-
+    <script src="js/formulario_adopcion.js"></script>
 </body>
 
 </html>

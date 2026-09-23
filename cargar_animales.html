@@ -12,13 +12,11 @@
 </head>
 
 <body>
-    <!-- cabecera con navbar-->
     <header class="cabecera">
         <div class="cabecera-contenido">
             <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
             <nav>
                 <ul class="menu">
-                    <!-- cambia las opciones del menu al ser admin-->
                     <li class="lista"><a href="catalogo.html">Catalogo</a></li>
                     <li class="lista"><a href="cargar_animales.html">Cargar animales</a></li>
                     <li class="lista"><a href="ver_formulario_adopcion_admin.html">Ver adopciones</a></li>
@@ -29,46 +27,52 @@
             </nav>
         </div>
     </header>
-    <main> <!-- Borrar el style, es para ejemplo-->
+    <main>
         <div class="contenedor">
             <h1>Cargar Animal</h1>
             <!-- comienzo del formulario-->
-            <form action="" method="" class="formulario">
+            <form action="" method="" id="cargar" class="formulario">
                 <!-- comienzan las preguntas-->
                 <div class="columna">
                     <label for="nombre" class="texto">Nombre</label><br>
-                    <input type="text" name="nombre" required>
+                    <input type="text" id="nombre" name="nombre">
+                    <small id="error-nombre"></small>
                 </div>
 
                 <div class="columna">
                     <label for="edad" class="texto">Edad</label><br>
-                    <input type="text" name="edad" required>
+                    <input type="text" id="edad" name="edad">
+                    <small id="error-edad"></small>
                 </div>
 
                 <div class="columna">
                     <label for="peso" class="texto">Peso</label><br>
-                    <input type="text" name="peso" required>
+                    <input type="text" id="peso" name="peso">
+                    <small id="error-peso"></small>
                 </div>
 
                 <div class="columna">
                     <label for="personalidad" class="texto">Personalidad</label><br>
-                    <input type="text" name="personalidad" required>
+                    <input type="text" id="personalidad" name="personalidad">
+                    <small id="error-personalidad"></small>
                 </div>
 
                 <div class="columna">
                     <span class="texto">¿Estan castrados?</span><br>
-                    <input type="radio" name="castrado" value="si" required>
-                    <label for="True" class="texto">Si</label>
-                    <input type="radio" name="castrado" value="no">
-                    <label for="False" class="texto">No</label>
+                    <input type="radio" id="castrado-si" name="castrado" value="si">
+                    <label for="castrado-si" class="texto">Si</label>
+                    <input type="radio" id="castrado-no" name="castrado" value="no">
+                    <label for="castrado-no" class="texto">No</label>
+                    <small id="error-castrado"></small>
                 </div>
-                
+
 
                 <div class="columna boton_file">
                     <label for="comprobante" class="texto">
                         <input type="file" id="comprobante" name="comprobante" hidden>
                         Foto del animal
                     </label><br>
+                    <small id="error-comprobante"></small>
                 </div>
 
                 <!-- terminan las preguntas-->
@@ -78,6 +82,7 @@
                     <button type="reset" class="boton-form">Limpiar formulario</button>
                 </div>
             </form>
+            <p id="mensaje-formulario" aria-live="polite"></p>
         </div>
     </main>
     <!-- footer igual-->
@@ -85,7 +90,7 @@
         <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
         <p>Cada huella merece encontrar un hogar.</p>
     </footer>
-
+    <script src="js/cargar_animales.js"></script>
 </body>
 
 </html>

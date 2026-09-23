@@ -33,15 +33,17 @@
             </div>
             <h1>Formulario de donacion</h1>
             <!-- comienzo del formulario-->
-            <form action="" method="" class="formulario">
+            <form action="" method="" id="donar"class="formulario">
                 <div class="columna">
                     <label for="mensaje" class="texto">¿Queres mandar un mensaje?</label><br>
-                    <textarea type="text" name="mensaje"> </textarea>
+                    <textarea type="text" id="mensaje" name="mensaje"> </textarea>
+                    <small id="error-mensaje"></small>
                 </div>
                 <div class="columna boton_comprobante">
                     <label for="comprobante" class="texto">
                         <input type="file" id="comprobante" name="comprobante" hidden>
                         Adjuntar comprobante </label><br>
+                        <small id="error-comprobante"></small>
 
                 </div>
                 <!-- botones de accion-->
@@ -50,6 +52,7 @@
                     <button type="reset" class="boton-form">Limpiar formulario</button>
                 </div>
             </form>
+            <p id="mensaje-formulario" aria-live="polite"></p>
             <p>Importante: Este formulario sera revisado para que luego se notifique la verificación de la donación.
             </p>
             <h2>Deposito o Transferencia bancaria</h2>
@@ -62,7 +65,7 @@
         <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
         <p>Cada huella merece encontrar un hogar.</p>
     </footer>
-
+    <script src="js/formulario_donar.js"></script>
 </body>
 
-</html>
+</html>>
