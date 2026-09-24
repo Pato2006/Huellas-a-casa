@@ -7,12 +7,19 @@ let lista = [];
 function recorrer_botones(boton) {
     boton.addEventListener("click", function () {
 
-        if (lista.includes(boton)) {
-            // Ya estaba seleccionado → eliminar
-            lista = lista.filter(item => item !== boton);
+        var encontrado = false;
+        for (var i = 0; i < lista.length; i++) {
+            if (lista[i] == boton) {
+                encontrado = true;
+                lista.splice(i, 1);
+                //si lo encuentra lo saca
+                break;
+            }
+        }
+
+        if (encontrado) {
             boton.classList.remove("borde");
         } else {
-            // No estaba seleccionado → agregar
             lista.push(boton);
             boton.classList.add("borde");
         }
