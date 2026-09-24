@@ -1,18 +1,15 @@
 const PATRON_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PATRON_CONTRASEÑA = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
 const PATRON_TELEFONO = /^\d{2}-\d{4}-\d{4}$/;
 const nombre = document.querySelector("#nombre");
 const apellido = document.querySelector("#apellido");
 const correo = document.querySelector("#correo");
 const fechaNacimiento = document.querySelector("#fecha-nacimiento");
 const telefono = document.querySelector("#telefono");
-const contraseña = document.querySelector("#contraseña");
 const errorNombre = document.querySelector("#error-nombre");
 const errorApellido = document.querySelector("#error-apellido");
 const errorCorreo = document.querySelector("#error-correo");
 const errorFecha = document.querySelector("#error-fecha-nacimiento");
 const errorTelefono = document.querySelector("#error-telefono");
-const errorContraseña= document.querySelector("#error-contraseña");
 const mensajeFormulario = document.querySelector("#mensaje-formulario");
 
 // 1. Valida que el nombre tenga al menos tres caracteres.
@@ -78,21 +75,6 @@ function validarCorreo(){
 	}
     return esValido;
 }
-function validarContraseña(){
-    let esValido = false;
-	const contraseñaLimpio = contraseña.value;
-	const contraseñaValido = PATRON_CONTRASEÑA.test(contraseñaLimpio);
-
-	if (contraseñaValido) {
-		contraseña.classList.remove("invalido");
-		errorContraseña.textContent = "";
-        esValido = true;
-	} else {
-		contraseña.classList.add("invalido");
-		errorContraseña.textContent = "La contraseña debe tener 8 caracteres, una mayúscula, un número y un carácter especial.";
-	}
-    return esValido;
-}
 // Valida que la persona tenga al menos 18 años cumplidos.
 function validarFecha() {
 	const valor = fechaNacimiento.value; // formato "AAAA-MM-DD"
@@ -129,7 +111,6 @@ function validarFecha() {
 
 // 4. submit activa la validación; solo se cancela si hay errores o no hay servidor.
 function validarFormulario(evento) {
-	const contraseñaValida = validarContraseña();
 	const correoValido = validarCorreo();
     const nombreValido = validarNombre();
     const fechaValida = validarFecha();
@@ -137,9 +118,9 @@ function validarFormulario(evento) {
     const telefonoValido = validarTelefono();
 
 
-	if (contraseñaValida && correoValido && nombreValido && fechaValida && apellidoValido && telefonoValido) {
+	if (correoValido && nombreValido && fechaValida && apellidoValido && telefonoValido) {
 		mensajeFormulario.classList.add("valido");
-		mensajeFormulario.textContent = "Datos válidos. Cuenta creada.";
+		mensajeFormulario.textContent = "Datos válidos. Perfil modificado correctamente.";
         
         evento.preventDefault()//DESPUES SE SACA
 	} else {
@@ -152,15 +133,14 @@ function validarFormulario(evento) {
 
 // input vuelve a validar el campo mientras se escribe.
 function iniciarValidacion() {
-	document.querySelector("#perfil-mod").addEventListener("submit", validarFormulario);
+	
 
 	nombre.addEventListener("input", validarNombre);
 	apellido.addEventListener("input", validarApellido);
 	correo.addEventListener("input", validarCorreo);
-	contraseña.addEventListener("input", validarContraseña);
 	telefono.addEventListener("input", validarTelefono);
 	fechaNacimiento.addEventListener("input", validarFecha);
-
+	document.querySelector("#perfil-mod").addEventListener("submit", validarFormulario);	
 
 }
 iniciarValidacion();

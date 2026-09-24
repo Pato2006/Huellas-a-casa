@@ -78,11 +78,8 @@ h1 {
     min-width: 150px;
     width: 100%;
 }
-.perfil-datos input.valido {
-    border: 2px solid #047857;
-}
 .perfil-datos input.invalido {
-    border: 2px solid #b42318;
+    border-bottom: 2px solid #b42318;
 }
 .perfil-datos small {
     display: block;

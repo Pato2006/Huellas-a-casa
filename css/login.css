@@ -50,9 +50,7 @@ main {
     padding: 15px 30px;
     
 }
-.login-contenido input.valido {
-    border: 2px solid #047857;
-}
+
 .login-contenido input.invalido {
     border: 2px solid #b42318;
 }
