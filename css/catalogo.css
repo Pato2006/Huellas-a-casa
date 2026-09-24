@@ -113,3 +113,7 @@
 .borde {
     border: 1px solid red;
 }
+
+#filtro_unico {
+    width: 120px;
+}
