@@ -46,27 +46,33 @@
 
                     <div class="columna">
                         <label for="nombre" class="texto">Nombre</label><br>
-                        <input type="text" name="nombre" required>
+                        <input type="text" name="nombre" id="nombre" required>
+                        <small id="error-nombre"></small>                    
                     </div>
 
                     <div class="columna">
                         <label for="edad" class="texto">Edad</label><br>
-                        <input type="text" name="edad" required>
+                        <input type="text" name="edad" id="edad" required>
+                        <small id="error-edad"></small>
                     </div>
 
                     <div class="columna">
                         <label for="peso" class="texto">Peso</label><br>
-                        <input type="text" name="peso" required>
+                        <input type="text" name="peso" id="peso" required>
+                        <small id="error-peso"></small>
                     </div>
 
                     <div class="columna">
                         <label for="personalidad" class="texto">Personalidad</label><br>
-                        <input type="text" name="personalidad" required>
+                        <input type="text" name="personalidad" id="personalidad" required>
+                        <small id="error-personalidad"></small>
                     </div>
 
                     <div class="columna">
                         <label for="descripcion" class="texto">Descripción</label><br>
-                        <textarea name="descripcion" required></textarea>
+                        <textarea name="descripcion" id="descripcion" required></textarea>
+                        <small id="error-descripcion"></small>
+
                     </div>
 
                     <div class="columna">
@@ -77,18 +83,20 @@
 
                         <input type="radio" name="tipo" value="gato">
                         <label for="gato" class="texto">Gato</label>
+                        <small id="error-tipo"></small>
                     </div>
                     <div class="columna">
                         <span class="texto">Estado</span><br>
 
-                        <input type="radio" name="tipo" value="perro" required>
+                        <input type="radio" name="estado" value="perro" required>
                         <label for="perro" class="texto">En adopción</label>
 
-                        <input type="radio" name="tipo" value="gato">
+                        <input type="radio" name="estado" value="gato">
                         <label for="gato" class="texto">En proceso</label>
 
-                        <input type="radio" name="tipo" value="gato">
+                        <input type="radio" name="estado" value="gato">
                         <label for="gato" class="texto">Adoptado</label>
+                        <small id="error-estado"></small>
                     </div>
 
                     <!-- terminan las preguntas-->
@@ -108,7 +116,7 @@
         <p>Cada huella merece encontrar un hogar.</p>
     </footer>
     <!-- footer con la informacion del refugio-->
-
+    <script src="js/modificar_animales.js"></script>
 </body>
 
 </html>

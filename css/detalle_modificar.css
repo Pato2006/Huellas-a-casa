@@ -35,3 +35,11 @@
 .fondo {
     background-color: white;
 }
+
+.invalido {
+    border: 2px solid #b42318;
+}
+
+.valido {
+    border: 2px solid #6ac213;
+}
