@@ -43,9 +43,11 @@
 
 /* las opciones de cada filtro */
 
-.lista-catalogo button {
+
+.catalogo-boton {
     background-color: #c8d1d9;
     border: none;
+
 }
 
 #nombre_animal {
@@ -107,3 +109,7 @@
 }
 
 /* el boton para conocer cada perro*/
+
+.borde {
+    border: 1px solid red;
+}
