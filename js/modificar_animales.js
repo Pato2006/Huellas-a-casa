@@ -17,6 +17,8 @@ const errorPersonalidad = document.querySelector("#error-personalidad");
 const errorDescripcion = document.querySelector("#error-descripcion");
 const errorTipo = document.querySelector("#error-tipo");
 const errorEstado = document.querySelector("#error-estado");
+const errorCastrado = document.querySelector("#error-castrado");
+
 
 
 // =========================
@@ -167,6 +169,24 @@ function validarEstado() {
     return esValido;
 }
 
+function validarCastrado() {
+    const castradoSeleccionado = document.querySelector(
+        'input[name="castrado"]:checked'
+    );
+
+    let esValido = false;
+
+    if (castradoSeleccionado !== null) {
+        errorCastrado.textContent = "";
+        esValido = true;
+    } else {
+        errorCastrado.textContent = "Seleccioná una opción.";
+    }
+
+    return esValido;
+}
+
+
 function validarFoto() {
     esValido = false
     if (foto.files.length > 0) {
@@ -193,7 +213,8 @@ function validarFormulario(evento) {
     const descripcionValida = validarDescripcion();
     const tipoValido = validarTipo();
     const estadoValido = validarEstado();
-    const fotoValido = validarFoto();
+    //const fotoValido = validarFoto();
+    const castradoValido = validarCastrado();
 
     if (
         nombreValido &&
@@ -202,7 +223,8 @@ function validarFormulario(evento) {
         personalidadValida &&
         descripcionValida &&
         tipoValido &&
-        estadoValido
+        estadoValido &&
+        castradoValido
     ) {
         evento.preventDefault();
 

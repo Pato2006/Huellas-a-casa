@@ -12,6 +12,9 @@ const errorPersonalidad = document.querySelector("#error-personalidad");
 const errorCastrado = document.querySelector("#error-castrado");
 const comprobante = document.querySelector("#comprobante");
 const errorComprobante = document.querySelector("#error-comprobante");
+const descripcion = document.querySelector("#descripcion");
+const errorDescripcion = document.querySelector("#error-descripcion")
+
 
 const mensajeFormulario = document.querySelector("#mensaje-formulario");
 
