@@ -17,7 +17,7 @@
             <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
             <nav>
                 <ul class="menu">
-                    <li class="lista"><a href="catalogo.html">Catalogo</a></li>
+                    <li class="lista"><a href="catalogo_admin.html">Catalogo</a></li>
                     <li class="lista"><a href="cargar_animales.html">Cargar animales</a></li>
                     <li class="lista"><a href="ver_formulario_adopcion_admin.html">Ver adopciones</a></li>
                     <li class="lista"><a href="formulario_donar_admin.html">Ver donaciones</a></li>
@@ -56,6 +56,21 @@
                     <input type="text" id="personalidad" name="personalidad">
                     <small id="error-personalidad"></small>
                 </div>
+                <div class="columna">
+                    <label for="descripcion" class="texto">Descripcion</label><br>
+                    <textarea name="descripcion" id="descripcion" required></textarea>
+                    <small id="error-descripcion"></small>
+                </div>
+                    <div class="columna">
+                        <span class="texto">Tipo</span><br>
+
+                        <input type="radio" name="tipo" value="perro" required>
+                        <label for="perro" class="texto">Perro</label>
+
+                        <input type="radio" name="tipo" value="gato">
+                        <label for="gato" class="texto">Gato</label>
+                        <small id="error-tipo"></small>
+                    </div>
 
                 <div class="columna">
                     <span class="texto">¿Estan castrados?</span><br>
