@@ -82,6 +82,36 @@ function validarPersonalidad() {
     return esValido;
 }
 
+function validarDescripcion() {
+    const descripcionLimpia = descripcion.value.trim();
+    let esValido = false;
+
+    if (descripcionLimpia.length >= 12) {
+        descripcion.classList.remove("invalido");
+        errorDescripcion.textContent = "";
+        esValido = true;
+    } else {
+        descripcion.classList.add("invalido");
+        errorDescripcion.textContent = "Ingresar al menos 12 caracteres.";
+    }
+
+    return esValido;
+}
+
+
+function validarTipo() {
+    const tipoSeleccionado = document.querySelector('input[name="tipo"]:checked');
+    let esValido = false;
+    if (tipoSeleccionado !== null) {
+        errorTipo.textContent = "";
+        esValido = true;
+    } else {
+        errorTipo.textContent = "Seleccioná un tipo.";
+    }
+    return esValido;
+}
+
+
 // Valida que se haya elegido una opción del grupo (si/no).
 function validarCastrado() {
     const castradoSeleccionado = document.querySelector('input[name="castrado"]:checked');
@@ -118,10 +148,19 @@ function validarFormulario(evento) {
     const edadValida = validarEdad();
     const pesoValido = validarPeso();
     const personalidadValida = validarPersonalidad();
+    const descripcionValida = validarDescripcion();
+    const tipoValido = validarTipo();
     const castradoValido = validarCastrado();
     const comprobanteValido = validarComprobante();
 
-    if (nombreValido && edadValida && pesoValido && personalidadValida && castradoValido && comprobanteValido) {
+    if (nombreValido &&
+        edadValida &&
+        pesoValido &&
+        personalidadValida &&
+        descripcionValida &&
+        tipoValido &&
+        castradoValido &&
+        comprobanteValido) {
         mensajeFormulario.classList.add("valido");
         mensajeFormulario.textContent = "Datos válidos. Animal cargado.";
 
@@ -140,7 +179,13 @@ function iniciarValidacion() {
     edad.addEventListener("input", validarEdad);
     peso.addEventListener("input", validarPeso);
     personalidad.addEventListener("input", validarPersonalidad);
+    descripcion.addEventListener("input", validarDescripcion);
+
     comprobante.addEventListener("input", validarComprobante);
+
+    document.querySelectorAll('input[name="tipo"]').forEach(function (radio) {
+        radio.addEventListener("change", validarTipo);
+    });
 
     document.querySelectorAll('input[name="castrado"]').forEach(function (radio) {
         radio.addEventListener("change", validarCastrado);
