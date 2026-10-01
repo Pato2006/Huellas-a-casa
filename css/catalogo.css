@@ -110,8 +110,19 @@
 
 /* el boton para conocer cada perro*/
 
+.lista_filtros{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .borde {
     border: 1px solid red;
+    padding: 4px;
+}
+
+.filtro-lista{
+    margin-left: 5px;
+    color: #5e4e3e;
 }
 
 #filtro_unico {

@@ -6,56 +6,80 @@ let lista = [];
 
 function recorrer_botones(boton) {
     boton.addEventListener("click", function () {
-
-        var encontrado = false;
-        for (var i = 0; i < lista.length; i++) {
-            if (lista[i] == boton) {
-                encontrado = true;
-                lista.splice(i, 1);
-                //si lo encuentra lo saca
-                break;
-            }
-        }
-
-        if (encontrado) {
-            boton.classList.remove("borde");
-        } else {
-            lista.push(boton);
-            boton.classList.add("borde");
-        }
-
-        mostrarFiltros();
-
         if (boton.id == "buscar-nombre") {
-            ver_input();
+            buscarNombre();
+        }
+        else {
+            var encontrado = false;
+            for (var i = 0; i < lista.length; i++) {
+                if (lista[i] == boton) {
+                    encontrado = true;
+                    lista.splice(i, 1);
+                    boton.classList.remove("borde");
+                }
+            }
+            if (!encontrado) {
+                lista.push(boton);
+                boton.classList.add("borde");
+            }
+            mostrarFiltros();
         }
     });
 }
 
+
 function mostrarFiltros() {
-    // Limpiamos la lista HTML
+    // chau html
     listaFiltros.innerHTML = "";
-
-    // Agregamos cada filtro seleccionado
-    lista.forEach(function (boton) {
+    // ponemos filtros a la lista
+    lista.forEach(function agregar_botones(boton) {
         const li = document.createElement("li");
-
-        li.textContent = boton.textContent;
-
-        // Al tocar el filtro, también se elimina
-        li.addEventListener("click", function () {
-            lista = lista.filter(item => item !== boton);
-            boton.classList.remove("borde");
-
-            mostrarFiltros();
+        li.classList.add("filtro-lista");
+        if (boton.id == "buscar-nombre") {
+            li.textContent = "Nombre: " + nombre.value;
+        }
+        else {
+            li.textContent = boton.textContent;
+        }
+        // toco filtro borro filtro
+        li.addEventListener("click", function borrar_boton() {
+            var encontrado = false;
+            for (var i = 0; i < lista.length; i++) {
+                if (lista[i] == boton) {
+                    encontrado = true;
+                    lista.splice(i, 1);
+                    boton.classList.remove("borde");
+                }
+            }
+            if (encontrado) {
+                mostrarFiltros();
+            }
         });
-
         listaFiltros.appendChild(li);
     });
 }
 
-function ver_input() {
-    alert("Buscaste: " + nombre.value);
+function buscarNombre() {
+    var encontrado = false;
+    for (var i = 0; i < lista.length; i++) {
+        if (lista[i].id == "buscar-nombre") {
+            encontrado = true;
+        }
+    }
+    if (nombre.value != "") {
+        if (encontrado == false) {
+            lista.push(document.querySelector("#buscar-nombre"));
+        }
+        mostrarFiltros();
+        var filtros = listaFiltros.querySelectorAll("li");
+        for (var i = 0; i < filtros.length; i++) {
+            if (lista[i] != undefined) {
+                if (lista[i].id == "buscar-nombre") {
+                    filtros[i].textContent = "Nombre: " + nombre.value;
+                }
+            }
+        }
+    }
 }
 
 function iniciarValidacion() {
@@ -63,4 +87,3 @@ function iniciarValidacion() {
 }
 
 iniciarValidacion();
-
