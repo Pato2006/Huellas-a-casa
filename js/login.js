@@ -34,7 +34,7 @@ function validarContraseña(){
         esValido = true;
 	} else {
 		contraseña.classList.add("invalido");
-		errorContraseña.textContent = "La contraseña debe contener 8 caracteres, una letra mayuscula y un número.";
+		errorContraseña.textContent = "Contraseña invalida.";
 	}
     return esValido;
 }
