@@ -13,75 +13,71 @@
 <body>
     <header class="cabecera">
         <div class="cabecera-contenido">
-            <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
+            <a href="index_admin.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
             <nav>
                 <ul class="menu">
-                    <li class="lista"><a href="catalogo.html">Adoptar</a></li>
-                    <li class="lista"><a href="formulario_donar.html">Donar</a></li>
-                    <li class="lista"><a href="contacto.html">Contactos</a></li>
-                    <li class="lista"><a href="perfil.html"><img src="img/perfil.svg" alt="Perfil" id="perfil"></a>
-                    </li>
+                    <li class="lista"><a href="catalogo_admin.html">Catalogo</a></li>
+                    <li class="lista"><a href="cargar_animales.html">Cargar animales</a></li>
+                    <li class="lista"><a href="ver_formulario_adopcion_admin.html">Ver adopciones</a></li>
+                    <li class="lista"><a href="formulario_donar_admin.html">Ver donaciones</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <main>
         <div class="contenedor">
-            <!-- comienzo del formulario-->
             <form action="" method="" id="adoptar" class="formulario">
-                <h1>Formulario de adopcion</h1>
-                <!-- comienzan las preguntas-->
+                <h1>Formulario de adopcion de Carlos</h1>
                 <div class="columna">
                     <label for="familia" class="texto">¿Con quien vivis?</label><br>
-                    <input type="text" id="familia" name="familia">
-                    <small id="error-familia"></small>
+                    <div class="respuesta" id="familia">Vivo con mis padres y mi hermano.</div>
                 </div>
+
                 <div class="columna">
                     <label for="alergias" class="texto">¿Alguno de los integrantes de tu casa tiene alergias?
                         ¿Cuales?</label><br>
-                    <input type="text" id="alergias" name="info_familia">
-                    <small id="error-alergias"></small>
+                    <div class="respuesta" id="alergias">No, ninguno tiene alergias.</div>
                 </div>
+
                 <div class="columna">
                     <label for="mascotas" class="texto">¿Tenes otras mascotas?¿Cuales y que edad
                         tienen?</label><br>
-                    <input type="text" id="mascotas" name="info_mascotas">
-                    <small id="error-mascotas"></small>
+                    <div class="respuesta" id="mascotas">Sí, tengo un gato de 3 años.</div>
                 </div>
+
                 <div class="columna">
                     <label for="cuidado" class="texto">¿Quien puede cuidarlo en caso de ausentarte?</label><br>
-                    <input type="text" id="cuidado" name="cuidado_mascota">
-                    <small id="error-cuidado"></small>
+                    <div class="respuesta" id="cuidado">Mi hermano puede cuidarlo.</div>
                 </div>
 
                 <div class="columna">
                     <label for="tiempo_solo" class="texto">¿Cuanto tiempo va a estar el animal solo?</label><br>
-                    <input type="text" id="tiempo_solo" name="tiempo_solo_mascota">
-                    <small id="error-solo"></small>
+                    <div class="respuesta" id="tiempo_solo">Aproximadamente 4 horas al día.</div>
                 </div>
+
                 <div class="columna">
                     <label for="hogar" class="texto">¿Donde vivis?</label><br>
-                    <input type="text" id="hogar" name="localidad_dueno">
-                    <small id="error-hogar"></small>
-                </div>
-                <!-- terminan las preguntas-->
-                <!-- botones de accion-->
-                <div class="botonera">
-                    <button type="submit" class="boton-form">Enviar propuesta</button>
-                    <button type="reset" class="boton-form">Limpiar formulario</button>
+                    <div class="respuesta" id="hogar">Hurlingham, Buenos Aires.</div>
                 </div>
             </form>
+
             <p id="mensaje-formulario" aria-live="polite"></p>
-            <p>Importante: Este formulario sera revisado y puede ser aprobado o desaprobado, completarlo no garantiza la
-                adopcion</p>
-            <!-- aclaracion-->
+
+            <p>
+                Importante: Este formulario sera revisado y puede ser aprobado o desaprobado,
+                completarlo no garantiza la adopcion
+            </p>
         </div>
     </main>
+
     <footer class="pie">
         <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
         <p>Cada huella merece encontrar un hogar.</p>
     </footer>
+
     <script src="js/formulario_adopcion.js"></script>
 </body>
 
 </html>
+```

@@ -100,6 +100,10 @@ textarea {
     padding: 5px;
 }
 
+.respuesta {
+    margin-top: 15px;
+}
+
 .boton_input label {
     color: white;
     cursor: pointer;
