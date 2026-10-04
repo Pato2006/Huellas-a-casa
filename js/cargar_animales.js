@@ -14,7 +14,7 @@ const comprobante = document.querySelector("#comprobante");
 const errorComprobante = document.querySelector("#error-comprobante");
 const descripcion = document.querySelector("#descripcion");
 const errorDescripcion = document.querySelector("#error-descripcion")
-
+const errorTipo = document.querySelector("#error-tipo");
 
 const mensajeFormulario = document.querySelector("#mensaje-formulario");
 
