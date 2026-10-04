@@ -7,7 +7,7 @@ const mensajeFormulario = document.querySelector("#mensaje-formulario");
 function validarComprobante() {
     let esValido=false
 
-    if(comprobante.files.lentgh > 0) {
+    if(comprobante.files.length > 0) {
         comprobante.classList.remove("invalido");
         errorComprobante.textContent="";
         esValido=true;
