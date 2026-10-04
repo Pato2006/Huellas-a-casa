@@ -4,7 +4,6 @@ const alergias=document.querySelector("#alergias");
 const erroralergias=document.querySelector("#error-alergias");
 const mascotas=document.querySelector("#mascotas");
 const errormascotas=document.querySelector("#error-mascotas");
-const errorTipo=document.querySelector("#error-tipo");
 const cuidado=document.querySelector("#cuidado");
 const errorcuidado=document.querySelector("#error-cuidado");
 const solo=document.querySelector("#tiempo_solo");
@@ -110,19 +109,6 @@ function validarhogar() {
     return esValido;
 }
 
-function validarTipo() {
-    const tipoSeleccionado = document.querySelector('input[name="tipo"]:checked');
-    let esValido = false;
-
-    if (tipoSeleccionado !== null) {
-        errorTipo.textContent = "";
-        esValido = true;
-    } else {
-        errorTipo.textContent = "Seleccioná una opción.";
-    }
-
-    return esValido;
-}
 
 function validarFormulario(evento) {
     const familiaValido=validarfamilia();
@@ -131,9 +117,8 @@ function validarFormulario(evento) {
     const cuidadoValido=validarcuidado();
     const soloValido=validarsolo();
     const hogarValido=validarhogar();
-    const tipoValido=validarTipo();
 
-    if (familiaValido && alergiasValido && mascotasValido && cuidadoValido && soloValido && hogarValido && tipoValido) {
+    if (familiaValido && alergiasValido && mascotasValido && cuidadoValido && soloValido && hogarValido) {
         mensajeFormulario.classList.add("valido");
         mensajeFormulario.textContent = "Datos válidos. Formulario registrado.";
 
@@ -154,9 +139,5 @@ function iniciarValidacion(){
     cuidado.addEventListener("input", validarcuidado);
     solo.addEventListener("input", validarsolo);
     hogar.addEventListener("input", validarhogar);
-
-    document.querySelectorAll('input[name="tipo"]').forEach(function (radio) {
-    radio.addEventListener("change", validarTipo);
-    });
 }
 iniciarValidacion();
