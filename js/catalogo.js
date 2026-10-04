@@ -71,14 +71,6 @@ function buscarNombre() {
             lista.push(document.querySelector("#buscar-nombre"));
         }
         mostrarFiltros();
-        var filtros = listaFiltros.querySelectorAll("li");
-        for (var i = 0; i < filtros.length; i++) {
-            if (lista[i] != undefined) {
-                if (lista[i].id == "buscar-nombre") {
-                    filtros[i].textContent = "Nombre: " + nombre.value;
-                }
-            }
-        }
     }
 }
 
