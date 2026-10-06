@@ -108,11 +108,16 @@
     text-align: center;
 }
 
-/* el boton para conocer cada perro*/
+#lista_filtros {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
 
-.lista_filtros{
-    display: flex;
-    flex-wrap: wrap;
+.filtro-lista {
+    margin-left: 5px;
+    color: #5e4e3e;
+    overflow-wrap: break-word;
 }
 
 .borde {
@@ -120,10 +125,7 @@
     padding: 4px;
 }
 
-.filtro-lista{
-    margin-left: 5px;
-    color: #5e4e3e;
-}
+
 
 #filtro_unico {
     width: 120px;
