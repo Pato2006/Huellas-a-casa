@@ -101,7 +101,7 @@ function validarCorreo(){
 }
 function validarContraseña(){
     let esValido = false;
-	const contraseñaLimpio = contraseña.value;
+	const contraseñaLimpio = contraseña.value.trim();
 	const contraseñaValido = PATRON_CONTRASEÑA.test(contraseñaLimpio);
 
 	if (contraseñaValido) {
