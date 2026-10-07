@@ -11,6 +11,8 @@ const errorCorreo = document.querySelector("#error-correo");
 const errorFecha = document.querySelector("#error-fecha-nacimiento");
 const errorTelefono = document.querySelector("#error-telefono");
 const mensajeFormulario = document.querySelector("#mensaje-formulario");
+const foto = document.querySelector("#foto");
+const errorFoto = document.querySelector("#error-foto");
 
 // 1. Valida que el nombre tenga al menos tres caracteres.
 function validarNombre() {
@@ -109,16 +111,41 @@ function validarFecha() {
 	return esValido;
 }
 
+function validarFoto() {
+	const archivo = foto.files[0];
+	let esValido = false;
+
+	if (!archivo) {
+		// Sin foto: es opcional, así que es válido y se limpia el mensaje
+		errorFoto.classList.remove("invalido", "valido");
+		errorFoto.textContent = "";
+		esValido = true;
+	} else if (archivo.type.startsWith("image/")) {
+		errorFoto.classList.remove("invalido");
+		errorFoto.classList.add("valido");
+		errorFoto.textContent = "Foto seleccionada: " + archivo.name;
+		esValido = true;
+	} else {
+		errorFoto.classList.add("invalido");
+		errorFoto.classList.remove("valido");
+		errorFoto.textContent = "Por favor, selecciona un archivo de imagen.";
+	}
+
+	return esValido;
+}
+
 // 4. submit activa la validación; solo se cancela si hay errores o no hay servidor.
 function validarFormulario(evento) {
+	
 	const correoValido = validarCorreo();
     const nombreValido = validarNombre();
     const fechaValida = validarFecha();
     const apellidoValido = validarApellido();
     const telefonoValido = validarTelefono();
+	const fotoValida = validarFoto();
 
 
-	if (correoValido && nombreValido && fechaValida && apellidoValido && telefonoValido) {
+	if (correoValido && nombreValido && fechaValida && apellidoValido && telefonoValido && fotoValida) {
 		mensajeFormulario.classList.add("valido");
 		mensajeFormulario.textContent = "Datos válidos. Perfil modificado correctamente.";
         
@@ -131,6 +158,7 @@ function validarFormulario(evento) {
 	}
 }
 
+
 // input vuelve a validar el campo mientras se escribe.
 function iniciarValidacion() {
 	
@@ -141,6 +169,7 @@ function iniciarValidacion() {
 	telefono.addEventListener("input", validarTelefono);
 	fechaNacimiento.addEventListener("input", validarFecha);
 	document.querySelector("#perfil-mod").addEventListener("submit", validarFormulario);	
+	foto.addEventListener("change", validarFoto);
 
 }
 iniciarValidacion();
