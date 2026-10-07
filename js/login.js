@@ -1,5 +1,5 @@
 const PATRON_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PATRON_CONTRASEÑA = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+const PATRON_CONTRASEÑA = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
 
 
 const correo = document.querySelector("#correo");
