@@ -1,7 +1,7 @@
 
 main {
     background-color: #b5c3c4;
-    padding-bottom: 20px;
+    padding: 100px;
 }
 
 h1 {
@@ -98,7 +98,7 @@ h1 {
 }
 #mensaje-formulario {
     text-align: center;
-    padding: 80px;
+    padding: 40px;
     color: #b42318;
 }
 #mensaje-formulario.valido {

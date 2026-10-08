@@ -55,7 +55,6 @@ function validarFormulario(evento) {
 
 function iniciarValidacion(){
     document.querySelector("#donar").addEventListener("submit", validarFormulario);
-
     mensaje.addEventListener("input", validarMensaje);
 	comprobante.addEventListener("input", validarComprobante);
 }
