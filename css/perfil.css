@@ -1,6 +1,5 @@
 
 main {
-    height: 500px;
     background-color: #b5c3c4;
 }
 
@@ -97,6 +96,8 @@ h1 {
     margin-top: 4px;
 }
 #mensaje-formulario {
+    text-align: center;
+    padding: 80px;
     color: #b42318;
 }
 #mensaje-formulario.valido {
