@@ -7,8 +7,10 @@ h1 {
     color: #654C32;
     font-size: 24px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
+
+/* Caja del perfil */
 
 .perfil-caja {
     background-color: #f5eae2;
@@ -24,16 +26,20 @@ h1 {
     margin: 0 auto;
 }
 
+/* Botones del perfil */
+
 .boton-modificar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    margin-top: 0;
     background-color: #654C32;
     color: #f5eae2;
-    border-radius: 50px;
-    padding: 15px 20px;
+    border: 1px solid #654C32;
+    border-radius: 25px;
     font-size: 13px;
-    cursor: pointer;
-    width: 115px;
-    text-decoration: none;
-    margin-top: 25px;
     text-align: center;
 }
 
@@ -47,6 +53,8 @@ h1 {
     width: 150px;
     margin-top: 25px;
 }
+
+/* Datos del perfil */
 
 .perfil-datos p {
     margin-bottom: 15px;
@@ -79,6 +87,8 @@ h1 {
     margin-top: 4px;
 }
 
+/* Mensajes del formulario */
+
 .perfil-columna-izquierda small.invalido {
     display: block;
     color: #b42318;
@@ -101,6 +111,8 @@ h1 {
     color: #047857;
 }
 
+/* Columna izquierda del perfil */
+
 .perfil-columna-izquierda {
     flex: 0 0 190px;
     display: flex;
@@ -119,7 +131,7 @@ h1 {
     margin: 0 auto;
 }
 
-/* Grupo de botones */
+/* Grupo de botones del perfil */
 
 .botones-perfil {
     display: flex;
@@ -130,16 +142,69 @@ h1 {
     width: 100%;
 }
 
-.boton-modificar {
+/* Contenedor de adopciones */
+
+.adopciones {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Tarjetas de adopción */
+
+.adopcion-caja {
+    background-color: #f5eae2;
+    padding: 25px 30px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: 12px 15px;
-    margin-top: 0;
+    justify-content: space-between;
+    gap: 25px;
+    box-shadow: 0 4px 12px #4b4747;
+}
+
+/* Foto del animal */
+
+.adopcion-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
+
+/* Botón para ver el formulario */
+
+.boton-formulario {
     background-color: #654C32;
     color: #f5eae2;
+    border: 1px solid #654C32;
     border-radius: 25px;
-    font-size: 13px;
+    padding: 12px 20px;
+    font-size: 16px;
     text-align: center;
+}
+
+.boton-formulario:hover {
+    background-color: #4b3825;
+}
+
+/* Estado de adopción */
+
+.estado-adopcion {
+    color: #654C32;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+}
+
+.separador {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.separador p{
+    margin-top: 10px;
+    font-size: 16px;
 }

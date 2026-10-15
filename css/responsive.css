@@ -609,3 +609,29 @@
     }
 }
 
+/* Estado adopciones */
+
+@media (max-width: 768px) {
+    main {
+        padding: 40px 20px;
+    }
+
+    .perfil-caja {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .adopcion-foto {
+        width: 75px;
+        height: 75px;
+    }
+
+    .boton-formulario {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .estado-adopcion {
+        font-size: 14px;
+    }
+}
