@@ -1,4 +1,3 @@
-
 main {
     background-color: #b5c3c4;
     padding: 100px;
@@ -25,21 +24,6 @@ h1 {
     margin: 0 auto;
 }
 
-.perfil-columna-izquierda {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.perfil-foto {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    background-color: #654C32;
-    padding: 10px;
-}
-
 .boton-modificar {
     background-color: #654C32;
     color: #f5eae2;
@@ -52,6 +36,7 @@ h1 {
     margin-top: 25px;
     text-align: center;
 }
+
 .boton-guardar {
     background-color: #654C32;
     color: #f5eae2;
@@ -68,6 +53,11 @@ h1 {
     font-size: 16px;
     color: #654C32;
 }
+
+.perfil-datos label {
+    color: #654C32;
+}
+
 .perfil-datos input {
     border: none;
     border-bottom: 1px solid #654C32;
@@ -78,29 +68,79 @@ h1 {
     min-width: 150px;
     width: 100%;
 }
+
 .perfil-datos input.invalido {
     border-bottom: 2px solid #b42318;
 }
+
 .perfil-datos small {
     display: block;
     color: #b42318;
     margin-top: 4px;
 }
+
 .perfil-columna-izquierda small.invalido {
     display: block;
     color: #b42318;
     margin-top: 4px;
 }
+
 .perfil-columna-izquierda small.valido {
     display: block;
     color: #047857;
     margin-top: 4px;
 }
+
 #mensaje-formulario {
     text-align: center;
     padding: 40px;
     color: #b42318;
 }
+
 #mensaje-formulario.valido {
     color: #047857;
+}
+
+.perfil-columna-izquierda {
+    flex: 0 0 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Foto de perfil */
+
+.perfil-avatar {
+    width: 110px;
+    height: 110px;
+    padding: 12px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Grupo de botones */
+
+.botones-perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 15px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.boton-modificar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    margin-top: 0;
+    background-color: #654C32;
+    color: #f5eae2;
+    border-radius: 25px;
+    font-size: 13px;
+    text-align: center;
 }

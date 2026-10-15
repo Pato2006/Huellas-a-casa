@@ -504,3 +504,108 @@
         font-size: 17px;
     }
 }
+
+/* Perfil */
+
+/* ===== RESPONSIVE DEL PERFIL ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+    main {
+        padding: 60px 30px;
+    }
+
+    .perfil-caja {
+        max-width: 650px;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .perfil-columna-izquierda {
+        flex: 0 0 170px;
+    }
+
+    .perfil-datos p {
+        font-size: 15px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 700px) {
+    main {
+        padding: 35px 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .perfil-caja {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        max-width: 100%;
+        padding: 25px 20px;
+        border-radius: 18px;
+        box-sizing: border-box;
+    }
+
+    .perfil-columna-izquierda {
+        flex: none;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .perfil-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .botones-perfil {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .boton-modificar {
+        width: 100%;
+        min-height: 44px;
+        padding: 12px;
+        margin-top: 0;
+        font-size: 13px;
+    }
+
+    .perfil-datos {
+        align-self: auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding-top: 20px;
+        border-top: 1px solid #ddcabb;
+    }
+
+    .perfil-datos p {
+        font-size: 14px;
+        margin-bottom: 16px;
+        overflow-wrap: anywhere;
+    }
+
+    .perfil-datos input {
+        box-sizing: border-box;
+        min-width: 0;
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .boton-guardar {
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 12px 18px;
+    }
+
+    #mensaje-formulario {
+        padding: 20px 10px;
+    }
+}
+
