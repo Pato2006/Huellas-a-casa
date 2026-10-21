@@ -147,3 +147,10 @@ textarea {
 #mensaje-formulario.valido {
     color: #047857;
 }
+
+textarea {
+    min-height: 50px;
+    max-height: 300px;
+    resize: vertical;
+    height: 100px;
+}

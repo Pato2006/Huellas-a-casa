@@ -3,6 +3,24 @@ const comprobante = document.querySelector("#comprobante");
 const errorMensaje = document.querySelector("#error-mensaje");
 const errorComprobante = document.querySelector("#error-comprobante");
 const mensajeFormulario = document.querySelector("#mensaje-formulario");
+const monto = document.querySelector("#monto");
+const errorMonto = document.querySelector("#error-monto");
+
+function validarMonto() {
+    const montoValor = parseFloat(monto.value);
+    let esValido = false;
+
+    if (isNaN(montoValor) || montoValor <= 0) {
+        monto.classList.add("invalido");
+        errorMonto.textContent = "Ingresar un monto válido.";
+    } else {
+        monto.classList.remove("invalido");
+        errorMonto.textContent = "";
+        esValido = true;
+    }
+
+    return esValido;
+}
 
 function validarComprobante() {
     let esValido=false
@@ -40,8 +58,9 @@ function validarMensaje() {
 function validarFormulario(evento) {
     const comprobanteValido=validarComprobante();
     const mensajeValido=validarMensaje();
+    const montoValido=validarMonto();
 
-    if (comprobanteValido && mensajeValido) {
+    if (comprobanteValido && mensajeValido && montoValido) {
         mensajeFormulario.classList.add("valido");
         mensajeFormulario.textContent = "Datos válidos. Donación registrada.";
 
@@ -57,5 +76,6 @@ function iniciarValidacion(){
     document.querySelector("#donar").addEventListener("submit", validarFormulario);
     mensaje.addEventListener("input", validarMensaje);
 	comprobante.addEventListener("input", validarComprobante);
+    monto.addEventListener("input", validarMonto);
 }
 iniciarValidacion();
