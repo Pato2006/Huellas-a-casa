@@ -8,16 +8,21 @@ const cuidado=document.querySelector("#cuidado");
 const errorcuidado=document.querySelector("#error-cuidado");
 const solo=document.querySelector("#tiempo_solo");
 const errorsolo=document.querySelector("#error-solo");
-const hogar=document.querySelector("#hogar");
 const errorhogar=document.querySelector("#error-hogar");
 
 const mensajeFormulario = document.querySelector("#mensaje-formulario");
+
+const MAXIMO_CARACTERES = 30;
+const MENSAJE_MAXIMO = "Sea breve y conciso, maximo a escribir 30 caracteres.";
 
 function validarfamilia() {
     const familiaLimpio = familia.value.trim();
     let esValido = false;
 
-    if (familiaLimpio.length >= 3) {
+    if (familiaLimpio.length > MAXIMO_CARACTERES) {
+        familia.classList.add("invalido");
+        errorfamilia.textContent = MENSAJE_MAXIMO;
+    } else if (familiaLimpio.length >= 3) {
         familia.classList.remove("invalido");
         errorfamilia.textContent = "";
         esValido = true;
@@ -33,7 +38,10 @@ function validaralergias() {
     const alergiasLimpio = alergias.value.trim();
     let esValido = false;
 
-    if (alergiasLimpio.length >= 2) {
+    if (alergiasLimpio.length > MAXIMO_CARACTERES) {
+        alergias.classList.add("invalido");
+        erroralergias.textContent = MENSAJE_MAXIMO;
+    } else if (alergiasLimpio.length >= 2) {
         alergias.classList.remove("invalido");
         erroralergias.textContent = "";
         esValido = true;
@@ -49,7 +57,10 @@ function validarmascotas() {
     const mascotasLimpio = mascotas.value.trim();
     let esValido = false;
 
-    if (mascotasLimpio.length >= 2) {
+     if (mascotasLimpio.length > MAXIMO_CARACTERES) {
+        mascotas.classList.add("invalido");
+        errormascotas.textContent = MENSAJE_MAXIMO;
+    } else if (mascotasLimpio.length >= 2) {
         mascotas.classList.remove("invalido");
         errormascotas.textContent = "";
         esValido = true;
@@ -65,7 +76,10 @@ function validarcuidado() {
     const cuidadoLimpio = cuidado.value.trim();
     let esValido = false;
 
-    if (cuidadoLimpio.length >= 3) {
+    if (cuidadoLimpio.length > MAXIMO_CARACTERES) {
+        cuidado.classList.add("invalido");
+        errorcuidado.textContent = MENSAJE_MAXIMO;
+    } else if (cuidadoLimpio.length >= 3) {
         cuidado.classList.remove("invalido");
         errorcuidado.textContent = "";
         esValido = true;
@@ -81,7 +95,10 @@ function validarsolo() {
     const soloLimpio = solo.value.trim();
     let esValido = false;
 
-    if (soloLimpio.length >= 3) {
+    if (soloLimpio.length > MAXIMO_CARACTERES) {
+        solo.classList.add("invalido");
+        errorsolo.textContent = MENSAJE_MAXIMO;
+    } else if (soloLimpio.length >= 3) {
         solo.classList.remove("invalido");
         errorsolo.textContent = "";
         esValido = true;
@@ -94,18 +111,16 @@ function validarsolo() {
 }
 
 function validarhogar() {
-    const hogarLimpio = hogar.value.trim();
+    const hogarSeleccionado = document.querySelector('input[name="localidad_dueno"]:checked');
     let esValido = false;
-
-    if (hogarLimpio.length >= 3) {
-        hogar.classList.remove("invalido");
+ 
+    if (hogarSeleccionado !== null) {
         errorhogar.textContent = "";
         esValido = true;
     } else {
-        hogar.classList.add("invalido");
-        errorhogar.textContent = "Ingresar al menos 3 caracteres.";
+        errorhogar.textContent = "Seleccioná dónde vivís.";
     }
-
+ 
     return esValido;
 }
 
@@ -138,6 +153,8 @@ function iniciarValidacion(){
     mascotas.addEventListener("input", validarmascotas);
     cuidado.addEventListener("input", validarcuidado);
     solo.addEventListener("input", validarsolo);
-    hogar.addEventListener("input", validarhogar);
+    document.querySelectorAll('input[name="localidad_dueno"]').forEach(function (radio) {
+    radio.addEventListener("change", validarhogar);
+    });
 }
 iniciarValidacion();
