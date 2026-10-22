@@ -511,7 +511,7 @@
 
 /* Tablets */
 @media (max-width: 900px) {
-    main {
+    .main-perfil {
         padding: 60px 30px;
     }
 
@@ -532,7 +532,7 @@
 
 /* Celulares */
 @media (max-width: 700px) {
-    main {
+    .main-perfil {
         padding: 35px 16px;
     }
 
@@ -612,7 +612,7 @@
 /* Estado adopciones */
 
 @media (max-width: 768px) {
-    main {
+    .main-perfil {
         padding: 40px 20px;
     }
 
