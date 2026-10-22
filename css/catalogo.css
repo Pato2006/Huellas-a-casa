@@ -7,7 +7,7 @@
 
 .lateral_iz {
     width: 13%;
-    background-color: #c8d1d9;
+    background-color: #f5eae2;
 }
 
 /* donde estan los filtros, es aside */
@@ -45,9 +45,9 @@
 
 
 .catalogo-boton {
-    background-color: #c8d1d9;
+    background-color: #f5eae2;
     border: none;
-
+    cursor: pointer;
 }
 
 #nombre_animal {
@@ -122,11 +122,22 @@
 
 .borde {
     border: 1px solid red;
-    padding: 4px;
 }
 
 
 
 #filtro_unico {
     width: 120px;
+}
+
+.btn-filtros,
+.btn-cerrar-filtros,
+.filtros-fondo {
+    display: none;
+}
+
+
+#panel_filtros {
+    display: flex;
+    justify-content: center;
 }

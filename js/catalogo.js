@@ -2,6 +2,19 @@ const botones = document.querySelectorAll(".lista-catalogo button");
 const nombre = document.querySelector("#nombre_animal");
 const listaFiltros = document.querySelector("#lista_filtros");
 
+const panelFiltros = document.getElementById("panel_filtros");
+document.getElementById("abrir-filtros").addEventListener("click", () => {
+    panelFiltros.classList.add("abierto");
+});
+document.getElementById("cerrar-filtros").addEventListener("click", () => {
+    panelFiltros.classList.remove("abierto");
+});
+document.getElementById("fondo-filtros").addEventListener("click", () => {
+    panelFiltros.classList.remove("abierto");
+});
+
+
+
 let lista = [];
 
 function recorrer_botones(boton) {
