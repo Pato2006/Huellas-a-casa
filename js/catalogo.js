@@ -1,94 +1,20 @@
 const botones = document.querySelectorAll(".lista-catalogo button");
 const nombre = document.querySelector("#nombre_animal");
-const listaFiltros = document.querySelector("#lista_filtros");
+const boton_nombre = document.querySelector("#buscar-nombre")
 
-const panelFiltros = document.getElementById("panel_filtros");
-document.getElementById("abrir-filtros").addEventListener("click", () => {
-    panelFiltros.classList.add("abierto");
-});
-document.getElementById("cerrar-filtros").addEventListener("click", () => {
-    panelFiltros.classList.remove("abierto");
-});
-document.getElementById("fondo-filtros").addEventListener("click", () => {
-    panelFiltros.classList.remove("abierto");
-});
-
-
-
-let lista = [];
-
-function recorrer_botones(boton) {
-    boton.addEventListener("click", function () {
-        if (boton.id == "buscar-nombre") {
-            buscarNombre();
-        }
-        else {
-            var encontrado = false;
-            for (var i = 0; i < lista.length; i++) {
-                if (lista[i] == boton) {
-                    encontrado = true;
-                    lista.splice(i, 1);
-                    boton.classList.remove("borde");
-                }
-            }
-            if (!encontrado) {
-                lista.push(boton);
-                boton.classList.add("borde");
-            }
-            mostrarFiltros();
-        }
-    });
+function boton_seleccionado() {
+    this.classList.toggle("catalogo-boton-activo")
 }
 
-
-function mostrarFiltros() {
-    // chau html
-    listaFiltros.innerHTML = "";
-    // ponemos filtros a la lista
-    lista.forEach(function agregar_botones(boton) {
-        const li = document.createElement("li");
-        li.classList.add("filtro-lista");
-        if (boton.id == "buscar-nombre") {
-            li.textContent = "Nombre: " + nombre.value;
-        }
-        else {
-            li.textContent = boton.textContent;
-        }
-        // toco filtro borro filtro
-        li.addEventListener("click", function borrar_boton() {
-            var encontrado = false;
-            for (var i = 0; i < lista.length; i++) {
-                if (lista[i] == boton) {
-                    encontrado = true;
-                    lista.splice(i, 1);
-                    boton.classList.remove("borde");
-                }
-            }
-            if (encontrado) {
-                mostrarFiltros();
-            }
-        });
-        listaFiltros.appendChild(li);
-    });
-}
-
-function buscarNombre() {
-    var encontrado = false;
-    for (var i = 0; i < lista.length; i++) {
-        if (lista[i].id == "buscar-nombre") {
-            encontrado = true;
-        }
-    }
-    if (nombre.value != "") {
-        if (encontrado == false) {
-            lista.push(document.querySelector("#buscar-nombre"));
-        }
-        mostrarFiltros();
-    }
+function boton_borrar(){
+    alert(nombre.textContent)
+    this.classList.toggle("catalogo-boton-activo")
 }
 
 function iniciarValidacion() {
-    botones.forEach(recorrer_botones);
+    for (i = 0; i < botones.length; i++) {
+        botones[i].addEventListener("click", boton_seleccionado)
+    }
+    boton_nombre.addEventListener("click",boton_borrar)
 }
-
-iniciarValidacion();
+iniciarValidacion()

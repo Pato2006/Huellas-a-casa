@@ -7,7 +7,7 @@
 
 .lateral_iz {
     width: 13%;
-    background-color: #f5eae2;
+    background-color: #c8d1d9;
 }
 
 /* donde estan los filtros, es aside */
@@ -45,9 +45,19 @@
 
 
 .catalogo-boton {
-    background-color: #f5eae2;
-    border: none;
+    background-color: #fffaf6;
+    color: #5e4e3f;
+    border: 1px solid #dfcdbd;
+    border-radius: 15px;
     cursor: pointer;
+    padding: 5px 10px;
+}
+
+.catalogo-boton:hover {
+    background-color: #e8d8ca;
+}
+.catalogo-boton-activo {
+    background-color: #e8d8ca;
 }
 
 #nombre_animal {
@@ -109,21 +119,18 @@
 }
 
 #lista_filtros {
-    width: 100%;
-    padding: 0;
-    margin: 0;
+    list-style: none;
 }
 
 .filtro-lista {
-    margin-left: 5px;
-    color: #5e4e3e;
-    overflow-wrap: break-word;
+    display: inline-block;
+    background-color: #5e4e3f;
+    color: #f5eae2;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 3px;
+    cursor: pointer;
 }
-
-.borde {
-    border: 1px solid red;
-}
-
 
 
 #filtro_unico {
