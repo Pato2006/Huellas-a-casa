@@ -7,7 +7,7 @@ function boton_seleccionado() {
 }
 
 function boton_borrar(){
-    alert(nombre.textContent)
+    alert(nombre.value)
     this.classList.toggle("catalogo-boton-activo")
 }
 
