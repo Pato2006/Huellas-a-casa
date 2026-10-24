@@ -1,86 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
+<main class="main-perfil">
+    <h1>Modificar perfil</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huellas a Casa</title>
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-</head>
+    <form class="perfil-caja" action="#" method="post" id="perfil-mod">
+        <div class="perfil-columna-izquierda">
+            <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto de perfil" class="perfil-avatar">
+            <label for="foto" class="boton-modificar">
+                Cambiar foto
+                <input type="file" id="foto" name="foto" accept="image/*" hidden>
 
-<body>
-    <header class="cabecera">
-        <div class="cabecera-contenido">
-            <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
-            <nav>
-                <ul class="menu">
-                    <li class="lista"><a href="catalogo.html">Adoptar</a></li>
-                    <li class="lista"><a href="formulario_donar.html">Donar</a></li>
-                    <li class="lista"><a href="contacto.html">Contactos</a></li>
-                    <li class="lista"><a href="perfil.html"><img src="img/perfil.svg" alt="Perfil" id="perfil"></a>
-                    </li>
-                </ul>
-            </nav>
+            </label>
+            <small id="error-foto"></small>
         </div>
-    </header>
-    <main class="main-perfil">
-        <h1>Modificar perfil</h1>
 
-        <form class="perfil-caja" action="#" method="post" id="perfil-mod">
-            <div class="perfil-columna-izquierda">
-                <img src="img/perfil.svg" alt="Foto de perfil" class="perfil-avatar">
-                <label for="foto" class="boton-modificar">
-                    Cambiar foto
-                    <input type="file" id="foto" name="foto" accept="image/*" hidden>
-                   
-                </label>
-                <small id="error-foto"></small>
-            </div>
+        <div class="perfil-datos">
+            <label for="nombre">
+                <strong>Nombre:</strong>
+                <input type="text" id="nombre" name="nombre" value="Nombre">
+                <small id="error-nombre"></small>
+            </label>
 
-            <div class="perfil-datos">
-                <label for="nombre">
-                    <strong>Nombre:</strong>
-                    <input type="text" id="nombre" name="nombre" value="Nombre">
-                    <small id="error-nombre"></small>
-                </label>
+            <label for="apellido">
+                <strong>Apellido:</strong>
+                <input type="text" id="apellido" name="apellido" value="Apellido">
+                <small id="error-apellido"></small>
+            </label>
 
-                <label for="apellido">
-                    <strong>Apellido:</strong>
-                    <input type="text" id="apellido" name="apellido" value="Apellido">
-                    <small id="error-apellido"></small>
-                </label>
+            <label for="email">
+                <strong>Correo electrónico:</strong>
+                <input type="email" id="correo" name="correo" value="...@gmail.com">
+                <small id="error-correo"></small>
+            </label>
 
-                <label for="email">
-                    <strong>Correo electrónico:</strong>
-                    <input type="email" id="correo" name="correo" value="...@gmail.com">
-                    <small id="error-correo"></small>
-                </label>
+            <label for="telefono">
+                <strong>Número de teléfono:</strong>
+                <input type="tel" id="telefono" name="telefono" value="11-1234-5678">
+                <small id="error-telefono"></small>
+            </label>
 
-                <label for="telefono">
-                    <strong>Número de teléfono:</strong>
-                    <input type="tel" id="telefono" name="telefono" value="11-1234-5678">
-                    <small id="error-telefono"></small>
-                </label>
+            <label for="fecha_nacimiento">
+                <strong>Fecha de nacimiento:</strong>
+                <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" value="0001-01-01">
+                <small id="error-fecha-nacimiento"></small>
+            </label>
 
-                <label for="fecha_nacimiento">
-                    <strong>Fecha de nacimiento:</strong>
-                    <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" value="0001-01-01">
-                    <small id="error-fecha-nacimiento"></small>
-                </label>
-
-                <button type="submit" class="boton-guardar">Guardar cambios</button>
-            </div>
-        </form>
-            <p id="mensaje-formulario" aria-live="polite"></p>
-    </main>
-    <footer class="pie">
-        <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
-        <p>Cada huella merece encontrar un hogar.</p>
-    </footer>
-    <script src="js/perfil_mod.js"></script>
-</body>
-
-</html>
+            <button type="submit" class="boton-guardar">Guardar cambios</button>
+        </div>
+    </form>
+    <p id="mensaje-formulario" aria-live="polite"></p>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/perfil_mod.js') }}"></script>
+{% endblock %}

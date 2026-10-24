@@ -1,88 +1,58 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends "base.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
+<main class="main-perfil">
+    <h1>Estado de adopciones</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estado de adopciones | Huellas a Casa</title>
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
+    <section class="adopciones">
 
-<body>
-    <header class="cabecera">
-        <div class="cabecera-contenido">
-            <a href="index.html">
-                <img src="img/logo.svg" alt="Huellas a casa" id="logo">
-            </a>
+        <article class="adopcion-caja">
+            <div class="separador">
+                <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto del animal"
+                    class="adopcion-foto">
+                <p>Terry</p>
+            </div>
 
-            <nav>
-                <ul class="menu">
-                    <li class="lista"><a href="catalogo.html">Adoptar</a></li>
-                    <li class="lista"><a href="formulario_donar.html">Donar</a></li>
-                    <li class="lista"><a href="contacto.html">Contactos</a></li>
-                    <li class="lista">
-                        <a href="perfil.html">
-                            <img src="img/perfil.svg" alt="Perfil" id="perfil">
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+            <a href="{{ url_for('formulario_adopcion_respondido_usuario') }}" class="boton-formulario">Ver
+                formulario</a>
 
-    <main class="main-perfil">
-        <h1>Estado de adopciones</h1>
+            <p class="estado-adopcion">
+                <strong>Estado:</strong> En proceso
+            </p>
+        </article>
 
-        <section class="adopciones">
+        <article class="adopcion-caja">
+            <div class="separador">
+                <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto del animal"
+                    class="adopcion-foto">
+                <p>Terry</p>
+            </div>
+            <a href="{{ url_for('formulario_adopcion_respondido_usuario') }}" class="boton-formulario">Ver
+                formulario</a>
 
-            <article class="adopcion-caja">
-                <div class="separador">
-                    <img src="img/perfil.svg" alt="Foto del animal" class="adopcion-foto">
-                    <p>Terry</p>
-                </div>
+            <p class="estado-adopcion">
+                <strong>Estado:</strong> En proceso
+            </p>
+        </article>
 
-                <a href="formulario_adopcion_respondido_usuario.html" class="boton-formulario">Ver formulario</a>
+        <article class="adopcion-caja">
+            <div class="separador">
+                <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto del animal"
+                    class="adopcion-foto">
+                <p>Terry</p>
+            </div>
 
-                <p class="estado-adopcion">
-                    <strong>Estado:</strong> En proceso
-                </p>
-            </article>
+            <a href="{{ url_for('formulario_adopcion_respondido_usuario') }}" class="boton-formulario">Ver
+                formulario</a>
 
-            <article class="adopcion-caja">
-                <div class="separador">
-                    <img src="img/perfil.svg" alt="Foto del animal" class="adopcion-foto">
-                    <p>Terry</p>
-                </div>
-                <a href="formulario_adopcion_respondido_usuario.html" class="boton-formulario">Ver formulario</a>
+            <p class="estado-adopcion">
+                <strong>Estado:</strong> En proceso
+            </p>
+        </article>
 
-                <p class="estado-adopcion">
-                    <strong>Estado:</strong> En proceso
-                </p>
-            </article>
-
-            <article class="adopcion-caja">
-                <div class="separador">
-                    <img src="img/perfil.svg" alt="Foto del animal" class="adopcion-foto">
-                    <p>Terry</p>
-                </div>
-
-                <a href="formulario_adopcion_respondido_usuario.html" class="boton-formulario">Ver formulario</a>
-
-                <p class="estado-adopcion">
-                    <strong>Estado:</strong> En proceso
-                </p>
-            </article>
-
-        </section>
-    </main>
-
-    <footer class="pie">
-        <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
-        <p>Cada huella merece encontrar un hogar.</p>
-    </footer>
-
-</body>
-
-</html>
+    </section>
+</main>
+{% endblock %}

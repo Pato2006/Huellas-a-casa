@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellas a casa</title>
-    {% block styles %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    {% block styles %}
     {% endblock %}
 </head>
 
@@ -16,13 +15,15 @@
     <!-- cabecera con navbar-->
     <header class="cabecera">
         <div class="cabecera-contenido">
-            <a href="index.html"><img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Huellas a casa" id="logo"></a>
+            <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/logo.svg') }}"
+                    alt="Huellas a casa" id="logo"></a>
             <nav>
                 <ul class="menu">
                     <li class="lista"><a href="{{ url_for('catalogo')}}">Adoptar</a></li>
                     <li class="lista"><a href="{{ url_for('formulario_donar')}}">Donar</a></li>
                     <li class="lista"><a href="{{ url_for('contacto')}}">Contactos</a></li>
-                    <li class="lista"><a href="{{ url_for('perfil')}}"><img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Perfil" id="perfil"></a>
+                    <li class="lista"><a href="{{ url_for('perfil')}}"><img
+                                src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Perfil" id="perfil"></a>
                     </li>
                 </ul>
             </nav>

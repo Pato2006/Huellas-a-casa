@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellas a casa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body>
+    <!-- cabecera con navbar-->
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/logo.svg') }}"
+                    alt="Huellas a casa" id="logo"></a>
+            <nav>
+                <ul class="menu">
+                    <li class="lista"><a href="{{ url_for('catalogo_admin')}}">Catalogo</a></li>
+                    <li class="lista"><a href="{{ url_for('cargar_animales')}}">Cargar Animales</a></li>
+                    <li class="lista"><a href="{{ url_for('ver_formulario_adopcion_admin')}}">Ver adopciones</a></li>
+                    <li class="lista"><a href="{{ url_for('formulario_donar_admin')}}">Ver donaciones</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- main -->
+    {% block content %}
+    <main>
+        <!-- foto del index con botones -->
+        <div class="portada">
+            <div class="contenido">
+                <p><strong>CADA HUELLA CUENTA, CADA VIDA IMPORTA</strong></p>
+            </div>
+            <div class="abajo">
+                <button class="boton-index"><a href="{{ url_for('catalogo') }}">ADOPTAR</a></button>
+                <button class="boton-index"><a href="{{ url_for('login') }}">INICIAR SESION</a></button>
+                <button class="boton-index"><a href="{{ url_for('formulario_donar') }}">DONAR</a></button>
+            </div>
+        </div>
+
+        <!-- primer consejo de como adoptar -->
+        <h1 class="color_adoptar">Como adoptar</h1>
+        <div class="comentarios">
+            <div class="rectangulo adoptar">
+                <p class="color_adoptar">Hace click en <strong>Adoptar</strong> y conoce a nuestras mascotas</p>
+            </div>
+            <div class="rectangulo adoptar">
+                <p class="color_adoptar">Crea una <strong>cuenta</strong> o <strong>inicia sesión</strong> y completa el
+                    formulario de adopción</p>
+            </div>
+            <div class="rectangulo adoptar">
+                <p class="color_adoptar">Completa el <strong>formulario</strong> de adopción y espera que te contactemos
+                </p>
+            </div>
+        </div>
+
+        <!-- segundo consejo de como donar -->
+        <h1 class="color_donar">Como donar</h1>
+        <div class="comentarios">
+            <div class="rectangulo donar">
+                <p class="color_donar">Hace click en <strong>Donar</strong> y elige el monto</p>
+            </div>
+            <div class="rectangulo donar">
+                <p class="color_donar">Las donaciones pueden ser <strong>anónimas</strong> o no</p>
+            </div>
+            <div class="rectangulo donar">
+                <p class="color_donar">Con cada una nos <strong>ayudas</strong> a seguir con el refugio</p>
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+    <!-- footer con datos -->
+    <footer class="pie">
+        <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
+        <p>Cada huella merece encontrar un hogar.</p>
+    </footer>
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>

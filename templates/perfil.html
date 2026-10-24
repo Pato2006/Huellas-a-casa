@@ -1,40 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huellas a Casa</title>
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
-
-<body>
-    <header class="cabecera">
-        <div class="cabecera-contenido">
-            <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
-            <nav>
-                <ul class="menu">
-                    <li class="lista"><a href="catalogo.html">Adoptar</a></li>
-                    <li class="lista"><a href="formulario_donar.html">Donar</a></li>
-                    <li class="lista"><a href="contacto.html">Contactos</a></li>
-                    <li class="lista"><a href="perfil.html"><img src="img/perfil.svg" alt="Perfil" id="perfil"></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+{% extends "base.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
     <main class="main-perfil">
         <h1>Tu perfil</h1>
 
         <div class="perfil-caja">
             <div class="perfil-columna-izquierda">
-                <img src="img/perfil.svg" alt="Foto de perfil" class="perfil-avatar">
+                <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto de perfil" class="perfil-avatar">
                 <div class="botones-perfil">
-                    <a href="perfil_mod.html" class="boton-modificar">Modificar perfil</a>
-                    <a href="perfil_form_adop.html" class="boton-modificar">Ver estado de adopciones</a>
-                    <a href="perfil_form_dona.html" class="boton-modificar">Ver estado de donaciones </a>
+                    <a href="{{ url_for('perfil_mod') }}" class="boton-modificar">Modificar perfil</a>
+                    <a href="{{ url_for('perfil_form_adop') }}" class="boton-modificar">Ver estado de adopciones</a>
+                    <a href="{{ url_for('perfil_form_dona') }}" class="boton-modificar">Ver estado de donaciones </a>
                 </div>
             </div>
 
@@ -47,11 +26,4 @@
             </div>
         </div>
     </main>
-    <footer class="pie">
-        <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
-        <p>Cada huella merece encontrar un hogar.</p>
-    </footer>
-
-</body>
-
-</html>
+{% endblock %}
