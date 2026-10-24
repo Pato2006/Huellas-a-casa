@@ -5,28 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellas a casa</title>
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    {% endblock %}
 </head>
 
 <body>
     <!-- cabecera con navbar-->
     <header class="cabecera">
         <div class="cabecera-contenido">
-            <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
+            <a href="index.html"><img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Huellas a casa" id="logo"></a>
             <nav>
                 <ul class="menu">
-                    <li class="lista"><a href="catalogo.html">Adoptar</a></li>
-                    <li class="lista"><a href="formulario_donar.html">Donar</a></li>
-                    <li class="lista"><a href="contacto.html">Contactos</a></li>
-                    <li class="lista"><a href="perfil.html"><img src="img/perfil.svg" alt="Perfil" id="perfil"></a>
+                    <li class="lista"><a href="{{ url_for('catalogo')}}">Adoptar</a></li>
+                    <li class="lista"><a href="{{ url_for('formulario_donar')}}">Donar</a></li>
+                    <li class="lista"><a href="{{ url_for('contacto')}}">Contactos</a></li>
+                    <li class="lista"><a href="{{ url_for('perfil')}}"><img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Perfil" id="perfil"></a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
     <!-- main -->
+    {% block content %}
     <main>
         <!-- foto del index con botones -->
         <div class="portada">
@@ -34,9 +37,9 @@
                 <p><strong>CADA HUELLA CUENTA, CADA VIDA IMPORTA</strong></p>
             </div>
             <div class="abajo">
-                <button class="boton-index"><a href="catalogo.html">ADOPTAR</a></button>
-                <button class="boton-index"><a href="login.html">INICIAR SESION</a></button>
-                <button class="boton-index"><a href="formulario_donar.html">DONAR</a></button>
+                <button class="boton-index"><a href="{{ url_for('catalogo') }}">ADOPTAR</a></button>
+                <button class="boton-index"><a href="{{ url_for('login') }}">INICIAR SESION</a></button>
+                <button class="boton-index"><a href="{{ url_for('formulario_donar') }}">DONAR</a></button>
             </div>
         </div>
 
@@ -70,11 +73,14 @@
             </div>
         </div>
     </main>
+    {% endblock %}
     <!-- footer con datos -->
     <footer class="pie">
         <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
         <p>Cada huella merece encontrar un hogar.</p>
     </footer>
+    {% block scripts %}
+    {% endblock %}
 </body>
 
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellas a casa</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <a href="index.html"><img src="img/logo.svg" alt="Huellas a casa" id="logo"></a>
+            <nav>
+                <ul class="menu">
+                    <li class="lista"><a href="catalogo.html">Adoptar</a></li>
+                    <li class="lista"><a href="formulario_donar.html">Donar</a></li>
+                    <li class="lista"><a href="contacto.html">Contactos</a></li>
+                    <li class="lista"><a href="perfil.html"><img src="img/perfil.svg" alt="Perfil" id="perfil"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="contenedor">
+            <div class="fotoportada">
+                <h1><strong>CON TU AYUDA ELLOS TIENEN UNA SEGUNDA OPORTUNIDAD</strong></h1>
+                <img src="img/perro_adopcion.jpg" alt="" id="fotodonacion">
+            </div>
+            <h1>Formulario de donacion</h1>
+            <!-- comienzo del formulario-->
+            <form action="" method="" id="donar"class="formulario">
+                <div class="columna">
+                    <label for="mensaje" class="texto">¿Queres mandar un mensaje?</label><br>
+                    <textarea type="text" id="mensaje" name="mensaje"> </textarea>
+                    <small id="error-mensaje"></small>
+                </div>
+                <div class="columna">
+                    <label for="monto" class="texto">¿Cual es el monto a donar?</label><br>
+                    <input type="number" id="monto" name="monto" min="0" step="0.01">
+                    <small id="error-monto"></small>
+                </div>
+                <div class="columna boton_comprobante">
+                    <label for="comprobante" class="texto">
+                        <input type="file" id="comprobante" name="comprobante" hidden>
+                        Adjuntar comprobante </label><br>
+                        <small id="error-comprobante"></small>
+
+                </div>
+                <!-- botones de accion-->
+                <div class="botonera">
+                    <button type="submit" class="boton-form">Enviar</button>
+                    <button type="reset" class="boton-form">Limpiar formulario</button>
+                </div>
+            </form>
+            <p id="mensaje-formulario" aria-live="polite"></p>
+            <p>Importante: Este formulario sera revisado para que luego se notifique la verificación de la donación.
+            </p>
+            <h2>Deposito o Transferencia bancaria</h2>
+            <p>Alias: Refugio.Huellasacasa
+                Cbu: 0170999940000025926071</p>
+            <!-- aclaracion-->
+        </div>
+    </main>
+    <footer class="pie">
+        <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
+        <p>Cada huella merece encontrar un hogar.</p>
+    </footer>
+    <script src="js/formulario_donar.js"></script>
+</body>
+
+</html>
