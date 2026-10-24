@@ -18,7 +18,7 @@ const errorDescripcion = document.querySelector("#error-descripcion");
 const errorTipo = document.querySelector("#error-tipo");
 const errorEstado = document.querySelector("#error-estado");
 const errorCastrado = document.querySelector("#error-castrado");
-
+const mensajeFormulario = document.querySelector("#mensaje-formulario");
 
 
 // =========================
@@ -227,9 +227,13 @@ function validarFormulario(evento) {
         castradoValido
     ) {
         evento.preventDefault();
-
-        alert("Datos válidos. Animal modificado.");
+        mensajeFormulario.classList.remove("invalido");
+        mensajeFormulario.classList.add("valido");
+        mensajeFormulario.textContent = "Datos válidos. Animal modificado.";
     } else {
+        mensajeFormulario.classList.remove("valido");
+        mensajeFormulario.classList.add("invalido");
+        mensajeFormulario.textContent = "Datos inválidos. Por favor, corrige los errores.";
         evento.preventDefault();
     }
 }

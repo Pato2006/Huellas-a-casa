@@ -154,3 +154,9 @@ textarea {
     resize: vertical;
     height: 100px;
 }
+
+.foto_detalle {
+    width: 500px;
+    height: auto;
+    display: block;
+}

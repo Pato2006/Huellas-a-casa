@@ -22,6 +22,10 @@ def formulario_adopcion():
 def login():
     return render_template('login.html')
 
+@app.route('/registro')
+def registro():
+    return render_template('registro.html')
+
 @app.route('/formulario_donar')
 def formulario_donar():
     return render_template('formulario_donar.html')
@@ -54,9 +58,37 @@ def perfil_form_dona():
 def formulario_donar_respondido_usuario():
     return render_template('formulario_donar_respondido_usuario.html')
 
-@app.route('/registro')
-def registro():
-    return render_template('registro.html')
+@app.route('/index_admin')
+def index_admin():
+    return render_template('index_admin.html')
+
+@app.route('/catalogo_admin')
+def catalogo_admin():
+    return render_template('catalogo_admin.html')
+
+@app.route('/catalogo_admin/detalle_modificar_admin')
+def detalle_modificar_admin():
+    return render_template('detalle_modificar_admin.html')
+
+@app.route('/cargar_animales')
+def cargar_animales():
+    return render_template('cargar_animales.html')
+
+@app.route('/ver_formulario_adopcion_admin')
+def ver_formulario_adopcion_admin():
+    return render_template('ver_formulario_adopcion_admin.html')
+
+@app.route('/ver_formulario_adopcion_admin/formulario_adopcion_respondido_admin')
+def formulario_adopcion_respondido_admin():
+    return render_template('formulario_adopcion_respondido_admin.html')
+
+@app.route('/formulario_donar_admin')
+def formulario_donar_admin():
+    return render_template('formulario_donar_admin.html')
+
+@app.route('/formulario_donar_admin/formulario_donar_respondido_admin')
+def formulario_donar_respondido_admin():
+    return render_template('formulario_donar_respondido_admin.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
