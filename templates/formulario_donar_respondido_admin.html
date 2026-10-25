@@ -1,28 +1,40 @@
 {% extends "base_admin.html" %}
+
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/formularios.css') }}">
 {% endblock %}
+
 {% block title %}Huellas a casa{% endblock %}
+
 {% block content %}
-    <main>
-        <div class="contenedor">
-            <h1>Formulario de donacion de Maria</h1>
-            <!-- comienzo del formulario-->
-            <form action="" method="" id="donar" class="formulario">
-                <div class="columna">
-                    <label for="mensaje" class="texto">¿Que mensaje nos enviaron?</label><br>
-                    <p class="respuesta" id="mensaje" name="mensaje">Muchas gracias por el gran trabajo que hacen</p>
-                </div>
-                <div class="columna boton_comprobante">
-                    <a href="{{ url_for('static', filename='uploads/comprobante_maria.pdf') }}" download class="texto">
-                        Descargar comprobante
-                    </a>
-                </div>
-                <!-- botones de accion-->
-            </form>
-        </div>
-    </main>
+<main>
+    <div class="contenedor">
+        <h1>
+            Formulario de donación de
+            {{ formulario['nombre'] }} {{ formulario['apellido'] }}
+        </h1>
+
+        <form id="donar" class="formulario">
+            <div class="columna">
+                <label for="mensaje" class="texto">
+                    ¿Qué mensaje nos enviaron?
+                </label><br>
+
+                <p class="respuesta" id="mensaje">
+                    {{ formulario['mensaje'] }}
+                </p>
+            </div>
+
+            <div class="columna boton_comprobante">
+                <a href="{{ url_for('static', filename=formulario['ruta_comp']) }}" download class="texto">
+                    Descargar comprobante
+                </a>
+            </div>
+        </form>
+    </div>
+</main>
 {% endblock %}
+
 {% block scripts %}
-<script src="js/formulario_donar.js"></script>
+<script src="{{ url_for('static', filename='js/formulario_donar.js') }}"></script>
 {% endblock %}
