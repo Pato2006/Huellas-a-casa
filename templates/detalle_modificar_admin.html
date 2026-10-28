@@ -1,0 +1,102 @@
+{% extends "base_admin.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/formularios.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
+<main>
+    <div class="informacion">
+        <div class="contenedor">
+            <img src="{{ url_for('static', filename='img/perro_adopcion_2.jpg') }}" alt="foto del perro" class="foto_detalle">
+            <div class="columna boton_input">
+                <label for="foto" class="texto">
+                    <input type="file" id="foto" name="foto" hidden>
+                    Cambiar foto
+                </label><br>
+            </div>
+
+
+            <form action="" method="" class="formulario">
+                <!-- comienzan las preguntas-->
+
+                <div class="columna">
+                    <label for="nombre" class="texto">Nombre</label><br>
+                    <input type="text" name="nombre" id="nombre" required>
+                    <small id="error-nombre"></small>
+                </div>
+
+                <div class="columna">
+                    <label for="edad" class="texto">Edad</label><br>
+                    <input type="text" name="edad" id="edad" required>
+                    <small id="error-edad"></small>
+                </div>
+
+                <div class="columna">
+                    <label for="peso" class="texto">Peso</label><br>
+                    <input type="text" name="peso" id="peso" required>
+                    <small id="error-peso"></small>
+                </div>
+
+                <div class="columna">
+                    <label for="personalidad" class="texto">Personalidad</label><br>
+                    <input type="text" name="personalidad" id="personalidad" required>
+                    <small id="error-personalidad"></small>
+                </div>
+
+                <div class="columna">
+                    <label for="descripcion" class="texto">Descripción</label><br>
+                    <textarea name="descripcion" id="descripcion" required></textarea>
+                    <small id="error-descripcion"></small>
+
+                </div>
+
+                <div class="columna">
+                    <span class="texto">Tipo</span><br>
+
+                    <input type="radio" id="tipo-perro" name="tipo" value="perro" required>
+                    <label for="tipo-perro" class="texto">Perro</label>
+
+                    <input type="radio" id="tipo-gato" name="tipo" value="gato">
+                    <label for="tipo-gato" class="texto">Gato</label>
+                    <small id="error-tipo"></small>
+                </div>
+                <div class="columna">
+                    <span class="texto">Estado</span><br>
+
+                    <input type="radio" id="estado-adopcion" name="estado" value="adopcion" required>
+                    <label for="estado-adopcion" class="texto">En adopción</label>
+
+                    <input type="radio" id="estado-proceso" name="estado" value="proceso">
+                    <label for="estado-proceso" class="texto">En proceso</label>
+
+                    <input type="radio" id="estado-adoptado" name="estado" value="adoptado">
+                    <label for="estado-adoptado" class="texto">Adoptado</label>
+                    <small id="error-estado"></small>
+                </div>
+                <div class="columna">
+                    <span class="texto">¿Estan castrados?</span><br>
+                    <input type="radio" id="castrado-si" name="castrado" value="si">
+                    <label for="castrado-si" class="texto">Si</label>
+                    <input type="radio" id="castrado-no" name="castrado" value="no">
+                    <label for="castrado-no" class="texto">No</label>
+                    <small id="error-castrado"></small>
+                </div>
+                <small id="mensaje-formulario"></small>
+                <!-- terminan las preguntas-->
+
+                <!-- botones de accion-->
+                <div class="botonera">
+                    <button type="submit" class="boton-form">Modificar</button>
+                    <button type="reset" class="boton-form">Limpiar formulario</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/modificar_animales.js') }}"></script>
+{% endblock %}
+</body>
+
+</html>

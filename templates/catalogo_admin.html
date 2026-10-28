@@ -1,0 +1,103 @@
+{% extends "base_admin.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/catalogo.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
+<main>
+    <div class="catalogo">
+        <div class="lateral_iz" id="panel_filtros">
+            <button class="btn-filtros" id="abrir-filtros">Filtros</button>
+            <div class="filtros-fondo" id="fondo-filtros"></div>
+
+            <div class="filtros">
+                <button class="btn-cerrar-filtros" id="cerrar-filtros" aria-label="Cerrar filtros">✕</button>
+                <h3>Filtros</h3>
+                <div class="filtro_fila">
+                    <p>Nombre:</p>
+                    <div class="lista-catalogo">
+                        <input type="text" id="nombre_animal" placeholder="Buscar por nombre">
+                        <small id="error_nombre"></small>
+                        <button class="catalogo-boton" id="buscar-nombre">Buscar</button>
+                    </div>
+                </div>
+
+                <div class="filtro_fila">
+                    <p>Tipo</p>
+                    <div class="lista-catalogo">
+                        <button class="catalogo-boton" id="gato">Gato</button>
+                        <button class="catalogo-boton" id="perro">Perro</button>
+                    </div>
+                </div>
+
+                <div class="filtro_fila">
+                    <p>Edad</p>
+                    <div class="lista-catalogo">
+                        <button class="catalogo-boton" id="edad-0-4">0 - 4 años</button>
+                        <button class="catalogo-boton" id="edad-4-8">4 - 8 años</button>
+                        <button class="catalogo-boton" id="edad-8-mas">+8 años</button>
+                    </div>
+                </div>
+
+                <div class="filtro_fila">
+                    <p>Tamaño</p>
+                    <div class="lista-catalogo">
+                        <button class="catalogo-boton" id="chico">Chico</button>
+                        <button class="catalogo-boton" id="mediano">Mediano</button>
+                        <button class="catalogo-boton" id="grande">Grande</button>
+                    </div>
+                </div>
+
+                <div class="filtro_fila">
+                    <p>Genero</p>
+                    <div class="lista-catalogo">
+                        <button class="catalogo-boton" id="macho">Macho</button>
+                        <button class="catalogo-boton" id="hembra">Hembra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lateral_dr">
+            <div class="animal">
+                <img src="{{ url_for('static', filename='img/perro_adopcion.jpg') }}" alt="Foto del animal para adoptar">
+                <h2>Terry</h2>
+                <a href="{{ url_for('detalle_modificar_admin') }}" class="boton_catalogo">Editar</a>
+            </div>
+
+            <div class="animal">
+                <img src="{{ url_for('static', filename='img/perro_adopcion_2.jpg') }}" alt="Foto del animal para adoptar">
+                <h2>Luna</h2>
+                <a href="{{ url_for('detalle_modificar_admin') }}" class="boton_catalogo">Editar</a>
+            </div>
+
+            <div class="animal">
+                <img src="{{ url_for('static', filename='img/perro_adopcion_3.jpg') }}" alt="Foto del animal para adoptar">
+                <h2>Max</h2>
+                <a href="{{ url_for('detalle_modificar_admin') }}" class="boton_catalogo">Editar</a>
+            </div>
+
+            <div class="animal">
+                <img src="{{ url_for('static', filename='img/perro_adopcion_4.jpg') }}" alt="Foto del animal para adoptar">
+                <h2>Terry</h2>
+                <a href="{{ url_for('detalle_modificar_admin') }}" class="boton_catalogo">Editar</a>
+            </div>
+
+            <div class="animal">
+                <img src="{{ url_for('static', filename='img/perro_adopcion_5.jpg') }}" alt="Foto del animal para adoptar">
+                <h2>Luna</h2>
+                <a href="{{ url_for('detalle_modificar_admin') }}" class="boton_catalogo">Editar</a>
+            </div>
+
+            <div class="animal">
+                <img src="{{ url_for('static', filename='img/perro_adopcion_6.jpg') }}" alt="Foto del animal para adoptar">
+                <h2>Max</h2>
+                <a href="{{ url_for('detalle_modificar_admin') }}" class="boton_catalogo">Editar</a>
+            </div>
+
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/catalogo.js') }}"></script>
+{% endblock %}

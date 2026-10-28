@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
+    <main class="main-perfil">
+        <h1>Tu perfil</h1>
+
+        <div class="perfil-caja">
+            <div class="perfil-columna-izquierda">
+                <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto de perfil" class="perfil-avatar">
+                <div class="botones-perfil">
+                    <a href="{{ url_for('perfil_mod') }}" class="boton-modificar">Modificar perfil</a>
+                    <a href="{{ url_for('perfil_form_adop') }}" class="boton-modificar">Ver estado de adopciones</a>
+                    <a href="{{ url_for('perfil_form_dona') }}" class="boton-modificar">Ver estado de donaciones </a>
+                </div>
+            </div>
+
+            <div class="perfil-datos">
+                <p><strong>Nombre:</strong> Nombre</p>
+                <p><strong>Apellido:</strong> Apellido</p>
+                <p><strong>Correo electrónico:</strong> ...@gmail.com</p>
+                <p><strong>Número de teléfono:</strong> +54 123456789</p>
+                <p><strong>Fecha de nacimiento:</strong> 01/01/01</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

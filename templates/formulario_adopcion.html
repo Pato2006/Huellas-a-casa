@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/formularios.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
+<main>
+    <div class="contenedor">
+        <!-- comienzo del formulario-->
+        <form action="" method="" id="adoptar" class="formulario">
+            <h1>Formulario de adopcion</h1>
+            <!-- comienzan las preguntas-->
+            <div class="columna">
+                <label for="familia" class="texto">¿Con quien vivis?</label><br>
+                <input type="text" id="familia" name="familia">
+                <small id="error-familia"></small>
+            </div>
+            <div class="columna">
+                <label for="alergias" class="texto">¿Alguno de los integrantes de tu casa tiene alergias?
+                    ¿Cuales?</label><br>
+                <input type="text" id="alergias" name="info_familia">
+                <small id="error-alergias"></small>
+            </div>
+            <div class="columna">
+                <label for="mascotas" class="texto">¿Tenes otras mascotas?¿Cuales y que edad
+                    tienen?</label><br>
+                <input type="text" id="mascotas" name="info_mascotas">
+                <small id="error-mascotas"></small>
+            </div>
+            <div class="columna">
+                <label for="cuidado" class="texto">¿Quien puede cuidarlo en caso de ausentarte?</label><br>
+                <input type="text" id="cuidado" name="cuidado_mascota">
+                <small id="error-cuidado"></small>
+            </div>
+
+            <div class="columna">
+                <label for="tiempo_solo" class="texto">¿Cuanto tiempo va a estar el animal solo?</label><br>
+                <input type="text" id="tiempo_solo" name="tiempo_solo_mascota">
+                <small id="error-solo"></small>
+            </div>
+            <div class="columna">
+                <label for="hogar" class="texto">¿Donde vivis?</label><br>
+                <input type="text" id="hogar" name="localidad_dueno">
+                <small id="error-hogar"></small>
+            </div>
+            <!-- terminan las preguntas-->
+            <!-- botones de accion-->
+            <div class="botonera">
+                <button type="submit" class="boton-form">Enviar propuesta</button>
+                <button type="reset" class="boton-form">Limpiar formulario</button>
+            </div>
+        </form>
+        <p id="mensaje-formulario" aria-live="polite"></p>
+        <p>Importante: Este formulario sera revisado y puede ser aprobado o desaprobado, completarlo no garantiza la
+            adopcion</p>
+        <!-- aclaracion-->
+    </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/formulario_adopcion.js') }}"></script>
+{% endblock %}

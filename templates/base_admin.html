@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Huellas a casa{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body>
+    <!-- cabecera con navbar-->
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <a href="{{ url_for('index_admin')}}"><img src="{{ url_for('static', filename='img/logo.svg') }}"
+                    alt="Huellas a casa" id="logo"></a>
+            <nav>
+                <ul class="menu">
+                    <li class="lista"><a href="{{ url_for('catalogo_admin')}}">Catalogo</a></li>
+                    <li class="lista"><a href="{{ url_for('cargar_animales')}}">Cargar Animales</a></li>
+                    <li class="lista"><a href="{{ url_for('ver_formulario_adopcion_admin')}}">Ver adopciones</a></li>
+                    <li class="lista"><a href="{{ url_for('formulario_donar_admin')}}">Ver donaciones</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- main -->
+    {% block content %}
+    {% endblock %}
+    <!-- footer con datos -->
+    <footer class="pie">
+        <p>© 2026 Huellas a Casa | Refugio animal 🐾</p>
+        <p>Cada huella merece encontrar un hogar.</p>
+    </footer>
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>

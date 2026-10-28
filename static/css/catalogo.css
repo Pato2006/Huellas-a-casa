@@ -1,0 +1,150 @@
+.catalogo {
+    display: flex;
+    width: 100%;
+}
+
+/* div principal */
+
+.lateral_iz {
+    width: 13%;
+    background-color: #c8d1d9;
+}
+
+/* donde estan los filtros, es aside */
+
+.filtros {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+/* div que contiene los botones de cada filtro */
+
+.filtros h3 {
+    font-size: 26px;
+}
+
+.filtro_fila {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* configuracion de cada fila */
+
+
+.lista-catalogo {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* las opciones de cada filtro */
+
+
+.catalogo-boton {
+    background-color: #fffaf6;
+    color: #5e4e3f;
+    border: 1px solid #dfcdbd;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.catalogo-boton:hover {
+    background-color: #e8d8ca;
+}
+.catalogo-boton-activo {
+    background-color: #e8d8ca;
+}
+
+#nombre_animal {
+    width: 115px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* el input para buscar por nombre */
+
+#buscar-nombre {
+    margin-top: 5px;
+}
+
+/* 2da clase para el div especial de buscar por nombre */
+
+.lateral_dr {
+    width: 87%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* aside de la derecha  */
+
+.animal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    width: 300px;
+}
+
+/* el div de cada animal */
+
+.animal h2 {
+    color: #5e4e3e;
+}
+
+.animal img {
+    width: 300px;
+    height: 300px;
+}
+
+.boton_catalogo {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #5e4e3f;
+    font-size: 18px;
+    color: #f5eae2;
+    text-decoration: none;
+    text-align: center;
+}
+
+#lista_filtros {
+    list-style: none;
+}
+
+.filtro-lista {
+    display: inline-block;
+    background-color: #5e4e3f;
+    color: #f5eae2;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+
+#filtro_unico {
+    width: 120px;
+}
+
+.btn-filtros,
+.btn-cerrar-filtros,
+.filtros-fondo {
+    display: none;
+}
+
+
+#panel_filtros {
+    display: flex;
+    justify-content: center;
+}

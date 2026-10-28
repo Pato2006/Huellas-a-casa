@@ -1,0 +1,665 @@
+/* Index y layout */
+
+@media (max-width: 1000px) {
+
+    .cabecera {
+        height: auto;
+    }
+
+    /* mantengo altura */
+
+    .cabecera-contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        /* div de el navbar en columnas, centradas y con espacio */
+    }
+
+    .portada {
+        height: auto;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+
+    /* hago la foto del fondo que se adapte a las dimensiones */
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        /* el nav en fila, centrado y con espacio entre los items */
+    }
+
+    .lista {
+        padding: 5px;
+        margin-left: 25px;
+        /* cada item del nav con margen y relleno distinto */
+    }
+
+    .lista a {
+        font-size: 20px;
+        width: auto;
+        /* el texto de la lista con otra fuente */
+    }
+
+    .abajo {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .boton-index {
+        margin: 20px;
+        width: 100px;
+        /* botones de adoptar donar con tamaño y margen distinto */
+    }
+
+    .boton-index a {
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .contenido p {
+        font-size: 40px;
+        /* el texto de la portada con otra fuente */
+    }
+
+    .centrar {
+        font-size: 40px;
+        /* solo cambio fuente al h1 ya centrado */
+    }
+
+    .comentarios {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        gap: 25px;
+        /* le doy separacion entre los divs de rectangulos */
+        margin-bottom: 60px;
+        /* div de los consejos de como adoptar y donar en columnas, centradas y con espacio*/
+    }
+
+
+    .rectangulo {
+        width: 80%;
+        max-width: 250px;
+        min-height: 100px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* le doy el 80% del ancho, todo en fila centrado */
+    }
+
+    .pie p {
+        font-size: 16px;
+        padding-top: 40px;
+        /* cambio tamaño de fuente del footer */
+    }
+}
+
+/*
+@media (max-width: 600px) {
+    .portada {
+        height: auto;
+        padding: 20px;
+        background-position: center;
+    }
+    /* caso especial para menos de 600px 
+}
+*/
+/* Contacto */
+
+@media (max-width: 1000px) {
+    .centrar-texto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* pongo todo en columnas y al centro */
+    }
+
+    .centrar-texto h1 {
+        font-size: 24px;
+        /* al h1 de ese contenedor cambio fuente */
+    }
+
+    .centrar-texto p {
+        font-size: 20px;
+        width: auto;
+        /* al p de ese contenedor cambio tamao y tiene ancho segun la pantalla */
+    }
+
+    .centrar-texto img {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        /* a la imagen de ese contenedor le doy margen y ancho */
+    }
+
+    .boton-contacto {
+        width: 120px;
+        margin: 60px;
+        /* cambio margen y tamaño del boton */
+    }
+
+    .boton-contacto a {
+        font-size: 20px;
+        /* cambio fuente del texto del boton */
+    }
+
+    .nuestros-datos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px
+            /* pongo todo en columnas y centro con un margen */
+    }
+
+    /* div de donde estamos y como contactarnos en columnas y centrado, cambio tamaño de 
+    fuente tambien */
+    .lateral {
+        margin-left: 40px;
+        width: 100%;
+    }
+
+    .lateral h2 {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    .lateral p {
+        margin-top: 20px;
+        margin-left: 10px;
+        font-size: 20px;
+    }
+
+    /* sobre nuestras redes sociales, cambio tamaño de fuente y de imagenes */
+    .redes h2 {
+        font-size: 24px;
+    }
+
+    .redes img {
+        width: 40px;
+    }
+}
+
+
+/* Formulario */
+@media (max-width: 1000px) {
+
+    /* formulario adoptar */
+    .contenedor {
+        padding: 0;
+    }
+
+    .formulario {
+        padding: 10px;
+        width: auto;
+
+    }
+
+    .botonera {
+        margin-left: 0px;
+    }
+
+    .contorno {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* pongo todo en columas */
+    .boton-form {
+        width: 150px;
+        font-size: 16px;
+    }
+
+    #fotodonacion {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .formulario {
+        width: 90%;
+        box-sizing: border-box;
+    }
+
+
+    /* hago que la imagen del formulario se adapte a las dimensiones */
+
+}
+
+/* Formulario donación */
+@media (max-width: 1000px) {}
+
+/* Formulario Admin */
+
+@media (max-width: 1000px) {
+
+    .tarjetas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* cada tarjeta en columas */
+
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* todo en columnas (uno abajo del otro) y al inicio*/
+
+    .informacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    /* los datos tambien en columna y centrados */
+
+    .informacion img {
+        margin-right: 0px;
+        margin-bottom: 25px;
+        /* saco margen de la imagen y le doy uno de abajo para separar de los datos */
+    }
+
+    .datos_animal {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    /* cambio fuente a los datos */
+
+    .botones {
+        align-items: center;
+        margin-right: 0px;
+        margin-left: 40px
+    }
+
+    /* los botones en columna y con otro margen */
+
+    .eleccion {
+        flex-direction: row;
+    }
+
+    /* los botones de aceptar y rechazar en fila */
+
+    .boton_adopcion {
+        width: 200px;
+        margin-top: 10px;
+    }
+
+    /* le cambio tamaño y margen a los botones */
+
+    .rechazar,
+    .aceptar {
+        margin-bottom: 20px;
+    }
+}
+
+/* Catalogo */
+
+@media (max-width: 1000px) {
+
+    .catalogo {
+        flex-direction: column;
+    }
+
+    /* barra finita con solo el boton */
+    .lateral_iz {
+        flex: none;                 /* anula el flex: 0 0 260px de escritorio */
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        border-right: none;
+        border-bottom: 2px solid #c8d1d9;
+    }
+
+    .btn-filtros {
+        display: inline-block;
+        background-color: #5e4e3f;
+        color: #f5eae2;
+        border: none;
+        border-radius: 20px;
+        padding: 8px 22px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-filtros:hover {
+        background-color: #654C32;
+    }
+
+    /* panel lateral flotante (eje Z) */
+    .filtros {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: min(320px, 85vw);
+        box-sizing: border-box;
+        overflow-y: auto;
+        background-color: #f5eae2;
+        z-index: 1001;
+        transform: translateX(-100%);   /* escondido a la izquierda */
+        transition: transform 1s ease;
+        box-shadow: 4px 0 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .lateral_iz.abierto .filtros {
+        transform: translateX(0);
+    }
+
+    /* fondo oscuro detras del panel */
+    .filtros-fondo {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.45);
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .lateral_iz.abierto .filtros-fondo {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .btn-cerrar-filtros {
+        display: block;
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        background: none;
+        border: none;
+        font-size: 22px;
+        color: #5e4e3e;
+        cursor: pointer;
+    }
+
+    #filtro_unico {
+        width: auto;                    /* antes 120px */
+    }
+
+    /* catalogo */
+    .lateral_dr {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .animal {
+        width: 200px;
+        padding: 0;
+    }
+
+    .animal img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .boton_catalogo {
+        width: 180px;
+    }
+}
+
+/* Login y registro*/
+@media (max-width: 1000px) {
+    .login-contenido {
+        margin: 0px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Login y registro*/
+
+@media (max-width: 1000px) {
+    .perfil-caja {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+/* Detalle Modificar Admin */
+@media (max-width: 1000px) {
+
+    .informacion {
+        grid-template-columns: 1fr;
+        padding: 0 18px;
+        width: 90%;
+    }
+
+    .div_detalle_iz,
+    .div_detalle_dr {
+        width: 100%;
+    }
+
+    .foto_detalle {
+        width: 100%;
+        height: auto;
+    }
+
+    .label_subir_foto {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Detalle del animal */
+@media (max-width: 1000px) {
+
+    .detalle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .informacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .informacion img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .datos {
+        width: 100%;
+        text-align: center;
+    }
+
+    .datos h1 {
+        font-size: 40px;
+        margin: 10px 0;
+    }
+
+    .datos p {
+        width: 100%;
+        max-width: 450px;
+        font-size: 18px;
+        margin: 10px auto;
+    }
+
+    .boton_adoptar {
+        width: 150px;
+        margin: 30px auto;
+    }
+
+    /* Requisitos */
+    .requisitos {
+        width: 90%;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .requisitos h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .requisitos-contenido {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .requisitos-contenido p {
+        font-size: 17px;
+    }
+}
+
+/* Perfil */
+
+/* ===== RESPONSIVE DEL PERFIL ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .main-perfil {
+        padding: 60px 30px;
+    }
+
+    .perfil-caja {
+        max-width: 650px;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .perfil-columna-izquierda {
+        flex: 0 0 170px;
+    }
+
+    .perfil-datos p {
+        font-size: 15px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 700px) {
+    .main-perfil {
+        padding: 35px 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .perfil-caja {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        max-width: 100%;
+        padding: 25px 20px;
+        border-radius: 18px;
+        box-sizing: border-box;
+    }
+
+    .perfil-columna-izquierda {
+        flex: none;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .perfil-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .botones-perfil {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .boton-modificar {
+        width: 100%;
+        min-height: 44px;
+        padding: 12px;
+        margin-top: 0;
+        font-size: 13px;
+    }
+
+    .perfil-datos {
+        align-self: auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding-top: 20px;
+        border-top: 1px solid #ddcabb;
+    }
+
+    .perfil-datos p {
+        font-size: 14px;
+        margin-bottom: 16px;
+        overflow-wrap: anywhere;
+    }
+
+    .perfil-datos input {
+        box-sizing: border-box;
+        min-width: 0;
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .boton-guardar {
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 12px 18px;
+    }
+
+    #mensaje-formulario {
+        padding: 20px 10px;
+    }
+}
+
+/* Estado adopciones */
+
+@media (max-width: 768px) {
+    .main-perfil {
+        padding: 40px 20px;
+    }
+
+    .perfil-caja {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .adopcion-foto {
+        width: 75px;
+        height: 75px;
+    }
+
+    .boton-formulario {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .estado-adopcion {
+        font-size: 14px;
+    }
+}

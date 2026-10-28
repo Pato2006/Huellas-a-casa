@@ -1,0 +1,211 @@
+.main-perfil {
+    background-color: #b5c3c4;
+    padding: 100px;
+}
+
+h1 {
+    color: #654C32;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Caja del perfil */
+
+.perfil-caja {
+    background-color: #f5eae2;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    text-align: left;
+    box-shadow: 0 4px 12px #4b4747;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Botones del perfil */
+
+.boton-modificar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    margin-top: 0;
+    background-color: #654C32;
+    color: #f5eae2;
+    border: 1px solid #654C32;
+    border-radius: 25px;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.boton-guardar {
+    background-color: #654C32;
+    color: #f5eae2;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 13px;
+    width: 150px;
+    margin-top: 25px;
+}
+
+/* Datos del perfil */
+
+.perfil-datos p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #654C32;
+}
+
+.perfil-datos label {
+    color: #654C32;
+}
+
+.perfil-datos input {
+    border: none;
+    border-bottom: 1px solid #654C32;
+    background: transparent;
+    font-size: 16px;
+    color: #654C32;
+    padding: 2px 4px;
+    min-width: 150px;
+    width: 100%;
+}
+
+.perfil-datos input.invalido {
+    border-bottom: 2px solid #b42318;
+}
+
+.perfil-datos small {
+    display: block;
+    color: #b42318;
+    margin-top: 4px;
+}
+
+/* Mensajes del formulario */
+
+.perfil-columna-izquierda small.invalido {
+    display: block;
+    color: #b42318;
+    margin-top: 4px;
+}
+
+.perfil-columna-izquierda small.valido {
+    display: block;
+    color: #047857;
+    margin-top: 4px;
+}
+
+#mensaje-formulario {
+    text-align: center;
+    padding: 40px;
+    color: #b42318;
+}
+
+#mensaje-formulario.valido {
+    color: #047857;
+}
+
+/* Columna izquierda del perfil */
+
+.perfil-columna-izquierda {
+    flex: 0 0 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Foto de perfil */
+
+.perfil-avatar {
+    width: 110px;
+    height: 110px;
+    padding: 12px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Grupo de botones del perfil */
+
+.botones-perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Contenedor de adopciones */
+
+.adopciones {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Tarjetas de adopción */
+
+.adopcion-caja {
+    background-color: #f5eae2;
+    padding: 25px 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    box-shadow: 0 4px 12px #4b4747;
+}
+
+/* Foto del animal */
+
+.adopcion-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
+
+/* Botón para ver el formulario */
+
+.boton-formulario {
+    background-color: #654C32;
+    color: #f5eae2;
+    border: 1px solid #654C32;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.boton-formulario:hover {
+    background-color: #4b3825;
+}
+
+/* Estado de adopción */
+
+.estado-adopcion {
+    color: #654C32;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+}
+
+.separador {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.separador p{
+    margin-top: 10px;
+    font-size: 16px;
+}

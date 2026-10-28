@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/detalle.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
+<main>
+    <!-- cabecera con el header y el nav general con todos los datos-->
+    <div class="detalle">
+        <div class="informacion">
+            <img src="{{ url_for('static', filename='img/perro_adopcion.jpg') }}" alt="Foto del animal">
+
+            <div class="datos">
+                <h1>TERRY</h1>
+                <p> Buena con las personas y súper compañera, cariñosa. 5 años. 18 kilos. Tamaño mediano</p>
+                <a href="{{ url_for('formulario_adopcion') }}" class="boton_adoptar">ADOPTAR</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="requisitos">
+        <h2>REQUISITOS</h2>
+        <div class="requisitos-contenido">
+            <p> Es requisito excluyente ser mayor de 21 años.</p>
+            <p>Las adopciones se tratan solamente con el adoptante final, no mediante terceros.</p>
+            <p>No damos en adopción cachorritos menores de 5 meses cuando hay niños menores de 6 años en la casa.</p>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

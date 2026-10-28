@@ -1,0 +1,66 @@
+{% extends "base_admin.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/formularios.css') }}">
+{% endblock %}
+
+{% block title %}Huellas a casa{% endblock %}
+
+{% block content %}
+<main>
+    <div class="contenedor">
+
+
+        <h1>
+            Formulario de adopción de Mateo
+        </h1>
+
+        <form id="adoptar" class="formulario">
+
+            <div class="columna">
+                <label for="familia" class="texto">¿Con quién vivís?</label><br>
+                <p class="respuesta" id="familia">Con mis papas</p>
+            </div>
+
+            <div class="columna">
+                <label for="alergias" class="texto">
+                    ¿Alguno de los integrantes de tu casa tiene alergias? ¿Cuáles?
+                </label><br>
+                <p class="respuesta" id="alergias">Ninguna</p>
+            </div>
+
+            <div class="columna">
+                <label for="mascotas" class="texto">
+                    ¿Tenés otras mascotas? ¿Cuáles y qué edad tienen?
+                </label><br>
+                <p class="respuesta" id="mascotas">4 gatos</p>
+            </div>
+
+            <div class="columna">
+                <label for="cuidado" class="texto">
+                    ¿Quién puede cuidarlo en caso de ausentarte?
+                </label><br>
+                <p class="respuesta" id="cuidado">Mi mama</p>
+            </div>
+
+            <div class="columna">
+                <label for="tiempo_solo" class="texto">
+                    ¿Cuánto tiempo va a estar el animal solo?
+                </label><br>
+                <p class="respuesta" id="tiempo_solo">Solo 1 hora</p>
+            </div>
+
+            <div class="columna">
+                <label for="hogar" class="texto">¿Dónde vivís?</label><br>
+                <p class="respuesta" id="hogar">En un Ph</p>
+            </div>
+
+        </form>
+
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/formulario_adopcion.js') }}"></script>
+{% endblock %}

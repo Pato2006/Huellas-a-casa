@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
+<main>
+
+    <div class="login-contenido">
+        <form id="login" action="#" method="post">
+            <legend>Iniciar Sesión</legend>
+
+            <p>
+                <label for="correo">Correo electrónico</label><br>
+                <input type="email" id="correo" name="correo">
+                <small id="error-correo"></small>
+            </p>
+
+            <p>
+                <label for="contraseña">Contraseña</label><br>
+                <input type="password" id="contraseña" name="contraseña">
+                <small id="error-contraseña"></small>
+            </p>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p id="mensaje-formulario" aria-live="polite"></p>
+
+        <a href="{{ url_for('registro') }}" class="boton-regis">Crear cuenta</a>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}

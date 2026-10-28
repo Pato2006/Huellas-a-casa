@@ -1,0 +1,83 @@
+{% extends "base_admin.html" %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/formularios.css') }}">
+{% endblock %}
+{% block title %}Huellas a casa{% endblock %}
+{% block content %}
+<main>
+    <div class="contenedor">
+        <h1>Cargar Animal</h1>
+        <!-- comienzo del formulario-->
+        <form action="" method="" id="cargar" class="formulario">
+            <!-- comienzan las preguntas-->
+            <div class="columna">
+                <label for="nombre" class="texto">Nombre</label><br>
+                <input type="text" id="nombre" name="nombre">
+                <small id="error-nombre"></small>
+            </div>
+
+            <div class="columna">
+                <label for="edad" class="texto">Edad</label><br>
+                <input type="text" id="edad" name="edad">
+                <small id="error-edad"></small>
+            </div>
+
+            <div class="columna">
+                <label for="peso" class="texto">Peso</label><br>
+                <input type="text" id="peso" name="peso">
+                <small id="error-peso"></small>
+            </div>
+
+            <div class="columna">
+                <label for="personalidad" class="texto">Personalidad</label><br>
+                <input type="text" id="personalidad" name="personalidad">
+                <small id="error-personalidad"></small>
+            </div>
+            <div class="columna">
+                <label for="descripcion" class="texto">Descripcion</label><br>
+                <textarea name="descripcion" id="descripcion"></textarea>
+                <small id="error-descripcion"></small>
+            </div>
+            <div class="columna">
+                <span class="texto">Tipo</span><br>
+
+                <input type="radio" name="tipo" value="perro">
+                <label for="perro" class="texto">Perro</label>
+
+                <input type="radio" name="tipo" value="gato">
+                <label for="gato" class="texto">Gato</label>
+                <small id="error-tipo"></small>
+            </div>
+
+            <div class="columna">
+                <span class="texto">¿Estan castrados?</span><br>
+                <input type="radio" id="castrado-si" name="castrado" value="si">
+                <label for="castrado-si" class="texto">Si</label>
+                <input type="radio" id="castrado-no" name="castrado" value="no">
+                <label for="castrado-no" class="texto">No</label>
+                <small id="error-castrado"></small>
+            </div>
+
+
+            <div class="columna boton_file">
+                <label for="comprobante" class="texto">
+                    <input type="file" id="comprobante" name="comprobante" hidden>
+                    Foto del animal
+                </label><br>
+                <small id="error-comprobante"></small>
+            </div>
+
+            <!-- terminan las preguntas-->
+            <!-- botones de accion-->
+            <div class="botonera">
+                <button type="submit" class="boton-form">Cargar Animal</button>
+                <button type="reset" class="boton-form">Limpiar formulario</button>
+            </div>
+        </form>
+        <p id="mensaje-formulario" aria-live="polite"></p>
+    </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/cargar_animales.js') }}"></script>
+{% endblock %}

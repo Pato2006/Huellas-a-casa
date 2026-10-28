@@ -1,0 +1,40 @@
+{% extends "base_admin.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/formularios.css') }}">
+{% endblock %}
+
+{% block title %}Huellas a casa{% endblock %}
+
+{% block content %}
+<main>
+    <div class="contenedor">
+        <h1>
+            Formulario de donación de
+            {{ formulario['nombre'] }} {{ formulario['apellido'] }}
+        </h1>
+
+        <form id="donar" class="formulario">
+            <div class="columna">
+                <label for="mensaje" class="texto">
+                    ¿Qué mensaje nos enviaron?
+                </label><br>
+
+                <p class="respuesta" id="mensaje">
+                    {{ formulario['mensaje'] }}
+                </p>
+            </div>
+
+            <div class="columna boton_comprobante">
+                <a href="{{ url_for('static', filename=formulario['ruta_comp']) }}" download class="texto">
+                    Descargar comprobante
+                </a>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/formulario_donar.js') }}"></script>
+{% endblock %}
