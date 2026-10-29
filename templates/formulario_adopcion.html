@@ -40,8 +40,13 @@
                 <small id="error-solo"></small>
             </div>
             <div class="columna">
-                <label for="hogar" class="texto">¿Donde vivis?</label><br>
-                <input type="text" id="hogar" name="localidad_dueno">
+                <span class="texto">¿Donde vivis?</span><br>
+                <input type="radio" id="hogar-casa" name="localidad_dueno" value="casa">
+                <label for="hogar-casa" class="texto">Casa</label>
+                <input type="radio" id="hogar-departamento" name="localidad_dueno" value="departamento">
+                <label for="hogar-departamento" class="texto">Departamento</label>
+                <input type="radio" id="hogar-ph" name="localidad_dueno" value="ph">
+                <label for="hogar-ph" class="texto">PH</label>
                 <small id="error-hogar"></small>
             </div>
             <!-- terminan las preguntas-->
