@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2026 a las 13:04:41
+-- Tiempo de generación: 29-10-2026 a las 13:57:35
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.1.25
 
@@ -160,7 +160,7 @@ ALTER TABLE `adopciones`
 -- AUTO_INCREMENT de la tabla `donaciones`
 --
 ALTER TABLE `donaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `formularios`
