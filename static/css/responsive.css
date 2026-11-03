@@ -350,11 +350,10 @@
         top: 0;
         left: 0;
         height: 100%;
-        width: min(320px, 85vw);
+        width: 320px;
         box-sizing: border-box;
-        overflow-y: auto;
         background-color: #f5eae2;
-        z-index: 1001;
+        z-index: 1;
         transform: translateX(-100%);   /* escondido a la izquierda */
         transition: transform 1s ease;
         box-shadow: 4px 0 16px rgba(0, 0, 0, 0.25);
@@ -370,7 +369,7 @@
         position: fixed;
         inset: 0;
         background-color: rgba(0, 0, 0, 0.45);
-        z-index: 1000;
+        z-index: 0;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease;
