@@ -363,23 +363,6 @@
         transform: translateX(0);
     }
 
-    /* fondo oscuro detras del panel */
-    .filtros-fondo {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.45);
-        z-index: 0;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-    }
-
-    .lateral_iz.abierto .filtros-fondo {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
     .btn-cerrar-filtros {
         display: block;
         position: absolute;
@@ -393,7 +376,7 @@
     }
 
     #filtro_unico {
-        width: auto;                    /* antes 120px */
+        width: auto;  
     }
 
     /* catalogo */
