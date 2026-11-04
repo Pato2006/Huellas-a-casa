@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2026 a las 21:19:12
+-- Tiempo de generación: 04-11-2026 a las 20:57:03
 -- Versión del servidor: 10.11.16-MariaDB
 -- Versión de PHP: 8.5.12
 
@@ -44,7 +44,8 @@ INSERT INTO `adopciones` (`id`, `formulario_id`, `mascota_id`, `estado`) VALUES
 (3, 3, 8, 'Rechazado'),
 (4, 4, 6, 'En proceso'),
 (5, 5, 7, 'Aceptado'),
-(6, 6, 8, 'Rechazado');
+(6, 6, 8, 'Rechazado'),
+(7, 7, 6, 'En proceso');
 
 -- --------------------------------------------------------
 
@@ -219,7 +220,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `adopciones`
 --
 ALTER TABLE `adopciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `donaciones`
