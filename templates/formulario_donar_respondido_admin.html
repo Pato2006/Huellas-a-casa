@@ -9,24 +9,18 @@
 {% block content %}
 <main>
     <div class="contenedor">
-        <h1>
-            Formulario de donación de
-            {{ formulario['nombre'] }} {{ formulario['apellido'] }}
-        </h1>
-
+        <h1>Formulario de donacion de Maria</h1>
         <form id="donar" class="formulario">
             <div class="columna">
                 <label for="mensaje" class="texto">
                     ¿Qué mensaje nos enviaron?
                 </label><br>
 
-                <p class="respuesta" id="mensaje">
-                    {{ formulario['mensaje'] }}
-                </p>
+                <p class="respuesta" id="mensaje" name="mensaje">Muchas gracias por el gran trabajo que hacen</p>
             </div>
 
             <div class="columna boton_comprobante">
-                <a href="{{ url_for('static', filename=formulario['ruta_comp']) }}" download class="texto">
+                <a href="{{ url_for('static', filename='uploads/comprobante_maria.pdf') }}" download class="texto">
                     Descargar comprobante
                 </a>
             </div>

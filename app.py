@@ -90,54 +90,11 @@ def formulario_adopcion_respondido_admin():
 
 @app.route('/formulario_donar_admin')
 def formulario_donar_admin():
-    sql = "SELECT donaciones.id, donaciones.monto, usuarios.nombre, usuarios.apellido, usuarios.ruta_img, donaciones.ruta_comp FROM donaciones INNER JOIN usuarios ON donaciones.usuario_id = usuarios.id"
-    try:
-        conexion = mysql.connector.connect(
-                host=CONFIG_DB["host"],
-                user=CONFIG_DB["user"],
-                password=CONFIG_DB["password"],
-                database=CONFIG_DB["database"]
-            )
-        cursor = conexion.cursor(dictionary=True)
-        cursor.execute(sql)
-        donaciones = cursor.fetchall()
-        conexion.commit()
-    except mysql.connector.Error as error:
-        if conexion is not None:
-            conexion.rollback()
-        print("No se pudo actualizar:", error)
-    finally:
-        if cursor is not None:
-            cursor.close()
-        if conexion is not None and conexion.is_connected():
-            conexion.close()
-            return render_template('formulario_donar_admin.html', donaciones=donaciones)
+    return render_template('formulario_donar_admin.html')
 
 @app.route('/formulario_donar_admin/formulario_donar_respondido_admin')
 def formulario_donar_respondido_admin():
-    donacion_id = request.args.get('donacion_id', type=int)
-    sql = "SELECT * FROM donaciones INNER JOIN usuarios ON donaciones.usuario_id = usuarios.id WHERE donaciones.id = %s"
-    try:
-        conexion = mysql.connector.connect(
-                host=CONFIG_DB["host"],
-                user=CONFIG_DB["user"],
-                password=CONFIG_DB["password"],
-                database=CONFIG_DB["database"]
-            )
-        cursor = conexion.cursor(dictionary=True)
-        cursor.execute(sql, (donacion_id,))
-        formulario_donar_respondido = cursor.fetchone()
-        conexion.commit()
-    except mysql.connector.Error as error:
-        if conexion is not None:
-            conexion.rollback()
-        print("No se pudo actualizar:", error)
-    finally:
-        if cursor is not None:
-            cursor.close()
-        if conexion is not None and conexion.is_connected():
-            conexion.close()
-        return render_template('formulario_donar_respondido_admin.html',formulario=formulario_donar_respondido)
+    return render_template('formulario_donar_respondido_admin.html')
     
 if __name__ == "__main__":
     app.run(debug=True)
