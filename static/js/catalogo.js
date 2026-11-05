@@ -2,10 +2,10 @@ const botones = document.querySelectorAll(".lista-catalogo button");
 const nombre = document.querySelector("#nombre_animal");
 const boton_nombre = document.querySelector("#buscar-nombre")
 const borrar_mascota = document.querySelectorAll(".borrar")
+
 const panelFiltros = document.getElementById("panel_filtros");
 const abrir_filtro = document.getElementById("abrir-filtros")
 const cerrar_filtro = document.getElementById("cerrar-filtros")
-const fondo_filtro = document.getElementById("fondo-filtros")
 
 function boton_seleccionado() {
     this.classList.toggle("catalogo-boton-activo")
@@ -37,7 +37,5 @@ function iniciarValidacion() {
     }
     abrir_filtro.addEventListener("click", cambiar_filtro);
     cerrar_filtro.addEventListener("click", cambiar_filtro);
-    fondo_filtro.addEventListener("click", cambiar_filtro);
-
 }
 iniciarValidacion()

@@ -321,12 +321,8 @@
 
     /* barra finita con solo el boton */
     .lateral_iz {
-        flex: none;                 /* anula el flex: 0 0 260px de escritorio */
         width: 100%;
         padding: 10px 20px;
-        box-sizing: border-box;
-        border-right: none;
-        border-bottom: 2px solid #c8d1d9;
     }
 
     .btn-filtros {
@@ -350,8 +346,7 @@
         top: 0;
         left: 0;
         height: 100%;
-        width: 320px;
-        box-sizing: border-box;
+        width: 300px;
         background-color: #f5eae2;
         z-index: 1;
         transform: translateX(-100%);   /* escondido a la izquierda */
@@ -361,23 +356,6 @@
 
     .lateral_iz.abierto .filtros {
         transform: translateX(0);
-    }
-
-    /* fondo oscuro detras del panel */
-    .filtros-fondo {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.45);
-        z-index: 0;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-    }
-
-    .lateral_iz.abierto .filtros-fondo {
-        opacity: 1;
-        pointer-events: auto;
     }
 
     .btn-cerrar-filtros {
@@ -393,7 +371,7 @@
     }
 
     #filtro_unico {
-        width: auto;                    /* antes 120px */
+        width: auto;  
     }
 
     /* catalogo */
