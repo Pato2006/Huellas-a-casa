@@ -7,6 +7,10 @@ from utilidades._mysql_db import selectDB, insertDB, updateDB, deleteDB
 from utilidades.file_utils import uploadFile
 from utilidades.request_utils import getRequest
 
+from modulos.catalogo import (
+    listas_animales,
+    ver_animal
+)
 
 app = Flask(__name__)
 
@@ -16,11 +20,7 @@ def index():
 
 @app.route('/catalogo')
 def catalogo():
-    consultas = selectDB(
-        CONFIG_DB,
-        "SELECT id,nombre,ruta_img FROM mascotas",
-        dictionary=True,
-    )
+    consultas = listas_animales()
     respuesta = None
     if consultas is None:
         respuesta = "No se pudieron consultar las especialidades.", 500
@@ -30,11 +30,7 @@ def catalogo():
 
 @app.route('/catalogo/<int:id>/detalle/')
 def detalle(id):
-    consultas = selectDB(
-        CONFIG_DB,
-        "SELECT * FROM mascotas WHERE id = %s",(id,),
-        dictionary=True,
-    )
+    consultas = ver_animal(id)
     respuesta = None
     if consultas is None:
         respuesta = "No se pudieron consultar las especialidades.", 500
@@ -94,7 +90,13 @@ def index_admin():
 
 @app.route('/catalogo_admin')
 def catalogo_admin():
-    return render_template('catalogo_admin.html')
+    consultas = listas_animales()
+    respuesta = None
+    if consultas is None:
+        respuesta = "No se pudieron consultar las especialidades.", 500
+    else:
+        respuesta = render_template('catalogo_admin.html', consultas=consultas, error="")
+    return respuesta
 
 @app.route('/catalogo_admin/detalle_modificar_admin')
 def detalle_modificar_admin():
