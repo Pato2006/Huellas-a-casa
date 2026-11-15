@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2026 a las 20:57:03
+-- Tiempo de generación: 15-11-2026 a las 15:11:16
 -- Versión del servidor: 10.11.16-MariaDB
 -- Versión de PHP: 8.5.12
 
@@ -20,32 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `huellas_a_casa`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `adopciones`
---
-
-CREATE TABLE `adopciones` (
-  `id` int(11) NOT NULL,
-  `formulario_id` int(11) NOT NULL,
-  `mascota_id` int(11) NOT NULL,
-  `estado` enum('Aceptado','Rechazado','En proceso') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `adopciones`
---
-
-INSERT INTO `adopciones` (`id`, `formulario_id`, `mascota_id`, `estado`) VALUES
-(1, 1, 6, 'En proceso'),
-(2, 2, 7, 'Aceptado'),
-(3, 3, 8, 'Rechazado'),
-(4, 4, 6, 'En proceso'),
-(5, 5, 7, 'Aceptado'),
-(6, 6, 8, 'Rechazado'),
-(7, 7, 6, 'En proceso');
 
 -- --------------------------------------------------------
 
@@ -67,13 +41,13 @@ CREATE TABLE `donaciones` (
 --
 
 INSERT INTO `donaciones` (`id`, `usuario_id`, `monto`, `estado`, `mensaje`, `ruta_comp`) VALUES
-(1, 1, 25000, 'Recibido', 'Espero que puedan seguir ayudando a muchos animales', 'comprobante6.jpg'),
-(2, 2, 75000, 'No recibido', '', 'comprobante7.jpg'),
-(3, 4, 150000, 'Recibido', 'Una pequeña ayuda para los gastos veterinarios', 'comprobante8.jpg'),
-(4, 4, 35000, 'Recibido', 'Gracias por cuidar a los animales que necesitan un hogar', 'comprobante9.jpg'),
-(5, 3, 5000, 'No recibido', 'Para colaborar con lo que haga falta', 'comprobante10.jpg'),
-(6, 5, 200000, 'Recibido', 'Espero que este aporte sirva para comprar alimento', 'comprobante11.jpg'),
-(7, 7, 45000, 'No recibido', '', 'comprobante12.jpg');
+(1, 1, 25000, 'Recibido', 'Espero que puedan seguir ayudando a muchos animales', 'comprobante1.jpg'),
+(2, 2, 75000, 'No recibido', '', 'comprobante2.jpg'),
+(3, 4, 150000, 'Recibido', 'Una pequeña ayuda para los gastos veterinarios', 'comprobante3.jpg'),
+(4, 4, 35000, 'Recibido', 'Gracias por cuidar a los animales que necesitan un hogar', 'comprobante4.jpg'),
+(5, 3, 5000, 'No recibido', 'Para colaborar con lo que haga falta', 'comprobante5.jpg'),
+(6, 5, 200000, 'Recibido', 'Espero que este aporte sirva para comprar alimento', 'comprobante6.pdf'),
+(7, 7, 45000, 'No recibido', '', 'comprobante7.png');
 
 -- --------------------------------------------------------
 
@@ -89,21 +63,24 @@ CREATE TABLE `formularios` (
   `otras_mascotas` varchar(32) NOT NULL,
   `cuidador_ausencia` varchar(32) NOT NULL,
   `tiempo_solo` varchar(32) NOT NULL,
-  `ubicacion` enum('PH','Departamento','Casa') NOT NULL
+  `ubicacion` enum('PH','Departamento','Casa') NOT NULL,
+  `estado` enum('Aceptado','Rechazado','En proceso') NOT NULL,
+  `mascota_id` int(11) NOT NULL,
+  `fecha_enviado` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `formularios`
 --
 
-INSERT INTO `formularios` (`id`, `usuario_id`, `grupo_familiar`, `alergias`, `otras_mascotas`, `cuidador_ausencia`, `tiempo_solo`, `ubicacion`) VALUES
-(1, 1, 'Vivo con mi esposa y dos hijos', 'Ninguna', 'Si, un perro de 5 años', 'Mi esposa trabaja desde casa', '2 horas por dia', 'Casa'),
-(2, 2, 'Vivo sola con mi pareja', 'Si, al polvo', 'No tengo otras mascotas', 'Mi pareja puede cuidarlo', '6 horas, cuando trabajo', 'Departamento'),
-(3, 3, 'Vivo con mis padres y mi hermano', 'Ninguna', 'Si, dos gatos de 3 años', 'Mis padres pueden cuidarlo', '4 horas por la mañana', 'Casa'),
-(4, 4, 'Vivo con mi hija de 10 años', 'Mi hija es alergica al polen', 'No', 'Mi madre vive a pocas cuadras y ', '5 horas cuando estoy trabajando', 'PH'),
-(5, 5, 'Vivo con mi hermano', 'Ninguna', 'Si, un gato de 2 años', 'Mi hermano puede quedarse con el', 'Nunca, siempre hay alguien en ca', 'Departamento'),
-(6, 6, 'Vivo sola', 'Ninguna', 'Si, un conejo', 'Una amiga puede cuidarlo si es n', '8 horas durante la semana', 'PH'),
-(7, 7, 'Vivo con mi esposa y mi hijo', 'Si, al pelo de gato', 'No tenemos mascotas actualmente', 'Mi esposa trabaja desde casa', '3 horas como maximo', 'Casa');
+INSERT INTO `formularios` (`id`, `usuario_id`, `grupo_familiar`, `alergias`, `otras_mascotas`, `cuidador_ausencia`, `tiempo_solo`, `ubicacion`, `estado`, `mascota_id`, `fecha_enviado`) VALUES
+(1, 1, 'Vivo con mi esposa y dos hijos', 'Ninguna', 'Si, un perro de 5 años', 'Mi esposa trabaja desde casa', '2 horas por dia', 'Casa', 'En proceso', 6, '2026-11-04 20:57:03'),
+(2, 2, 'Vivo sola con mi pareja', 'Si, al polvo', 'No tengo otras mascotas', 'Mi pareja puede cuidarlo', '6 horas, cuando trabajo', 'Departamento', 'Aceptado', 7, '2026-11-04 20:57:03'),
+(3, 3, 'Vivo con mis padres y mi hermano', 'Ninguna', 'Si, dos gatos de 3 años', 'Mis padres pueden cuidarlo', '4 horas por la mañana', 'Casa', 'Rechazado', 8, '2026-11-04 20:57:03'),
+(4, 4, 'Vivo con mi hija de 10 años', 'Mi hija es alergica al polen', 'No', 'Mi madre vive a pocas cuadras y ', '5 horas cuando estoy trabajando', 'PH', 'En proceso', 6, '2026-11-04 20:57:03'),
+(5, 5, 'Vivo con mi hermano', 'Ninguna', 'Si, un gato de 2 años', 'Mi hermano puede quedarse con el', 'Nunca, siempre hay alguien en ca', 'Departamento', 'Aceptado', 7, '2026-11-04 20:57:03'),
+(6, 6, 'Vivo sola', 'Ninguna', 'Si, un conejo', 'Una amiga puede cuidarlo si es n', '8 horas durante la semana', 'PH', 'Rechazado', 8, '2026-11-04 20:57:03'),
+(7, 7, 'Vivo con mi esposa y mi hijo', 'Si, al pelo de gato', 'No tenemos mascotas actualmente', 'Mi esposa trabaja desde casa', '3 horas como maximo', 'Casa', 'En proceso', 6, '2026-11-04 20:57:03');
 
 -- --------------------------------------------------------
 
@@ -175,14 +152,6 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `correo`, `contrasena`, `tel
 --
 
 --
--- Indices de la tabla `adopciones`
---
-ALTER TABLE `adopciones`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk__formulario_id__formularios` (`formulario_id`),
-  ADD KEY `fk__mascota_id__mascotas` (`mascota_id`);
-
---
 -- Indices de la tabla `donaciones`
 --
 ALTER TABLE `donaciones`
@@ -194,7 +163,8 @@ ALTER TABLE `donaciones`
 --
 ALTER TABLE `formularios`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk__form_usuario_id__usuarios` (`usuario_id`);
+  ADD KEY `fk__form_usuario_id__usuarios` (`usuario_id`),
+  ADD KEY `fk__mascota_id__mascotas` (`mascota_id`);
 
 --
 -- Indices de la tabla `mascotas`
@@ -215,12 +185,6 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `adopciones`
---
-ALTER TABLE `adopciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `donaciones`
@@ -251,13 +215,6 @@ ALTER TABLE `usuarios`
 --
 
 --
--- Filtros para la tabla `adopciones`
---
-ALTER TABLE `adopciones`
-  ADD CONSTRAINT `fk__formulario_id__formularios` FOREIGN KEY (`formulario_id`) REFERENCES `formularios` (`id`),
-  ADD CONSTRAINT `fk__mascota_id__mascotas` FOREIGN KEY (`mascota_id`) REFERENCES `mascotas` (`id`);
-
---
 -- Filtros para la tabla `donaciones`
 --
 ALTER TABLE `donaciones`
@@ -267,7 +224,8 @@ ALTER TABLE `donaciones`
 -- Filtros para la tabla `formularios`
 --
 ALTER TABLE `formularios`
-  ADD CONSTRAINT `fk__form_usuario_id__usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `fk__form_usuario_id__usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `fk__mascota_id__mascotas` FOREIGN KEY (`mascota_id`) REFERENCES `mascotas` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

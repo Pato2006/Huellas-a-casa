@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2026 a las 13:57:47
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.1.25
+-- Tiempo de generación: 15-11-2026 a las 15:08:23
+-- Versión del servidor: 10.11.16-MariaDB
+-- Versión de PHP: 8.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,19 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `huellas_a_casa`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `adopciones`
---
-
-CREATE TABLE `adopciones` (
-  `id` int(11) NOT NULL,
-  `formulario_id` int(11) NOT NULL,
-  `mascota_id` int(11) NOT NULL,
-  `estado` enum('Aceptado','Rechazado','En proceso') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -63,7 +50,10 @@ CREATE TABLE `formularios` (
   `otras_mascotas` varchar(32) NOT NULL,
   `cuidador_ausencia` varchar(32) NOT NULL,
   `tiempo_solo` varchar(32) NOT NULL,
-  `ubicacion` enum('PH','Departamento','Casa') NOT NULL
+  `ubicacion` enum('PH','Departamento','Casa') NOT NULL,
+  `estado` enum('Aceptado','Rechazado','En proceso') NOT NULL,
+  `mascota_id` int(11) NOT NULL,
+  `fecha_enviado` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -109,14 +99,6 @@ CREATE TABLE `usuarios` (
 --
 
 --
--- Indices de la tabla `adopciones`
---
-ALTER TABLE `adopciones`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk__formulario_id__formularios` (`formulario_id`),
-  ADD KEY `fk__mascota_id__mascotas` (`mascota_id`);
-
---
 -- Indices de la tabla `donaciones`
 --
 ALTER TABLE `donaciones`
@@ -128,7 +110,8 @@ ALTER TABLE `donaciones`
 --
 ALTER TABLE `formularios`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk__form_usuario_id__usuarios` (`usuario_id`);
+  ADD KEY `fk__form_usuario_id__usuarios` (`usuario_id`),
+  ADD KEY `fk__mascota_id__mascotas` (`mascota_id`);
 
 --
 -- Indices de la tabla `mascotas`
@@ -149,12 +132,6 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `adopciones`
---
-ALTER TABLE `adopciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `donaciones`
@@ -185,13 +162,6 @@ ALTER TABLE `usuarios`
 --
 
 --
--- Filtros para la tabla `adopciones`
---
-ALTER TABLE `adopciones`
-  ADD CONSTRAINT `fk__formulario_id__formularios` FOREIGN KEY (`formulario_id`) REFERENCES `formularios` (`id`),
-  ADD CONSTRAINT `fk__mascota_id__mascotas` FOREIGN KEY (`mascota_id`) REFERENCES `mascotas` (`id`);
-
---
 -- Filtros para la tabla `donaciones`
 --
 ALTER TABLE `donaciones`
@@ -201,7 +171,8 @@ ALTER TABLE `donaciones`
 -- Filtros para la tabla `formularios`
 --
 ALTER TABLE `formularios`
-  ADD CONSTRAINT `fk__form_usuario_id__usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `fk__form_usuario_id__usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `fk__mascota_id__mascotas` FOREIGN KEY (`mascota_id`) REFERENCES `mascotas` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
