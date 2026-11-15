@@ -2,16 +2,18 @@
 
 import mysql.connector
 
-# Marcadores: %s usa tuplas/listas y %(nombre)s 
-# usa diccionarios; no usar %d ni %f.
+# Marcadores: %s usa tuplas/listas y %(nombre)s usa diccionarios;
+# no usar %d ni %f.
 
 def _conectar(configDB):
-    return mysql.connector.connect(
-                host=configDB["host"],
-                user=configDB["user"],
-                password=configDB["password"],
-                database=configDB["database"]
-            )
+    conexion = mysql.connector.connect(
+        host=configDB["host"],
+        user=configDB["user"],
+        password=configDB["password"],
+        database=configDB["database"],
+    )
+    return conexion
+
 
 def selectDB(configDB, sql, valores=None, title=False, dictionary=False):
     """Ejecuta un SELECT y retorna tuplas o diccionarios.
@@ -34,6 +36,7 @@ def selectDB(configDB, sql, valores=None, title=False, dictionary=False):
             else:
                 titulos = tuple(titulos)
             registros.insert(0, titulos)
+
     except mysql.connector.Error as error:
         print("No se pudo realizar el SELECT:", error)
     finally:

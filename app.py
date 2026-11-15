@@ -1,8 +1,12 @@
-from flask import Flask, render_template, request
+import os
+from flask import Flask, redirect, render_template, request, session, url_for
 import mysql.connector
 
 from config import CONFIG_DB
-from utilidades._mysql_db import selectDB
+from utilidades._mysql_db import selectDB, insertDB, updateDB, deleteDB
+from utilidades.file_utils import uploadFile
+from utilidades.request_utils import getRequest
+
 
 app = Flask(__name__)
 
@@ -12,11 +16,31 @@ def index():
 
 @app.route('/catalogo')
 def catalogo():
-    return render_template('catalogo.html')
+    consultas = selectDB(
+        CONFIG_DB,
+        "SELECT id,nombre,ruta_img FROM mascotas",
+        dictionary=True,
+    )
+    respuesta = None
+    if consultas is None:
+        respuesta = "No se pudieron consultar las especialidades.", 500
+    else:
+        respuesta = render_template('catalogo.html', consultas=consultas, error="")
+    return respuesta
 
-@app.route('/catalogo/detalle')
-def detalle():
-    return render_template('detalle.html')
+@app.route('/catalogo/<int:id>/detalle/')
+def detalle(id):
+    consultas = selectDB(
+        CONFIG_DB,
+        "SELECT * FROM mascotas WHERE id = %s",(id,),
+        dictionary=True,
+    )
+    respuesta = None
+    if consultas is None:
+        respuesta = "No se pudieron consultar las especialidades.", 500
+    else:
+        respuesta = render_template('detalle.html', consultas=consultas[0], error="")
+    return respuesta
 
 @app.route('/catalogo/detalle/formulario_adopcion')
 def formulario_adopcion():
