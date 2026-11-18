@@ -12,6 +12,8 @@ from modulos.catalogo import (
     ver_animal
 )
 
+from modulos.ver_adopciones import (lista_adopciones, ver_formulario, cambiar_estado)
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -108,11 +110,24 @@ def cargar_animales():
 
 @app.route('/ver_formulario_adopcion_admin')
 def ver_formulario_adopcion_admin():
-    return render_template('ver_formulario_adopcion_admin.html')
+    consultas = lista_adopciones()
+    if consultas is None:
+        return "No se pudieron consultar las adopciones.", 500
+    return render_template('ver_formulario_adopcion_admin.html', consultas=consultas)
 
-@app.route('/ver_formulario_adopcion_admin/formulario_adopcion_respondido_admin')
-def formulario_adopcion_respondido_admin():
-    return render_template('formulario_adopcion_respondido_admin.html')
+@app.route('/ver_formulario_adopcion_admin/formulario/<int:formulario_id>')
+def formulario_adopcion_respondido_admin(formulario_id):
+    consultas = ver_formulario(formulario_id)
+    if not consultas:
+        return "Formulario no encontrado.", 404
+    return render_template('formulario_adopcion_respondido_admin.html', f=consultas[0])
+
+@app.route('/ver_formulario_adopcion_admin/<int:formulario_id>/estado', methods=['POST'])
+def cambiar_estado_adopcion(formulario_id):
+    estado = request.form.get('estado')
+    if estado in ('Aceptado', 'Rechazado'):
+        cambiar_estado(formulario_id, estado)
+    return redirect(url_for('ver_formulario_adopcion_admin'))
 
 @app.route('/formulario_donar_admin')
 def formulario_donar_admin():

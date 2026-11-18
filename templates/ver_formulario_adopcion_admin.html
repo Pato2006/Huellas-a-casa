@@ -5,69 +5,30 @@
 {% block title %}Huellas a casa{% endblock %}
 {% block content %}
     <main>
-        <!-- cada tarjeta es un animal-->
-        <div class="tarjetas">
-            <div class="contenido">
-                <!-- aca se agrupan todos los datos-->
-                <div class="informacion">
-                    <!-- informacion del animal-->
-                    <img src="{{ url_for('static', filename='img/perro_adopcion.jpg') }}" alt="Foto de perro">
-                    <div class="datos">
-                        <h1>Nombre</h1>
-                        <p>Buena con las personas y súper compañera, cariosa. 5 años. 18 Kilos. Tamaño mediano</p>
-                    </div>
-                </div>
-                <!-- aca van los botones de accion-->
-                <div class="botones">
-                    <!-- aca van en columna-->
-                    <a href="{{ url_for('formulario_adopcion_respondido_admin')}}"><button class="boton_adopcion ver">Ver formulario de adopcion</button></a>
-                    <div class="eleccion">
-                        <!-- los separo para ponerlos en fila-->
-                        <button class="boton_adopcion aceptar">Aceptar</button>
-                        <button class="boton_adopcion rechazar">Rechazar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <!-- se repiten las tarjetas para el ejemplo-->
+        {% for consulta in consultas %}
         <div class="tarjetas">
             <div class="contenido">
                 <div class="informacion">
-                    <img src="{{ url_for('static', filename='img/perro_adopcion.jpg') }}" alt="Foto de perro">
+                    <img src="{{ url_for('static', filename='img/' + consulta['ruta_img']) }}" alt="Foto de {{ consulta['nombre'] }}">
                     <div class="datos">
-                        <h1>Nombre</h1>
-                        <p>Buena con las personas y súper compañera, cariosa. 5 años. 18 Kilos. Tamaño mediano</p>
+                        <h1>{{ consulta['nombre'] }}</h1>
+                        <p>{{ consulta['personalidad'] }}. {{ consulta['edad'] }} años. {{ consulta['peso'] }} kg. Estado: {{ consulta['estado'] }}</p>
                     </div>
                 </div>
                 <div class="botones">
-                    <a href="{{ url_for('formulario_adopcion_respondido_admin')}}"><button class="boton_adopcion ver">Ver formulario de adopcion</button></a>
-                    <div class="eleccion">
-                        <button class="boton_adopcion aceptar">Aceptar</button>
-                        <button class="boton_adopcion rechazar">Rechazar</button>
-                    </div>
+                    <a href="{{ url_for('formulario_adopcion_respondido_admin', formulario_id=consulta['formulario_id']) }}">
+                        <button class="boton_adopcion ver">Ver formulario de adopcion</button>
+                    </a>
+                    <form class="eleccion" method="post"
+                        action="{{ url_for('cambiar_estado_adopcion', adopcion_id=consulta['adopcion_id']) }}">
+                        <button class="boton_adopcion aceptar" name="estado" value="Aceptado">Aceptar</button>
+                        <button class="boton_adopcion rechazar" name="estado" value="Rechazado">Rechazar</button>
+                    </form>
                 </div>
             </div>
         </div>
-        </div>
-        <div class="tarjetas">
-            <div class="contenido">
-                <div class="informacion">
-                    <img src="{{ url_for('static', filename='img/perro_adopcion.jpg') }}" alt="Foto de perro">
-                    <div class="datos">
-                        <h1>Nombre</h1>
-                        <p>Buena con las personas y súper compañera, cariosa. 5 años. 18 Kilos. Tamaño mediano</p>
-                    </div>
-                </div>
-                <div class="botones">
-                    <a href="{{ url_for('formulario_adopcion_respondido_admin')}}"><button class="boton_adopcion ver">Ver formulario de adopcion</button></a>
-                    <div class="eleccion">
-                        <button class="boton_adopcion aceptar">Aceptar</button>
-                        <button class="boton_adopcion rechazar">Rechazar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
+        {% else %}
+        <p>No hay formularios de adopción.</p>
+        {% endfor %}
     </main>
 {% endblock %}
