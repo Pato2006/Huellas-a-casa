@@ -20,7 +20,7 @@
                         <button class="boton_adopcion ver">Ver formulario de adopcion</button>
                     </a>
                     <form class="eleccion" method="post"
-                        action="{{ url_for('cambiar_estado_adopcion', adopcion_id=consulta['adopcion_id']) }}">
+                        action="{{ url_for('cambiar_estado_adopcion', formulario_id=consulta['formulario_id']) }}">
                         <button class="boton_adopcion aceptar" name="estado" value="Aceptado">Aceptar</button>
                         <button class="boton_adopcion rechazar" name="estado" value="Rechazado">Rechazar</button>
                     </form>
