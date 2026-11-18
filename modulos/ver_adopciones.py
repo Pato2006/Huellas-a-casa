@@ -11,9 +11,9 @@ def lista_adopciones():
     return selectDB(CONFIG_DB, sql, dictionary=True)
 
 def ver_formulario(formulario_id):
-    sql = """SELECT formularios.*, usuarios.nombre AS usuario_nombre, usuarios.apellido AS usuario_apellido
+    sql = """SELECT formularios.*, mascotas.nombre AS mascota_nombre
              FROM formularios
-             INNER JOIN usuarios ON formularios.usuario_id = usuarios.id
+             INNER JOIN mascotas ON formularios.mascota_id = mascotas.id
              WHERE formularios.id = %s"""
     return selectDB(CONFIG_DB, sql, (formulario_id,), dictionary=True)
 
