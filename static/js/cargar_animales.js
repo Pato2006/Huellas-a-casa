@@ -10,11 +10,12 @@ const errorPeso = document.querySelector("#error-peso");
 const personalidad = document.querySelector("#personalidad");
 const errorPersonalidad = document.querySelector("#error-personalidad");
 const errorCastrado = document.querySelector("#error-castrado");
-const comprobante = document.querySelector("#comprobante");
-const errorComprobante = document.querySelector("#error-comprobante");
+const foto = document.querySelector("#foto");
+const errorFoto = document.querySelector("#error-foto");
 const descripcion = document.querySelector("#descripcion");
 const errorDescripcion = document.querySelector("#error-descripcion")
 const errorTipo = document.querySelector("#error-tipo");
+const errorGenero = document.querySelector("#error-genero");
 
 const mensajeFormulario = document.querySelector("#mensaje-formulario");
 
@@ -101,6 +102,19 @@ function validarDescripcion() {
     return esValido;
 }
 
+function validarGenero() {
+    const generoSeleccionado = document.querySelector('input[name="genero"]:checked');
+    let esValido = false;
+
+    if (generoSeleccionado !== null) {
+        errorGenero.textContent = "";
+        esValido = true;
+    } else {
+        errorGenero.textContent = "Seleccioná un género.";
+    }
+
+    return esValido;
+}
 
 function validarTipo() {
     const tipoSeleccionado = document.querySelector('input[name="tipo"]:checked');
@@ -131,16 +145,16 @@ function validarCastrado() {
 }
 
 // La foto es obligatoria: tiene que haber al menos un archivo adjunto.
-function validarComprobante() {
+function validarFoto() {
     let esValido = false;
 
-    if (comprobante.files.length > 0) {
-        comprobante.classList.remove("invalido");
-        errorComprobante.textContent = "";
+    if (foto.files.length > 0) {
+        foto.classList.remove("invalido");
+        errorFoto.textContent = "";
         esValido = true;
     } else {
-        comprobante.classList.add("invalido");
-        errorComprobante.textContent = "Tenés que adjuntar una foto.";
+        foto.classList.add("invalido");
+        errorFoto.textContent = "Tenés que adjuntar una foto.";
     }
 
     return esValido;
@@ -154,7 +168,8 @@ function validarFormulario(evento) {
     const descripcionValida = validarDescripcion();
     const tipoValido = validarTipo();
     const castradoValido = validarCastrado();
-    const comprobanteValido = validarComprobante();
+    const fotoValida = validarFoto();
+    const generoValido = validarGenero();
 
     if (nombreValido &&
         edadValida &&
@@ -162,12 +177,12 @@ function validarFormulario(evento) {
         personalidadValida &&
         descripcionValida &&
         tipoValido &&
+        generoValido &&
         castradoValido &&
-        comprobanteValido) {
+        fotoValida) {
         mensajeFormulario.classList.add("valido");
         mensajeFormulario.textContent = "Datos válidos. Animal cargado.";
 
-        evento.preventDefault(); // DESPUES SE SACA, cuando haya servidor
     } else {
         mensajeFormulario.classList.remove("valido");
         mensajeFormulario.textContent = "Revisar los campos marcados antes de continuar.";
@@ -184,7 +199,7 @@ function iniciarValidacion() {
     personalidad.addEventListener("input", validarPersonalidad);
     descripcion.addEventListener("input", validarDescripcion);
 
-    comprobante.addEventListener("input", validarComprobante);
+    foto.addEventListener("input", validarFoto);
 
     document.querySelectorAll('input[name="tipo"]').forEach(function (radio) {
         radio.addEventListener("change", validarTipo);
@@ -192,6 +207,10 @@ function iniciarValidacion() {
 
     document.querySelectorAll('input[name="castrado"]').forEach(function (radio) {
         radio.addEventListener("change", validarCastrado);
+    });
+
+    document.querySelectorAll('input[name="genero"]').forEach(function (radio) {
+        radio.addEventListener("change", validarGenero);
     });
 }
 iniciarValidacion();

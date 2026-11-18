@@ -8,7 +8,7 @@
     <div class="contenedor">
         <h1>Cargar Animal</h1>
         <!-- comienzo del formulario-->
-        <form action="" method="" id="cargar" class="formulario">
+        <form action="{{ url_for('subir_animales') }}" method="POST" id="cargar" class="formulario" enctype="multipart/form-data">
             <!-- comienzan las preguntas-->
             <div class="columna">
                 <label for="nombre" class="texto">Nombre</label><br>
@@ -39,6 +39,16 @@
                 <small id="error-descripcion"></small>
             </div>
             <div class="columna">
+                <span class="texto">Género</span><br>
+
+                <input type="radio" name="genero" value="macho">
+                <label class="texto">Macho</label>
+
+                <input type="radio" name="genero" value="hembra">
+                <label class="texto">Hembra</label>
+                <small id="error-genero"></small>
+            </div>
+            <div class="columna">
                 <span class="texto">Tipo</span><br>
 
                 <input type="radio" name="tipo" value="perro">
@@ -60,11 +70,11 @@
 
 
             <div class="columna boton_file">
-                <label for="comprobante" class="texto">
-                    <input type="file" id="comprobante" name="comprobante" hidden>
+                <label for="foto" class="texto">
+                    <input type="file" id="foto" name="foto" hidden>
                     Foto del animal
                 </label><br>
-                <small id="error-comprobante"></small>
+                <small id="error-foto"></small>
             </div>
 
             <!-- terminan las preguntas-->
@@ -75,6 +85,7 @@
             </div>
         </form>
         <p id="mensaje-formulario" aria-live="polite"></p>
+        {% if error %}<p class="mensaje error">{{ error }}</p>{% endif %}
     </div>
 </main>
 {% endblock %}

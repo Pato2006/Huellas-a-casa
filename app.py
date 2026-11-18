@@ -10,12 +10,16 @@ from utilidades.request_utils import getRequest
 from modulos.catalogo import (
     listas_animales,
     ver_animal,
-    borrar_animal
+    borrar_animal,
+    cargar_animal_nuevo
 )
 
 from modulos.ver_adopciones import (lista_adopciones, ver_formulario, cambiar_estado)
 
 app = Flask(__name__)
+
+CARPETA_UPLOADS = os.path.join(app.root_path, "static", "img")
+EXTENSIONES_AVATAR = {"png", "jpg", "jpeg"}
 
 @app.route('/')
 def index():
@@ -112,12 +116,36 @@ def eliminar_animal(animal_id):
     if consultas is None:
         retorno = "No se pudo eliminar el animal.", 500
     else:
-        retorno =redirect(url_for('catalogo_admin'))
+        retorno = redirect(url_for('catalogo_admin'))
     return retorno
 
 @app.route('/cargar_animales')
 def cargar_animales():
     return render_template('cargar_animales.html')
+
+@app.route('/cargar_animales/nuevo', methods=['GET', 'POST'])
+def subir_animales():
+    error = ""
+    datos = {}
+    respuesta = None
+    
+    if request.method == "POST":
+        datos = getRequest()
+        datos = uploadFile(
+            datos,
+            campo="foto",
+            carpeta=CARPETA_UPLOADS,
+            extensiones_permitidas=EXTENSIONES_AVATAR,
+        )
+        if "error_foto" in datos:
+            error = datos["error_foto"]
+        else:
+            exito, error = cargar_animal_nuevo(datos)
+            if exito:
+                respuesta = redirect(url_for("catalogo_admin"))
+    if respuesta is None:
+        respuesta = render_template("cargar_animales.html", datos=datos, error=error)
+    return respuesta
 
 @app.route('/ver_formulario_adopcion_admin')
 def ver_formulario_adopcion_admin():
