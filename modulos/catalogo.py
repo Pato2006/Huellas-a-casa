@@ -19,5 +19,21 @@ def ver_animal(id):
         (id,),
         dictionary=True,
     )
-
     return consultas
+
+def borrar_animal(id):
+    sql = """
+        DELETE FROM mascotas
+        WHERE id = %s
+    """
+    valores = (id,)
+    consultas = deleteDB(
+        CONFIG_DB,
+        sql,
+        valores    
+    )
+    if consultas == 1:
+        retorno = True
+    else:
+        retorno = "No se pudo eliminar el turno solicitado."
+    return retorno

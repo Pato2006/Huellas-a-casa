@@ -9,7 +9,8 @@ from utilidades.request_utils import getRequest
 
 from modulos.catalogo import (
     listas_animales,
-    ver_animal
+    ver_animal,
+    borrar_animal
 )
 
 from modulos.ver_adopciones import (lista_adopciones, ver_formulario, cambiar_estado)
@@ -103,6 +104,16 @@ def catalogo_admin():
 @app.route('/catalogo_admin/detalle_modificar_admin')
 def detalle_modificar_admin():
     return render_template('detalle_modificar_admin.html')
+
+@app.route('/catalogo_admin/borrar/<int:animal_id>', methods=['POST'])
+def eliminar_animal(animal_id):
+    consultas = borrar_animal(animal_id)
+    retorno = ""
+    if consultas is None:
+        retorno = "No se pudo eliminar el animal.", 500
+    else:
+        retorno =redirect(url_for('catalogo_admin'))
+    return retorno
 
 @app.route('/cargar_animales')
 def cargar_animales():

@@ -63,7 +63,11 @@
                     alt="Foto de {{ consulta['nombre'] }}">
                 <h2>{{ consulta['nombre'] }}</h2>
                 <a href="{{ url_for('detalle_modificar_admin', id=consulta.id) }}" class="boton_catalogo">Editar</a>
-                <button href="" class="boton_catalogo borrar">Borrar</button>
+                <form action="{{ url_for('eliminar_animal', animal_id=consulta['id']) }}" method="POST">
+                    <button type="submit" class="boton_catalogo borrar">
+                        Borrar
+                    </button>
+                </form>
             </div>
             {% endfor %}
         </div>
