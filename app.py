@@ -18,7 +18,7 @@ from modulos.ver_adopciones import (lista_adopciones, ver_formulario, cambiar_es
 
 app = Flask(__name__)
 
-CARPETA_UPLOADS = os.path.join(app.root_path, "static", "img")
+CARPETA_IMG = os.path.join(app.root_path, "static", "img")
 EXTENSIONES_AVATAR = {"png", "jpg", "jpeg"}
 
 @app.route('/')
@@ -134,7 +134,7 @@ def subir_animales():
         datos = uploadFile(
             datos,
             campo="foto",
-            carpeta=CARPETA_UPLOADS,
+            carpeta=CARPETA_IMG,
             extensiones_permitidas=EXTENSIONES_AVATAR,
         )
         if "error_foto" in datos:
