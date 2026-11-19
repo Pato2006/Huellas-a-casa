@@ -4,19 +4,23 @@
 {% endblock %}
 {% block title %}Huellas a casa{% endblock %}
 {% block content %}
-    <main>
+<main>
+    {% if consultas%}
         {% for consulta in consultas %}
         <div class="tarjetas">
             <div class="contenido">
                 <div class="informacion">
-                    <img src="{{ url_for('static', filename='img/' + consulta['ruta_img']) }}" alt="Foto de {{ consulta['nombre'] }}">
+                    <img src="{{ url_for('static', filename='img/' + consulta['ruta_img']) }}"
+                        alt="Foto de {{ consulta['nombre'] }}">
                     <div class="datos">
                         <h1>{{ consulta['nombre'] }}</h1>
-                        <p>{{ consulta['personalidad'] }}. {{ consulta['edad'] }} años. {{ consulta['peso'] }} kg. Estado: {{ consulta['estado'] }}</p>
+                        <p>{{ consulta['personalidad'] }}. {{ consulta['edad'] }} años. {{ consulta['peso'] }} kg. Estado:
+                            {{ consulta['estado'] }}</p>
                     </div>
                 </div>
                 <div class="botones">
-                    <a href="{{ url_for('formulario_adopcion_respondido_admin', formulario_id=consulta['formulario_id']) }}">
+                    <a
+                        href="{{ url_for('formulario_adopcion_respondido_admin', formulario_id=consulta['formulario_id']) }}">
                         <button class="boton_adopcion ver">Ver formulario de adopcion</button>
                     </a>
                     <form class="eleccion" method="post"
@@ -27,8 +31,9 @@
                 </div>
             </div>
         </div>
-        {% else %}
-        <p>No hay formularios de adopción.</p>
         {% endfor %}
-    </main>
+    {% else %}
+        <p>No hay formularios de adopción.</p>
+    {% endif %}
+</main>
 {% endblock %}

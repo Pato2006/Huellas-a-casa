@@ -25,10 +25,7 @@ def ver_animal(id):
     return consultas
 
 def borrar_animal(id):
-    sql = """
-        DELETE FROM mascotas
-        WHERE id = %s
-    """
+    sql = "DELETE FROM mascotas WHERE id = %s"
     valores = (id,)
     consultas = deleteDB(
         CONFIG_DB,
@@ -38,7 +35,7 @@ def borrar_animal(id):
     if consultas == 1:
         retorno = True
     else:
-        retorno = "No se pudo eliminar el turno solicitado."
+        retorno = "No se pudo eliminar el animal solicitado."
     return retorno
 
 def cargar_animal_nuevo(datos):
