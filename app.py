@@ -16,7 +16,10 @@ from modulos.catalogo import (
 
 from modulos.ver_adopciones import (lista_adopciones, ver_formulario, cambiar_estado)
 
+from modulos.usuarios import (buscar_usuario_por_email, crear_usuario, modificar_usuario)
+
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "clave-solo-para-desarrollo"
 
 CARPETA_IMG = os.path.join(app.root_path, "static", "img")
 EXTENSIONES_AVATAR = {"png", "jpg", "jpeg"}
@@ -49,13 +52,61 @@ def detalle(id):
 def formulario_adopcion():
     return render_template('formulario_adopcion.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    error = ""
+    respuesta = None
 
-@app.route('/registro')
-def registro():
-    return render_template('registro.html')
+    if request.method == "POST":
+        datos = getRequest()
+        usuario = buscar_usuario_por_email(datos.get("correo", ""))
+        credenciales_correctas = False
+
+        if usuario:
+            contrasena = datos.get("contrasena", "")
+            credenciales_correctas = usuario["contrasena"] == contrasena
+
+        if credenciales_correctas:
+            session["usuario_id"] = usuario["id"]
+            session["nombre"] = usuario["nombre"]
+            session["apellido"] = usuario["apellido"]
+            session["correo"] = usuario["correo"]
+            session["telefono"] = usuario["telefono"]
+            session["fecha_nacimiento"] = str(usuario["fecha_nacimiento"])
+            session["tipo"] = usuario["tipo"]
+
+            if usuario["tipo"] == "admin":    
+                respuesta = redirect(url_for("index_admin"))
+            else:
+                respuesta = redirect(url_for("index"))
+        else:
+            error = "Email o contraseña incorrectos."
+    if "usuario_id" in session:
+        respuesta = render_template("perfil.html", usuario=session, aviso="Ya tenés una sesión iniciada.")
+
+    if respuesta is None:
+        respuesta = render_template("login.html", error=error)
+
+    return respuesta
+
+@app.route('/registro', methods=['GET', 'POST'])
+def registrar():
+    datos = {}
+    error = ""
+    respuesta = None
+
+    if request.method == "POST":
+        datos = getRequest()
+
+        exito, error = crear_usuario(datos)
+
+        if exito:
+            respuesta = redirect(url_for("login"))
+
+    if respuesta is None:
+        respuesta = render_template("registro.html", datos=datos, error=error)
+
+    return respuesta
 
 @app.route('/formulario_donar')
 def formulario_donar():
@@ -67,11 +118,47 @@ def contacto():
 
 @app.route('/perfil')
 def perfil():
-    return render_template('perfil.html')
+    respuesta = None
 
-@app.route('/perfil/modificar')
+    if "usuario_id" not in session:
+        respuesta = redirect(url_for("login"))
+    else:
+        respuesta = render_template("perfil.html", usuario=session)
+
+    return respuesta
+
+@app.route('/perfil/modificar', methods=['GET', 'POST'])
 def perfil_mod():
-    return render_template('perfil_mod.html')
+    error = ""
+    respuesta = None
+
+    if "usuario_id" not in session:
+        respuesta = redirect(url_for("login"))
+    else:
+        datos = {
+            "nombre": session["nombre"],
+            "apellido": session["apellido"],
+            "correo": session["correo"],
+            "telefono": session["telefono"],
+            "fecha_nacimiento": session["fecha_nacimiento"]
+        }
+
+        if request.method == "POST":
+            datos = getRequest()
+            error = modificar_usuario(session["usuario_id"], datos)
+
+            if error == "":
+                session["nombre"] = datos["nombre"]
+                session["apellido"] = datos["apellido"]
+                session["correo"] = datos["correo"]
+                session["telefono"] = datos["telefono"]
+                session["fecha_nacimiento"] = datos["fecha_nacimiento"]
+                respuesta = redirect(url_for("perfil"))
+
+        if respuesta is None:
+            respuesta = render_template("perfil_mod.html", datos=datos, error=error, usuario=session)
+
+    return respuesta
 
 @app.route('/perfil/formulario_adopcion')
 def perfil_form_adop():

@@ -9,46 +9,49 @@
     <div class="login-contenido">
         <form action="#" method="post" id="registro">
             <legend>Crear Cuenta</legend>
-
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+            
             <p>
                 <label for="correo">Correo electrónico</label><br>
-                <input type="email" id="correo" name="correo">
+                <input type="email" id="correo" name="correo" value="{{ datos.get('correo', '') }}">
                 <small id="error-correo"></small>
             </p>
 
             <p>
                 <label for="nombre">Nombre</label><br>
-                <input type="text" id="nombre" name="nombre">
+                <input type="text" id="nombre" name="nombre" value="{{ datos.get('nombre', '') }}">
                 <small id="error-nombre"></small>
             </p>
 
             <p>
                 <label for="apellido">Apellido</label><br>
-                <input type="text" id="apellido" name="apellido">
+                <input type="text" id="apellido" name="apellido" value="{{ datos.get('apellido', '') }}">
                 <small id="error-apellido"></small>
             </p>
 
             <p>
                 <label for="telefono">Número de teléfono</label><br>
-                <input type="tel" id="telefono" name="telefono">
+                <input type="tel" id="telefono" name="telefono" value="{{ datos.get('telefono', '') }}">
                 <small id="error-telefono"></small>
             </p>
 
             <p>
                 <label for="fecha-nacimiento">Fecha de nacimiento</label><br>
-                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+                <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" value="{{ datos.get('fecha_nacimiento', '') }}">
                 <small id="error-fecha-nacimiento"></small>
             </p>
 
             <p>
                 <label for="dni">DNI</label><br>
-                <input type="number" id="dni" name="dni">
+                <input type="number" id="dni" name="dni" value="{{ datos.get('dni', '') }}">
                 <small id="error-dni"></small>
             </p>
 
             <p>
                 <label for="contraseña">Contraseña</label><br>
-                <input type="password" id="contraseña" name="contraseña">
+                <input type="password" id="contraseña" name="contrasena" value="{{ datos.get('contrasena', '') }}">
                 <small id="error-contraseña"></small>
             </p>
 

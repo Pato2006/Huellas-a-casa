@@ -148,8 +148,7 @@ function validarFormulario(evento) {
 	if (correoValido && nombreValido && fechaValida && apellidoValido && telefonoValido && fotoValida) {
 		mensajeFormulario.classList.add("valido");
 		mensajeFormulario.textContent = "Datos válidos. Perfil modificado correctamente.";
-        
-        evento.preventDefault()//DESPUES SE SACA
+		
 	} else {
 		// Si hay errores, siempre se cancela el envío para poder corregirlos.
 		mensajeFormulario.classList.remove("valido");

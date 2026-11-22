@@ -6,8 +6,10 @@
 {% block content %}
 <main class="main-perfil">
     <h1>Modificar perfil</h1>
-
-    <form class="perfil-caja" action="#" method="post" id="perfil-mod">
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+    <form class="perfil-caja" action="{{ url_for('perfil_mod') }}" method="post" id="perfil-mod">
         <div class="perfil-columna-izquierda">
             <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto de perfil" class="perfil-avatar">
             <label for="foto" class="boton-modificar">
@@ -21,31 +23,31 @@
         <div class="perfil-datos">
             <label for="nombre">
                 <strong>Nombre:</strong>
-                <input type="text" id="nombre" name="nombre" value="Nombre">
+                <input type="text" id="nombre" name="nombre" value={{ usuario["nombre"] }}>
                 <small id="error-nombre"></small>
             </label>
 
             <label for="apellido">
                 <strong>Apellido:</strong>
-                <input type="text" id="apellido" name="apellido" value="Apellido">
+                <input type="text" id="apellido" name="apellido" value={{ usuario["apellido"] }}>
                 <small id="error-apellido"></small>
             </label>
 
-            <label for="email">
+            <label for="correo">
                 <strong>Correo electrónico:</strong>
-                <input type="email" id="correo" name="correo" value="...@gmail.com">
+                <input type="email" id="correo" name="correo" value={{ usuario["correo"] }}>
                 <small id="error-correo"></small>
             </label>
 
             <label for="telefono">
                 <strong>Número de teléfono:</strong>
-                <input type="tel" id="telefono" name="telefono" value="11-1234-5678">
+                <input type="tel" id="telefono" name="telefono" value={{ usuario["telefono"] }}>
                 <small id="error-telefono"></small>
             </label>
 
-            <label for="fecha_nacimiento">
+            <label for="fecha-nacimiento">
                 <strong>Fecha de nacimiento:</strong>
-                <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" value="0001-01-01">
+                <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" value={{ usuario["fecha_nacimiento"] }}>
                 <small id="error-fecha-nacimiento"></small>
             </label>
 

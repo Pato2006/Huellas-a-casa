@@ -48,7 +48,6 @@ function validarFormulario(evento) {
 		mensajeFormulario.classList.add("valido");
 		mensajeFormulario.textContent = "Datos válidos. Sesión iniciada";
         
-        evento.preventDefault()//DESPUES SE SACA
 	} else {
 		// Si hay errores, siempre se cancela el envío para poder corregirlos.
 		mensajeFormulario.classList.remove("valido");
