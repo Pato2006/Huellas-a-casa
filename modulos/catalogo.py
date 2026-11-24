@@ -73,3 +73,52 @@ def cargar_animal_nuevo(datos):
     else:
         mensaje = "No se pudo cargar el animal satisfactoriamente"
     return resultado, mensaje
+
+def filtros_mascotas(filtros):
+
+    sql = """
+        SELECT id, nombre, ruta_img
+        FROM mascotas
+        WHERE 1=1
+    """
+
+    valores = []
+
+    if filtros.get("nombre"):
+        sql += " AND nombre LIKE %s"
+        valores.append("%" + filtros["nombre"] + "%")
+
+    if filtros.get("tipo"):
+        sql += " AND tipo = %s"
+        valores.append(filtros["tipo"])
+
+    if filtros.get("peso"):
+        if filtros["peso"] == "5":
+            sql += " AND peso <= %s"
+        elif filtros["peso"] == "8":
+            sql += " AND peso > 5 AND peso <= %s"
+        elif filtros["peso"] == "10":
+            sql += " AND peso > %s"
+        valores.append(filtros["peso"])
+
+    if filtros.get("edad"):
+        if filtros["edad"] == "0":
+            sql += " AND edad >= %s AND edad <= 4"
+        elif filtros["edad"] == "4":
+            sql += " AND edad > %s AND edad <= 8"
+        elif filtros["edad"] == "8":
+            sql += " AND edad > %s"
+        valores.append(filtros["edad"])
+
+    if filtros.get("genero"):
+        sql += " AND genero = %s"
+        valores.append(filtros["genero"])
+
+    consultas = selectDB(
+        CONFIG_DB,
+        sql,
+        valores,
+        dictionary=True
+    )
+
+    return consultas

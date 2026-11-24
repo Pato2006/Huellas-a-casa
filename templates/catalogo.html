@@ -7,52 +7,59 @@
 <main>
     <div class="catalogo">
         <div class="lateral_iz" id="panel_filtros">
-            <button class="btn-filtros" id="abrir-filtros">Filtros</button>
-            <div class="filtros">
-                <button class="btn-cerrar-filtros" id="cerrar-filtros" aria-label="Cerrar filtros">✕</button>
-                <h3>Filtros</h3>
-                <div class="filtro_fila">
-                    <p>Nombre:</p>
-                    <div class="lista-catalogo">
-                        <input type="text" id="nombre_animal" placeholder="Buscar por nombre">
-                        <button class="catalogo-boton" id="buscar-nombre">Buscar</button>
+            <button type="button" class="btn-filtros" id="abrir-filtros">Filtros</button>
+            <form action="{{ url_for('filtros') }}" method="GET">
+                <div class="filtros">
+                    <button type="button" class="btn-cerrar-filtros" id="cerrar-filtros"
+                        aria-label="Cerrar filtros">✕</button>
+                    <h3>Filtros</h3>
+                    <div class="filtro_fila">
+                        <p>Nombre:</p>
+                        <div class="lista-catalogo">
+                            <input type="text" id="nombre_animal" name="nombre" placeholder="Buscar por nombre" data-filtro="nombre">
+                            <button class="catalogo-boton" id="buscar-nombre" type="submit">Buscar</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="filtro_fila">
-                    <p>Tipo:</p>
-                    <div class="lista-catalogo">
-                        <button class="catalogo-boton" id="gato">Gato</button>
-                        <button class="catalogo-boton" id="perro">Perro</button>
+                    <div class="filtro_fila">
+                        <p>Tipo:</p>
+                        <div class="lista-catalogo">
+                            <button type="submit" class="catalogo-boton" name="tipo" data-filtro="tipo" value="Gato">Gato</button>
+                            <button type="submit" class="catalogo-boton" name="tipo" data-filtro="tipo" value="Perro">Perro</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="filtro_fila">
-                    <p>Edad:</p>
-                    <div class="lista-catalogo">
-                        <button class="catalogo-boton" id="edad-0-4">0 - 4 años</button>
-                        <button class="catalogo-boton" id="edad-4-8">4 - 8 años</button>
-                        <button class="catalogo-boton" id="edad-8-mas">+8 años</button>
+                    <div class="filtro_fila">
+                        <p>Edad:</p>
+                        <div class="lista-catalogo">
+                            <button type="submit" class="catalogo-boton" name="edad" data-filtro="edad" value="0">0 - 4
+                                años</button>
+                            <button type="submit" class="catalogo-boton" name="edad" data-filtro="edad" value="4">4 - 8
+                                años</button>
+                            <button type="submit" class="catalogo-boton" name="edad" data-filtro="edad" value="8">+8 años</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="filtro_fila">
-                    <p>Tamaño:</p>
-                    <div class="lista-catalogo">
-                        <button class="catalogo-boton" id="chico">Chico</button>
-                        <button class="catalogo-boton" id="mediano">Mediano</button>
-                        <button class="catalogo-boton" id="grande">Grande</button>
+                    <div class="filtro_fila">
+                        <p>Tamaño:</p>
+                        <div class="lista-catalogo">
+                            <button type="submit" class="catalogo-boton" name="peso" data-filtro="peso" value="5">Chico</button>
+                            <button type="submit" class="catalogo-boton" name="peso" data-filtro="peso" value="8">Mediano</button>
+                            <button type="submit" class="catalogo-boton" name="peso" data-filtro="peso" value="10">Grande</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="filtro_fila">
-                    <p>Genero:</p>
-                    <div class="lista-catalogo">
-                        <button class="catalogo-boton" id="macho">Macho</button>
-                        <button class="catalogo-boton" id="hembra">Hembra</button>
+                    <div class="filtro_fila">
+                        <p>Genero:</p>
+                        <div class="lista-catalogo">
+                            <button type="submit" class="catalogo-boton" name="genero" data-filtro="genero"
+                                value="Macho">Macho</button>
+                            <button type="submit" class="catalogo-boton" name="genero" data-filtro="genero"
+                                value="Hembra">Hembra</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
         {% if consultas %}
         <div class="lateral_dr">

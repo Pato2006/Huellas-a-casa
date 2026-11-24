@@ -7,12 +7,7 @@ from utilidades._mysql_db import selectDB, insertDB, updateDB, deleteDB
 from utilidades.file_utils import uploadFile
 from utilidades.request_utils import getRequest
 
-from modulos.catalogo import (
-    listas_animales,
-    ver_animal,
-    borrar_animal,
-    cargar_animal_nuevo
-)
+from modulos.catalogo import (listas_animales, ver_animal, borrar_animal, cargar_animal_nuevo, filtros_mascotas)
 
 from modulos.ver_adopciones import (lista_adopciones, ver_formulario, cambiar_estado)
 
@@ -37,6 +32,14 @@ def catalogo():
     else:
         respuesta = render_template('catalogo.html', consultas=consultas, error="")
     return respuesta
+
+@app.route('/catalogo/filtros', methods=['GET', 'POST'])
+def filtros():
+    datos = getRequest()
+    consultas = filtros_mascotas(datos)
+    if consultas is None:
+        return "No se pudieron consultar los animales.", 500
+    return render_template('catalogo.html', consultas=consultas)    
 
 @app.route('/catalogo/<int:id>/detalle/')
 def detalle(id):
@@ -75,7 +78,7 @@ def login():
             session["fecha_nacimiento"] = str(usuario["fecha_nacimiento"])
             session["tipo"] = usuario["tipo"]
 
-            if usuario["tipo"] == "admin":    
+            if usuario["tipo"] == "Admin":    
                 respuesta = redirect(url_for("index_admin"))
             else:
                 respuesta = redirect(url_for("index"))

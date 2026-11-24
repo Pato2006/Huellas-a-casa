@@ -11,7 +11,6 @@ function boton_seleccionado() {
 }
 
 function boton_busqueda() {
-    alert(nombre.value)
     this.classList.toggle("catalogo-boton-activo")
 }
 
