@@ -20,3 +20,18 @@ def ver_donacion(donacion_id):
 def cambiar_estado_donaciones(donacion_id, estado):
     sql = "UPDATE donaciones SET estado = %s WHERE id = %s"
     return updateDB(CONFIG_DB, sql, (estado, donacion_id))
+
+def lista_donaciones_usuario(usuario_id):
+    sql="""SELECT donaciones.id AS donacion_id, donaciones.monto AS monto, donaciones.estado AS estado
+        FROM donaciones
+        WHERE donaciones.usuario_id=%s
+        ORDER BY donaciones.id DESC"""
+    return selectDB(CONFIG_DB,sql,(usuario_id,),dictionary=True)
+
+def ver_donacion_usuario(donacion_id, usuario_id):
+    sql="""SELECT donaciones.id, donaciones.mensaje AS mensaje, donaciones.ruta_comp AS comprobante,
+        donaciones.estado AS estado, usuarios.nombre, usuarios.apellido
+        FROM donaciones
+        INNER JOIN usuarios ON donaciones.usuario_id=usuarios.id
+        WHERE donaciones.id=%s AND donaciones.usuario_id=%s"""
+    return selectDB(CONFIG_DB,sql,(donacion_id,usuario_id),dictionary=True)

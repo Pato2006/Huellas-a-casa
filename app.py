@@ -9,11 +9,12 @@ from utilidades.request_utils import getRequest
 
 from modulos.catalogo import (listas_animales, ver_animal, borrar_animal, cargar_animal_nuevo, filtros_mascotas)
 
-from modulos.ver_adopciones import (lista_adopciones, ver_formulario, cambiar_estado)
+from modulos.ver_adopciones import (lista_adopciones, ver_formulario, cambiar_estado, lista_adopciones_usuario, ver_formulario_usuario)
 
 from modulos.usuarios import (buscar_usuario_por_email, crear_usuario, modificar_usuario)
 
-from modulos.ver_donaciones import(lista_donaciones,ver_donacion, cambiar_estado_donaciones)
+from modulos.ver_donaciones import(lista_donaciones, ver_donacion, cambiar_estado_donaciones, lista_donaciones_usuario, ver_donacion_usuario)
+
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "clave-solo-para-desarrollo"
@@ -167,19 +168,51 @@ def perfil_mod():
 
 @app.route('/perfil/formulario_adopcion')
 def perfil_form_adop():
-    return render_template('perfil_form_adop.html')
+    if "usuario_id" not in session:
+        respuesta = redirect(url_for("login"))
+    else:
+        consultas = lista_adopciones_usuario(session["usuario_id"])
+        if consultas is None:
+            respuesta = "No se pudieron consultar las adopciones.", 500
+        else:
+            respuesta = render_template('perfil_form_adop.html', consultas=consultas)
+    return respuesta
 
-@app.route('/perfil/formulario_adopcion_respondido_usuario')
-def formulario_adopcion_respondido_usuario():
-    return render_template('formulario_adopcion_respondido_usuario.html')
+@app.route('/perfil/formulario_adopcion_respondido_usuario/<int:formulario_id>')
+def formulario_adopcion_respondido_usuario(formulario_id):
+    if "usuario_id" not in session:
+        respuesta = redirect(url_for("login"))
+    else:
+        consultas = ver_formulario_usuario(formulario_id, session["usuario_id"])
+        if not consultas:
+            respuesta = "Formulario de adopcion no encontrado.", 404
+        else:
+            respuesta = render_template('formulario_adopcion_respondido_usuario.html', consultas=consultas[0])
+    return respuesta
 
 @app.route('/perfil/formulario_donacion')
 def perfil_form_dona():
-    return render_template('perfil_form_dona.html')
+    if "usuario_id" not in session:
+        respuesta = redirect(url_for("login"))
+    else:
+        consultas = lista_donaciones_usuario(session["usuario_id"])
+        if consultas is None:
+            respuesta = "No se pudieron consultar las donaciones.", 500
+        else:
+            respuesta = render_template('perfil_form_dona.html', consultas=consultas)
+    return respuesta
 
-@app.route('/perfil/formulario_donar_respondido_usuario')
-def formulario_donar_respondido_usuario():
-    return render_template('formulario_donar_respondido_usuario.html')
+@app.route('/perfil/formulario_donar_respondido_usuario/<int:donacion_id>')
+def formulario_donar_respondido_usuario(donacion_id):
+    if "usuario_id" not in session:
+        respuesta = redirect(url_for("login"))
+    else:
+        consultas = ver_donacion_usuario(donacion_id, session["usuario_id"])
+        if not consultas:
+            respuesta = "Formulario de donacion no encontrado.", 404
+        else:
+            respuesta = render_template('formulario_donar_respondido_usuario.html', consultas=consultas[0])
+    return respuesta
 
 #ADMINISTRADOR
 

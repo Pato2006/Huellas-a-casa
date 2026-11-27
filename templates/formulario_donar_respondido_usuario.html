@@ -6,23 +6,28 @@
 {% block content %}
 <main>
     <div class="contenedor">
-        <h1>Formulario de donacion de Maria</h1>
+        <h1>Formulario de donacion de {{ consultas.nombre }} {{ consultas.apellido }}</h1>
         <!-- comienzo del formulario-->
         <form action="" method="" id="donar" class="formulario">
             <div class="columna">
                 <label for="mensaje" class="texto">Mensaje enviado</label><br>
-                <p class="respuesta" id="mensaje" name="mensaje">Muchas gracias por el gran trabajo que hacen</p>
+                <p class="respuesta" id="mensaje" name="mensaje">{{ consultas.mensaje or 'Sin mensaje' }}</p>
             </div>
+            <div class="columna">
+                <span class="texto">Estado</span><br>
+                <p class="respuesta">{{ consultas.estado or 'Pendiente' }}</p>
+            </div>
+            {% if consultas.comprobante %}
             <div class="columna boton_comprobante">
-                <a href="{{ url_for('static', filename='uploads/comprobante_maria.pdf') }}" download class="texto">
+                <a href="{{ url_for('static', filename=consultas.comprobante) }}" download class="texto">
                     Descargar comprobante
                 </a>
             </div>
+            {% endif %}
             <!-- botones de accion-->
         </form>
     </div>
 </main>
-
 {% endblock %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/formulario_donar.js') }}"></script>
