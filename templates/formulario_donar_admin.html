@@ -5,115 +5,39 @@
 {% block title %}Huellas a casa{% endblock %}
 {% block content %}
 <main>
-    <!-- cada tarjeta es un animal-->
+    <!-- cada tarjeta es una donacion-->
+    {% for c in consultas %}
     <div class="tarjetas">
         <div class="contenido">
             <!-- aca se agrupan todos los datos-->
             <div class="informacion">
-                <!-- informacion del animal-->
+                <!-- informacion del donante-->
                 <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto de perfil del donante">
                 <div class="datos">
-                    <h1>Donacion:(monto)</h1>
-                    <p>Nombre Apellido del donante</p>
+                    <h1>Donacion: ${{ c.monto }}</h1>
+                    <p>{{ c.nombre }} {{ c.apellido }}</p>
+                    <p>Estado: {{ c.estado }}</p>
                 </div>
             </div>
             <!-- aca van los botones de accion-->
             <div class="botones">
                 <!-- aca van en columna-->
-                <a href="{{ url_for('formulario_donar_respondido_admin') }}">
+                <a href="{{ url_for('formulario_donar_respondido_admin', donacion_id=c.donacion_id) }}">
                     <button class="boton_adopcion ver">
                         Ver formulario
                     </button>
                 </a>
                 <div class="eleccion">
-                    <!-- los separo para ponerlos en fila-->
-                    <button class="boton_adopcion aceptar">Recibido</button>
-                    <button class="boton_adopcion rechazar">No recibido</button>
-                </div>
+                    <form method="post" action="{{ url_for('cambiar_estado_donacion', donacion_id=c.donacion_id) }}">
+                        <button type="submit" name="estado" value="Recibido" class="boton_adopcion aceptar">Recibido</button>
+                         <button type="submit" name="estado" value="No recibido" class="boton_adopcion rechazar">No recibido</button>
+                     </form>
+                 </div>
             </div>
         </div>
     </div>
-        <div class="tarjetas">
-        <div class="contenido">
-            <!-- aca se agrupan todos los datos-->
-            <div class="informacion">
-                <!-- informacion del animal-->
-                <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto de perfil del donante">
-                <div class="datos">
-                    <h1>Donacion:(monto)</h1>
-                    <p>Nombre Apellido del donante</p>
-                </div>
-            </div>
-            <!-- aca van los botones de accion-->
-            <div class="botones">
-                <!-- aca van en columna-->
-                <a href="{{ url_for('formulario_donar_respondido_admin') }}">
-                    <button class="boton_adopcion ver">
-                        Ver formulario
-                    </button>
-                </a>
-                <div class="eleccion">
-                    <!-- los separo para ponerlos en fila-->
-                    <button class="boton_adopcion aceptar">Recibido</button>
-                    <button class="boton_adopcion rechazar">No recibido</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tarjetas">
-        <div class="contenido">
-            <!-- aca se agrupan todos los datos-->
-            <div class="informacion">
-                <!-- informacion del animal-->
-                <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto de perfil del donante">
-                <div class="datos">
-                    <h1>Donacion:(monto)</h1>
-                    <p>Nombre Apellido del donante</p>
-                </div>
-            </div>
-            <!-- aca van los botones de accion-->
-            <div class="botones">
-                <!-- aca van en columna-->
-                <a href="{{ url_for('formulario_donar_respondido_admin') }}">
-                    <button class="boton_adopcion ver">
-                        Ver formulario
-                    </button>
-                </a>
-                <div class="eleccion">
-                    <!-- los separo para ponerlos en fila-->
-                    <button class="boton_adopcion aceptar">Recibido</button>
-                    <button class="boton_adopcion rechazar">No recibido</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tarjetas">
-        <div class="contenido">
-            <!-- aca se agrupan todos los datos-->
-            <div class="informacion">
-                <!-- informacion del animal-->
-                <img src="{{ url_for('static', filename='img/perfil.svg') }}" alt="Foto de perfil del donante">
-                <div class="datos">
-                    <h1>Donacion:(monto)</h1>
-                    <p>Nombre Apellido del donante</p>
-                </div>
-            </div>
-            <!-- aca van los botones de accion-->
-            <div class="botones">
-                <!-- aca van en columna-->
-                <a href="{{ url_for('formulario_donar_respondido_admin') }}">
-                    <button class="boton_adopcion ver">
-                        Ver formulario
-                    </button>
-                </a>
-                <div class="eleccion">
-                    <!-- los separo para ponerlos en fila-->
-                    <button class="boton_adopcion aceptar">Recibido</button>
-                    <button class="boton_adopcion rechazar">No recibido</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+    {% else %}
+    <p>No hay donaciones.</p>
+    {% endfor %}
 </main>
 {% endblock %}

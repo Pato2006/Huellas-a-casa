@@ -13,6 +13,8 @@ from modulos.ver_adopciones import (lista_adopciones, ver_formulario, cambiar_es
 
 from modulos.usuarios import (buscar_usuario_por_email, crear_usuario, modificar_usuario)
 
+from modulos.ver_donaciones import(lista_donaciones,ver_donacion, cambiar_estado_donaciones)
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "clave-solo-para-desarrollo"
 
@@ -265,11 +267,33 @@ def cambiar_estado_adopcion(formulario_id):
 
 @app.route('/formulario_donar_admin')
 def formulario_donar_admin():
-    return render_template('formulario_donar_admin.html')
+    consultas=lista_donaciones()
+    if consultas is None:
+        respuesta="No se pudieron consultar las donaciones", 500
+    else:
+        respuesta=render_template('formulario_donar_admin.html', consultas=consultas)
+    return respuesta 
 
-@app.route('/formulario_donar_admin/formulario_donar_respondido_admin')
-def formulario_donar_respondido_admin():
-    return render_template('formulario_donar_respondido_admin.html')
-    
+@app.route('/formulario_donar_admin/donacion/<int:donacion_id>')
+def formulario_donar_respondido_admin(donacion_id):
+    consultas=ver_donacion(donacion_id)
+    if consultas is None:
+        respuesta="Formulario de donacion no encontrado.", 404
+    else:
+        respuesta=render_template('formulario_donar_respondido_admin.html', consultas=consultas[0])
+    return respuesta
+
+@app.route('/formulario_donar_admin/estado/<int:donacion_id>', methods=['POST'])
+def cambiar_estado_donacion(donacion_id):
+    estado = request.form.get('estado')
+    if estado not in ('Recibido', 'No recibido'):
+        respuesta = "Estado invalido.", 400
+    elif cambiar_estado_donaciones(donacion_id, estado) is None:
+        respuesta = "No se pudo cambiar el estado de la donacion.", 500
+    else:
+        respuesta = redirect(url_for('formulario_donar_admin'))
+    return respuesta
+
+
 if __name__ == "__main__":
     app.run(debug=True)
